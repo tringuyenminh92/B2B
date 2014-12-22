@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{030284D4-8111-4425-8A59-F8FFFE20848B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>B2B.View</RootNamespace>
+    <AssemblyName>B2B.View</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BMIModel">
+      <HintPath>..\..\B2B.Main\__DLL\BMIModel.dll</HintPath>
+    </Reference>
+    <Reference Include="BusinessObject">
+      <HintPath>..\..\B2B.Main\__DLL\BusinessObject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IBaogiaView.cs" />
+    <Compile Include="IDongiaDetailView.cs" />
+    <Compile Include="IDongiaView.cs" />
+    <Compile Include="IDonhangDetailView.cs" />
+    <Compile Include="IDonhangView.cs" />
+    <Compile Include="IDonviView.cs" />
+    <Compile Include="IHanghoaDetailView.cs" />
+    <Compile Include="IHanghoaView.cs" />
+    <Compile Include="IKhachhangDetailView.cs" />
+    <Compile Include="IKhachhangView.cs" />
+    <Compile Include="IKhoDetailView.cs" />
+    <Compile Include="IKhoView.cs" />
+    <Compile Include="IKhuvucTinhthanhView.cs" />
+    <Compile Include="IMainView.cs" />
+    <Compile Include="INguyennhanDetailView.cs" />
+    <Compile Include="INguyennhanView.cs" />
+    <Compile Include="INhaCungcapDetailView.cs" />
+    <Compile Include="INhaCungcapView.cs" />
+    <Compile Include="INhanvienDetailView.cs" />
+    <Compile Include="INhanvienView.cs" />
+    <Compile Include="INhomHanghoaView.cs" />
+    <Compile Include="INhomKhachhangView.cs" />
+    <Compile Include="IPhieunhapDetailView.cs" />
+    <Compile Include="IPhieunhapView.cs" />
+    <Compile Include="IPhieuxuatDetailView.cs" />
+    <Compile Include="IPhieuxuatView.cs" />
+    <Compile Include="IPhongbanView.cs" />
+    <Compile Include="IQuanhuyenDetailView.cs" />
+    <Compile Include="IThuoctinhHanghoaView.cs" />
+    <Compile Include="ITinhthanhDetailView.cs" />
+    <Compile Include="ITinhthanhQuanhuyenView.cs" />
+    <Compile Include="ITinhtrangDetailView.cs" />
+    <Compile Include="ITinhtrangView.cs" />
+    <Compile Include="ITonkhoView.cs" />
+    <Compile Include="IUserDetailView.cs" />
+    <Compile Include="IUserView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\B2B.Model\B2B.Model.csproj">
+      <Project>{357c1811-0e0c-4840-9e4d-ecf898faa1a2}</Project>
+      <Name>B2B.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

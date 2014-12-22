@@ -1,0 +1,782 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE3D2758-CF86-4D6D-B2D1-CCA1B23621D1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>B2B.Main</RootNamespace>
+    <AssemblyName>B2B.Main</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BMIModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>__DLL\BMIModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\ActiveCustomersList_16x16.png" />
+    <Content Include="Images\ActiveCustomersList_32x32.png" />
+    <Content Include="Images\ActiveRents_16x16.png" />
+    <Content Include="Images\ActiveRents_32x32.png" />
+    <Content Include="Images\Actor_16x16.png" />
+    <Content Include="Images\Actor_32x32.png" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\AddFile_16x16.png" />
+    <Content Include="Images\AddFile_32x32.png" />
+    <Content Include="Images\AddFolder_16x16.png" />
+    <Content Include="Images\AddFolder_32x32.png" />
+    <Content Include="Images\AddFooter_16x16.png" />
+    <Content Include="Images\AddFooter_32x32.png" />
+    <Content Include="Images\AddGroupFooter_16x16.png" />
+    <Content Include="Images\AddGroupFooter_32x32.png" />
+    <Content Include="Images\AddGroupHeader_16x16.png" />
+    <Content Include="Images\AddGroupHeader_32x32.png" />
+    <Content Include="Images\AddHeader_16x16.png" />
+    <Content Include="Images\AddHeader_32x32.png" />
+    <Content Include="Images\AddItem_16x16.png" />
+    <Content Include="Images\AddItem_32x32.png" />
+    <Content Include="Images\AddNewDataSource_16x16.png" />
+    <Content Include="Images\AddNewDataSource_32x32.png" />
+    <Content Include="Images\AddToAlbum_16x16.png" />
+    <Content Include="Images\AddToAlbum_32x32.png" />
+    <Content Include="Images\AddToLibrary_16x16.png" />
+    <Content Include="Images\AddToLibrary_32x32.png" />
+    <Content Include="Images\Add_16x16.png" />
+    <Content Include="Images\Add_32x32.png" />
+    <Content Include="Images\Alarm-Clock.gif" />
+    <Content Include="Images\Album_16x16.png" />
+    <Content Include="Images\Album_32x32.png" />
+    <Content Include="Images\AlignCenter_16x16.png" />
+    <Content Include="Images\AlignCenter_32x32.png" />
+    <Content Include="Images\AlignHorizontalBottom2_16x16.png" />
+    <Content Include="Images\AlignHorizontalBottom2_32x32.png" />
+    <Content Include="Images\AlignHorizontalBottom_16x16.png" />
+    <Content Include="Images\AlignHorizontalBottom_32x32.png" />
+    <Content Include="Images\AlignHorizontalCenter2_16x16.png" />
+    <Content Include="Images\AlignHorizontalCenter2_32x32.png" />
+    <Content Include="Images\AlignHorizontalCenter_16x16.png" />
+    <Content Include="Images\AlignHorizontalCenter_32x32.png" />
+    <Content Include="Images\AlignHorizontalTop2_16x16.png" />
+    <Content Include="Images\AlignHorizontalTop2_32x32.png" />
+    <Content Include="Images\AlignHorizontalTop_16x16.png" />
+    <Content Include="Images\AlignHorizontalTop_32x32.png" />
+    <Content Include="Images\AlignJustify_16x16.png" />
+    <Content Include="Images\AlignJustify_32x32.png" />
+    <Content Include="Images\AlignLeft_16x16.png" />
+    <Content Include="Images\AlignLeft_32x32.png" />
+    <Content Include="Images\AlignRight_16x16.png" />
+    <Content Include="Images\AlignRight_32x32.png" />
+    <Content Include="Images\AlignVerticalCenter2_16x16.png" />
+    <Content Include="Images\AlignVerticalCenter2_32x32.png" />
+    <Content Include="Images\AlignVerticalCenter_16x16.png" />
+    <Content Include="Images\AlignVerticalCenter_32x32.png" />
+    <Content Include="Images\AlignVerticalLeft2_16x16.png" />
+    <Content Include="Images\AlignVerticalLeft2_32x32.png" />
+    <Content Include="Images\AlignVerticalLeft_16x16.png" />
+    <Content Include="Images\AlignVerticalLeft_32x32.png" />
+    <Content Include="Images\AlignVerticalRight2_16x16.png" />
+    <Content Include="Images\AlignVerticalRight2_32x32.png" />
+    <Content Include="Images\AlignVerticalRight_16x16.png" />
+    <Content Include="Images\AlignVerticalRight_32x32.png" />
+    <Content Include="Images\am.png" />
+    <Content Include="Images\Announcement_16x16.png" />
+    <Content Include="Images\Announcement_32x32.png" />
+    <Content Include="Images\Apply_16x16.png" />
+    <Content Include="Images\Apply_32x32.png" />
+    <Content Include="Images\Area_16x16.png" />
+    <Content Include="Images\Area_32x32.png" />
+    <Content Include="Images\arrow-down.png" />
+    <Content Include="Images\arrow-left.png" />
+    <Content Include="Images\arrow-right.png" />
+    <Content Include="Images\arrow-up.png" />
+    <Content Include="Images\art-knife.png" />
+    <Content Include="Images\Article_16x16.png" />
+    <Content Include="Images\Article_32x32.png" />
+    <Content Include="Images\AssignToMe_16x16.png" />
+    <Content Include="Images\AssignToMe_32x32.png" />
+    <Content Include="Images\AssignTo_16x16.png" />
+    <Content Include="Images\AssignTo_32x32.png" />
+    <Content Include="Images\Attachment_16x16.png" />
+    <Content Include="Images\Attachment_32x32.png" />
+    <Content Include="Images\Attach_16x16.png" />
+    <Content Include="Images\Attach_32x32.png" />
+    <Content Include="Images\b2b.ico" />
+    <Content Include="Images\b2b.jpg" />
+    <Content Include="Images\b2c.ico" />
+    <Content Include="Images\Back.png" />
+    <Content Include="Images\Backward_16x16.png" />
+    <Content Include="Images\Backward_32x32.png" />
+    <Content Include="Images\Back_16x16.png" />
+    <Content Include="Images\Back_32x32.png" />
+    <Content Include="Images\banner-3.jpg" />
+    <Content Include="Images\Barcode_16x16.png" />
+    <Content Include="Images\Barcode_32x32.png" />
+    <Content Include="Images\Bar_16x16.png" />
+    <Content Include="Images\Bar_32x32.png" />
+    <Content Include="Images\beer.png" />
+    <Content Include="Images\BehindText_16x16.png" />
+    <Content Include="Images\BehindText_32x32.png" />
+    <Content Include="Images\Bold_16x16.png" />
+    <Content Include="Images\Bold_32x32.png" />
+    <Content Include="Images\BreakingChange_16x16.png" />
+    <Content Include="Images\BreakingChange_32x32.png" />
+    <Content Include="Images\BringForward_16x16.png" />
+    <Content Include="Images\BringForward_32x32.png" />
+    <Content Include="Images\BringToFrontOfText_16x16.png" />
+    <Content Include="Images\BringToFrontOfText_32x32.png" />
+    <Content Include="Images\BringToFront_16x16.png" />
+    <Content Include="Images\BringToFront_32x32.png" />
+    <Content Include="Images\Browser.Icon.ico" />
+    <Content Include="Images\Bubble_16x16.png" />
+    <Content Include="Images\Bubble_32x32.png" />
+    <Content Include="Images\BugReport_16x16.png" />
+    <Content Include="Images\BugReport_32x32.png" />
+    <Content Include="Images\Build_16x16.png" />
+    <Content Include="Images\Build_32x32.png" />
+    <Content Include="Images\bullhorn.png" />
+    <Content Include="Images\ca.png" />
+    <Content Include="Images\calc.png" />
+    <Content Include="Images\calc_32x32.png" />
+    <Content Include="Images\Calendar_16x16.png" />
+    <Content Include="Images\Calendar_32x32.png" />
+    <Content Include="Images\Cancel_16x16.png" />
+    <Content Include="Images\Cancel_32x32.png" />
+    <Content Include="Images\Cards_16x16.png" />
+    <Content Include="Images\Cards_32x32.png" />
+    <Content Include="Images\Categories_16x16.png" />
+    <Content Include="Images\Categories_32x32.png" />
+    <Content Include="Images\CellsAutoHeight-_16x16.png" />
+    <Content Include="Images\CellsAutoHeight-_32x32.png" />
+    <Content Include="Images\ChangeFontStyle_16x16.png" />
+    <Content Include="Images\ChangeFontStyle_32x32.png" />
+    <Content Include="Images\ChartsRotate_16x16.png" />
+    <Content Include="Images\ChartsRotate_32x32.png" />
+    <Content Include="Images\ChartsShowLegend_16x16.png" />
+    <Content Include="Images\ChartsShowLegend_32x32.png" />
+    <Content Include="Images\ChartYAxisSettings_16x16.png" />
+    <Content Include="Images\ChartYAxisSettings_32x32.png" />
+    <Content Include="Images\Chart_16x16.png" />
+    <Content Include="Images\Chart_16_16.png" />
+    <Content Include="Images\Chart_32x32.png" />
+    <Content Include="Images\chat.png" />
+    <Content Include="Images\CheckBox_16x16.png" />
+    <Content Include="Images\CheckBox_32x32.png" />
+    <Content Include="Images\checklist-icon.png" />
+    <Content Include="Images\checkmark.png" />
+    <Content Include="Images\chuyenkho_32.png" />
+    <Content Include="Images\ClearFilter_16x16.png" />
+    <Content Include="Images\ClearFilter_32x32.png" />
+    <Content Include="Images\ClearFormatting_16x16.png" />
+    <Content Include="Images\ClearFormatting_32x32.png" />
+    <Content Include="Images\Clear_16x16.png" />
+    <Content Include="Images\Clear_32x32.png" />
+    <Content Include="Images\Clip_16x16.png" />
+    <Content Include="Images\Clip_32x32.png" />
+    <Content Include="Images\CloseDetails_16x16.png" />
+    <Content Include="Images\CloseDetails_32x32.png" />
+    <Content Include="Images\Close_16x16.png" />
+    <Content Include="Images\Close_32x32.png" />
+    <Content Include="Images\Code_Central.png" />
+    <Content Include="Images\coffee.png" />
+    <Content Include="Images\Collage_16x16.png" />
+    <Content Include="Images\Collage_32x32.png" />
+    <Content Include="Images\colors.png" />
+    <Content Include="Images\Colors_16x16.png" />
+    <Content Include="Images\Colors_32x32.png" />
+    <Content Include="Images\Columns_16x16.png" />
+    <Content Include="Images\Columns_32x32.png" />
+    <Content Include="Images\Comment_16x16.png" />
+    <Content Include="Images\Comment_32x32.png" />
+    <Content Include="Images\Company_16x16.png" />
+    <Content Include="Images\Company_32x32.png" />
+    <Content Include="Images\conference-16x16.png" />
+    <Content Include="Images\conference_32_32.png" />
+    <Content Include="Images\Contact_16x16.png" />
+    <Content Include="Images\Contact_32x32.png" />
+    <Content Include="Images\Contact_Us.png" />
+    <Content Include="Images\ContentArrangeInColums_16x16.png" />
+    <Content Include="Images\ContentArrangeInColums_32x32.png" />
+    <Content Include="Images\ContentArrangeInRows_16x16.png" />
+    <Content Include="Images\ContentArrangeInRows_32x32.png" />
+    <Content Include="Images\ContentAutoArrange_16x16.png" />
+    <Content Include="Images\ContentAutoArrange_32x32.png" />
+    <Content Include="Images\Content_16x16.png" />
+    <Content Include="Images\Content_32x32.png" />
+    <Content Include="Images\ConvertToParagraphs_16x16.png" />
+    <Content Include="Images\ConvertToParagraphs_32x32.png" />
+    <Content Include="Images\Convert_16x16.png" />
+    <Content Include="Images\Convert_32x32.png" />
+    <Content Include="Images\Copy_16x16.png" />
+    <Content Include="Images\Copy_32x32.png" />
+    <Content Include="Images\Country_16x16.png" />
+    <Content Include="Images\Country_32x32.png" />
+    <Content Include="Images\CrossDataSourceFiltering _16x16.png" />
+    <Content Include="Images\CrossDataSourceFiltering_32x32.png" />
+    <Content Include="Images\CSharp_16x16.png" />
+    <Content Include="Images\CSharp_32x32.png" />
+    <Content Include="Images\Currency_16x16.png" />
+    <Content Include="Images\Currency_32x32.png" />
+    <Content Include="Images\CustomerFilmRentsList_16x16.png" />
+    <Content Include="Images\CustomerFilmRentsList_32x32.png" />
+    <Content Include="Images\CustomerInfoCards_16x16.png" />
+    <Content Include="Images\CustomerInfoCards_32x32.png" />
+    <Content Include="Images\CustomerRevenue_16x16.png" />
+    <Content Include="Images\CustomerRevenue_32x32.png" />
+    <Content Include="Images\CustomersByDate_16x16.png" />
+    <Content Include="Images\CustomersByDate_32x32.png" />
+    <Content Include="Images\CustomersKPI_16x16.png" />
+    <Content Include="Images\CustomersKPI_32x32.png" />
+    <Content Include="Images\Customer_16x16.png" />
+    <Content Include="Images\customer_16_16.png" />
+    <Content Include="Images\Customer_32x32.png" />
+    <Content Include="Images\customer_32_32.png" />
+    <Content Include="Images\customer_group_16_16.png" />
+    <Content Include="Images\customer_group_32_32.png" />
+    <Content Include="Images\Customization_16x16.png" />
+    <Content Include="Images\Customization_32x32.png" />
+    <Content Include="Images\CustomizeGrid_16x16.png" />
+    <Content Include="Images\CustomizeGrid_32x32.png" />
+    <Content Include="Images\Cut_16x16.png" />
+    <Content Include="Images\Cut_32x32.png" />
+    <Content Include="Images\database.png" />
+    <Content Include="Images\Database_16x16.png" />
+    <Content Include="Images\Database_32x32.png" />
+    <Content Include="Images\DayView_16x16.png" />
+    <Content Include="Images\DayView_32x32.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\DeleteDataSource_16x16.png" />
+    <Content Include="Images\DeleteDataSource_32x32.png" />
+    <Content Include="Images\DeleteFooter_16x16.png" />
+    <Content Include="Images\DeleteFooter_32x32.png" />
+    <Content Include="Images\DeleteGroupFooter_16x16.png" />
+    <Content Include="Images\DeleteGroupFooter_32x32.png" />
+    <Content Include="Images\DeleteGroupHeader_16x16.png" />
+    <Content Include="Images\DeleteGroupHeader_32x32.png" />
+    <Content Include="Images\DeleteHeader_16x16.png" />
+    <Content Include="Images\DeleteHeader_32x32.png" />
+    <Content Include="Images\DeleteList2_16x16.png" />
+    <Content Include="Images\DeleteList2_32x32.png" />
+    <Content Include="Images\DeleteList_16x16.png" />
+    <Content Include="Images\DeleteList_32x32.png" />
+    <Content Include="Images\Delete_16x16.png" />
+    <Content Include="Images\Delete_32x32.png" />
+    <Content Include="Images\department_16x16.png" />
+    <Content Include="Images\department_32_32.png" />
+    <Content Include="Images\Design_16x16.png" />
+    <Content Include="Images\Design_32x32.png" />
+    <Content Include="Images\document.png" />
+    <Content Include="Images\DocumentMap_16x16.png" />
+    <Content Include="Images\DocumentMap_32x32.png" />
+    <Content Include="Images\DoubleFirst_16x16.png" />
+    <Content Include="Images\DoubleFirst_32x32.png" />
+    <Content Include="Images\DoubleLast_16x16.png" />
+    <Content Include="Images\DoubleLast_32x32.png" />
+    <Content Include="Images\DoubleNext_16x16.png" />
+    <Content Include="Images\DoubleNext_32x32.png" />
+    <Content Include="Images\DoublePrev_16x16.png" />
+    <Content Include="Images\DoublePrev_32x32.png" />
+    <Content Include="Images\Download_16x16.png" />
+    <Content Include="Images\Download_32x32.png" />
+    <Content Include="Images\DrillDownOnArguments_Chart_16x16.png" />
+    <Content Include="Images\DrillDownOnArguments_Chart_32x32.png" />
+    <Content Include="Images\DrillDownOnArguments_Pie_16x16.png" />
+    <Content Include="Images\DrillDownOnArguments_Pie_32x32.png" />
+    <Content Include="Images\DrillDownOnSeries_Chart_16x16.png" />
+    <Content Include="Images\DrillDownOnSeries_Chart_32x32.png" />
+    <Content Include="Images\DrillDownOnSeries_Pie_16x16.png" />
+    <Content Include="Images\DrillDownOnSeries_Pie_32x32.png" />
+    <Content Include="Images\DrillDown_16x16.png" />
+    <Content Include="Images\DrillDown_32x32.png" />
+    <Content Include="Images\earth.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\EditContact_16x16.png" />
+    <Content Include="Images\EditContact_32x32.png" />
+    <Content Include="Images\EditDataSource_16x16.png" />
+    <Content Include="Images\EditDataSource_32x32.png" />
+    <Content Include="Images\EditFeed_16x16.png" />
+    <Content Include="Images\EditFeed_32x32.png" />
+    <Content Include="Images\EditPageHF_16x16.png" />
+    <Content Include="Images\EditPageHF_32x32.png" />
+    <Content Include="Images\EditTask_16x16.png" />
+    <Content Include="Images\EditTask_32x32.png" />
+    <Content Include="Images\EditWrapPoints_16x16.png" />
+    <Content Include="Images\EditWrapPoints_32x32.png" />
+    <Content Include="Images\Edit_16x16.png" />
+    <Content Include="Images\Edit_32x32.png" />
+    <Content Include="Images\EmailTemplate_16x16.png" />
+    <Content Include="Images\EmailTemplate_32x32.png" />
+    <Content Include="Images\EMail_16x16.png" />
+    <Content Include="Images\EMail_32x32.png" />
+    <Content Include="Images\Employee_16x16.png" />
+    <Content Include="Images\Employee_32x32.png" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\error_16_16.png" />
+    <Content Include="Images\ExportCsvLarge.png" />
+    <Content Include="Images\ExportGraphicLarge.png" />
+    <Content Include="Images\ExportHtmLarge.png" />
+    <Content Include="Images\ExportMhtLarge.png" />
+    <Content Include="Images\ExportPdfLarge.png" />
+    <Content Include="Images\ExportRtfLarge.png" />
+    <Content Include="Images\ExportToExcel_16x16.png" />
+    <Content Include="Images\ExportToExcel_32x32.png" />
+    <Content Include="Images\ExportToHTML_16x16.png" />
+    <Content Include="Images\ExportToHTML_32x32.png" />
+    <Content Include="Images\ExportToIMG_16x16.png" />
+    <Content Include="Images\ExportToIMG_32x32.png" />
+    <Content Include="Images\ExportToMHT_16x16.png" />
+    <Content Include="Images\ExportToMHT_32x32.png" />
+    <Content Include="Images\ExportToPDF_16x16.png" />
+    <Content Include="Images\ExportToPDF_32x32.png" />
+    <Content Include="Images\ExportToRTF_16x16.png" />
+    <Content Include="Images\ExportToRTF_32x32.png" />
+    <Content Include="Images\ExportToTXT_16x16.png" />
+    <Content Include="Images\ExportToTXT_32x32.png" />
+    <Content Include="Images\ExportToXML_16x16.png" />
+    <Content Include="Images\ExportToXML_32x32.png" />
+    <Content Include="Images\ExportTxtLarge.png" />
+    <Content Include="Images\ExportXlsLarge.png" />
+    <Content Include="Images\ExportXlsxLarge.png" />
+    <Content Include="Images\Export_16x16.png" />
+    <Content Include="Images\Export_32x32.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\fedora.png" />
+    <Content Include="Images\FilmItemInfoCards_16x16.png" />
+    <Content Include="Images\FilmItemInfoCards_32x32.png" />
+    <Content Include="Images\Film_16x16.png" />
+    <Content Include="Images\Film_32x32.png" />
+    <Content Include="Images\Filter_16x16.png" />
+    <Content Include="Images\Filter_32x32.png" />
+    <Content Include="Images\flag-blue.png" />
+    <Content Include="Images\flag-green.png" />
+    <Content Include="Images\flag-red.png" />
+    <Content Include="Images\flag-yellow.png" />
+    <Content Include="Images\flask.png" />
+    <Content Include="Images\Folder_16x16.png" />
+    <Content Include="Images\Folder_32x32.png" />
+    <Content Include="Images\Forward_16x16.png" />
+    <Content Include="Images\Forward_32x32.png" />
+    <Content Include="Images\gear.png" />
+    <Content Include="Images\GenerateData_16x16.png" />
+    <Content Include="Images\GenerateData_32x32.png" />
+    <Content Include="Images\globe.png" />
+    <Content Include="Images\Group_Administrator.png" />
+    <Content Include="Images\Group_Catalog.png" />
+    <Content Include="Images\Group_KPI.png" />
+    <Content Include="Images\Group_Rental.png" />
+    <Content Include="Images\Group_Reports.png" />
+    <Content Include="Images\Group_Statistics.png" />
+    <Content Include="Images\headphones.png" />
+    <Content Include="Images\Help_16x16.png" />
+    <Content Include="Images\Help_32x32.png" />
+    <Content Include="Images\Hinhhanghoa\cocacola1.5L.jpg" />
+    <Content Include="Images\Hinhhanghoa\cocacola300ml.jpg" />
+    <Content Include="Images\Hinhhanghoa\CPCanhGiua2kg.jpg" />
+    <Content Include="Images\Hinhhanghoa\CPCanhNguyen1kg.jpg" />
+    <Content Include="Images\Hinhhanghoa\CPCoGaKhongDau1kg.jpg" />
+    <Content Include="Images\Hinhhanghoa\CPDuiCanh1kg.jpg" />
+    <Content Include="Images\Hinhhanghoa\CPMeGa500r.jpg" />
+    <Content Include="Images\Hinhhanghoa\CPTimGa500r.jpg" />
+    <Content Include="Images\History.png" />
+    <Content Include="Images\Home.png" />
+    <Content Include="Images\Home_16x16.png" />
+    <Content Include="Images\Home_32x32.png" />
+    <Content Include="Images\import_excel_16x16.png" />
+    <Content Include="Images\import_excel_32x32.png" />
+    <Content Include="Images\info-16x16.png" />
+    <Content Include="Images\Info_16x16.png" />
+    <Content Include="Images\Info_32x32.png" />
+    <Content Include="Images\iphone.png" />
+    <Content Include="Images\ItemMarked_16x16.png" />
+    <Content Include="Images\ItemMarked_32x32.png" />
+    <Content Include="Images\latte.png" />
+    <Content Include="Images\LayoutFlip_16x16.png" />
+    <Content Include="Images\LayoutFlip_32x32.png" />
+    <Content Include="Images\LayoutOptions_16x16.png" />
+    <Content Include="Images\LayoutOptions_32x32.png" />
+    <Content Include="Images\LayoutRotate_16x16.png" />
+    <Content Include="Images\LayoutRotate_32x32.png" />
+    <Content Include="Images\Library_16x16.png" />
+    <Content Include="Images\Library_32x32.png" />
+    <Content Include="Images\Line Chart.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\ManageItems_16x16.png" />
+    <Content Include="Images\ManageItems_32x32.png" />
+    <Content Include="Images\Mark_16x16.png" />
+    <Content Include="Images\Mark_32x32.png" />
+    <Content Include="Images\MediaPerformance_16x16.png" />
+    <Content Include="Images\MediaPerformance_32x32.png" />
+    <Content Include="Images\microscope.png" />
+    <Content Include="Images\movie.png" />
+    <Content Include="Images\MoviesKPI_16x16.png" />
+    <Content Include="Images\MoviesKPI_32x32.png" />
+    <Content Include="Images\Movie_16x16.png" />
+    <Content Include="Images\Movie_32x32.png" />
+    <Content Include="Images\MultiplePagesLarge.png" />
+    <Content Include="Images\Navigation_16x16.png" />
+    <Content Include="Images\Navigation_32x32.png" />
+    <Content Include="Images\NewAlbum_16x16.png" />
+    <Content Include="Images\NewAlbum_32x32.png" />
+    <Content Include="Images\New_16x16.png" />
+    <Content Include="Images\New_32x32.png" />
+    <Content Include="Images\Next.png" />
+    <Content Include="Images\Next_16x16.png" />
+    <Content Include="Images\Next_32x32.png" />
+    <Content Include="Images\Nhaphang_32.png" />
+    <Content Include="Images\note-16x16.png" />
+    <Content Include="Images\note-32x32.png" />
+    <Content Include="Images\Online_Help.png" />
+    <Content Include="Images\Open_16x16.png" />
+    <Content Include="Images\Open_32x32.png" />
+    <Content Include="Images\Order_16x16.png" />
+    <Content Include="Images\Order_32x32.png" />
+    <Content Include="Images\Other_16x16.png" />
+    <Content Include="Images\Other_32x32.png" />
+    <Content Include="Images\PageMarginsModerate.png" />
+    <Content Include="Images\PageMarginsNarrow.png" />
+    <Content Include="Images\PageMarginsNormal.png" />
+    <Content Include="Images\PageMarginsWide.png" />
+    <Content Include="Images\PageOrientationLandscape.png" />
+    <Content Include="Images\PageOrientationPortrait.png" />
+    <Content Include="Images\Palette_16x16.png" />
+    <Content Include="Images\Palette_32x32.png" />
+    <Content Include="Images\PaperKind_A3.png" />
+    <Content Include="Images\PaperKind_A4.png" />
+    <Content Include="Images\PaperKind_A5.png" />
+    <Content Include="Images\PaperKind_A6.png" />
+    <Content Include="Images\PaperKind_Executive.png" />
+    <Content Include="Images\PaperKind_Legal.png" />
+    <Content Include="Images\PaperKind_Letter.png" />
+    <Content Include="Images\PaperKind_Tabloid.png" />
+    <Content Include="Images\PaperSize.png" />
+    <Content Include="Images\PaperSizeLarge.png" />
+    <Content Include="Images\Paste_16x16.png" />
+    <Content Include="Images\Paste_32x32.png" />
+    <Content Include="Images\Period_16x16.png" />
+    <Content Include="Images\Period_32x32.png" />
+    <Content Include="Images\Person_16x16.png" />
+    <Content Include="Images\Person_32x32.png" />
+    <Content Include="Images\pipette.png" />
+    <Content Include="Images\Preview_16x16.png" />
+    <Content Include="Images\Preview_32x32.png" />
+    <Content Include="Images\Previous_16x16.png" />
+    <Content Include="Images\Previous_32x32.png" />
+    <Content Include="Images\price-icon.png" />
+    <Content Include="Images\PrintDirectLarge.png" />
+    <Content Include="Images\Print_16x16.png" />
+    <Content Include="Images\Print_32x32.png" />
+    <Content Include="Images\product.png" />
+    <Content Include="Images\Property.png" />
+    <Content Include="Images\province_32.png" />
+    <Content Include="Images\record.png" />
+    <Content Include="Images\Refresh.png" />
+    <Content Include="Images\Refresh_16x16.png" />
+    <Content Include="Images\Refresh_32x32.png" />
+    <Content Include="Images\region_32.png" />
+    <Content Include="Images\remove.png" />
+    <Content Include="Images\RemoveAlbum_16x16.png" />
+    <Content Include="Images\RemoveAlbum_32x32.png" />
+    <Content Include="Images\RemoveFolder_16x16.png" />
+    <Content Include="Images\RemoveFolder_32x32.png" />
+    <Content Include="Images\RemoveFromAlbum_16x16.png" />
+    <Content Include="Images\RemoveFromAlbum_32x32.png" />
+    <Content Include="Images\Remove_16x16.png" />
+    <Content Include="Images\Remove_32x32.png" />
+    <Content Include="Images\Return_16x16.png" />
+    <Content Include="Images\Return_32x32.png" />
+    <Content Include="Images\RevenueSplit_16x16.png" />
+    <Content Include="Images\RevenueSplit_32x32.png" />
+    <Content Include="Images\Revenue_16x16.png" />
+    <Content Include="Images\Revenue_32x32.png" />
+    <Content Include="Images\Ribbon_AlignCenter_16x16.png" />
+    <Content Include="Images\Ribbon_AlignLeft_16x16.png" />
+    <Content Include="Images\Ribbon_AlignRight_16x16.png" />
+    <Content Include="Images\Ribbon_Bold_16x16.png" />
+    <Content Include="Images\Ribbon_Close_16x16.png" />
+    <Content Include="Images\Ribbon_Close_32x32.png" />
+    <Content Include="Images\Ribbon_Content_16x16.png" />
+    <Content Include="Images\Ribbon_Content_32x32.png" />
+    <Content Include="Images\Ribbon_Exit_16x16.png" />
+    <Content Include="Images\Ribbon_Exit_32x32.png" />
+    <Content Include="Images\Ribbon_Find_16x16.png" />
+    <Content Include="Images\Ribbon_Find_32x32.png" />
+    <Content Include="Images\Ribbon_Info_16x16.png" />
+    <Content Include="Images\Ribbon_Info_32x32.png" />
+    <Content Include="Images\Ribbon_Italic_16x16.png" />
+    <Content Include="Images\Ribbon_New_16x16.png" />
+    <Content Include="Images\Ribbon_New_32x32.png" />
+    <Content Include="Images\Ribbon_Open_16x16.png" />
+    <Content Include="Images\Ribbon_Open_32x32.png" />
+    <Content Include="Images\Ribbon_SaveAs_16x16.png" />
+    <Content Include="Images\Ribbon_SaveAs_32x32.png" />
+    <Content Include="Images\Ribbon_Save_16x16.png" />
+    <Content Include="Images\Ribbon_Save_32x32.png" />
+    <Content Include="Images\Ribbon_Underline_16x16.png" />
+    <Content Include="Images\ru.png" />
+    <Content Include="Images\sale.png" />
+    <Content Include="Images\Sale_16x16.png" />
+    <Content Include="Images\sale_32.png" />
+    <Content Include="Images\Sale_32x32.png" />
+    <Content Include="Images\SaveAndClose_16x16.png" />
+    <Content Include="Images\SaveAndClose_32x32.png" />
+    <Content Include="Images\Save_16x16.png" />
+    <Content Include="Images\Save_32x32.png" />
+    <Content Include="Images\Scheduler_16x16.png" />
+    <Content Include="Images\Scheduler_32x32.png" />
+    <Content Include="Images\SelectAllMarked_16x16.png" />
+    <Content Include="Images\SelectAllMarked_32x32.png" />
+    <Content Include="Images\ShopImage.png" />
+    <Content Include="Images\Slideshow_16x16.png" />
+    <Content Include="Images\Slideshow_32x32.png" />
+    <Content Include="Images\Status-dialog-information-icon.png" />
+    <Content Include="Images\Status-security-high-icon.png" />
+    <Content Include="Images\stop.png" />
+    <Content Include="Images\TheMostProfitableGenresList_16x16.png" />
+    <Content Include="Images\TheMostProfitableGenresList_32x32.png" />
+    <Content Include="Images\thumbtack-blue.png" />
+    <Content Include="Images\thumbtack-green.png" />
+    <Content Include="Images\thumbtack-red.png" />
+    <Content Include="Images\thumbtack-yellow.png" />
+    <Content Include="Images\Tile.png" />
+    <Content Include="Images\Tonkho_32.png" />
+    <Content Include="Images\TopCustomers_16x16.png" />
+    <Content Include="Images\TopCustomers_32x32.png" />
+    <Content Include="Images\TopFilmList_16x16.png" />
+    <Content Include="Images\TopFilmList_32x32.png" />
+    <Content Include="Images\Undo_16x16.png" />
+    <Content Include="Images\Undo_32x32.png" />
+    <Content Include="Images\unit.png" />
+    <Content Include="Images\UnmarkAll_16x16.png" />
+    <Content Include="Images\UnmarkAll_32x32.png" />
+    <Content Include="Images\Unmark_16x16.png" />
+    <Content Include="Images\Unmark_32x32.png" />
+    <Content Include="Images\Upload_16x16.png" />
+    <Content Include="Images\Upload_32x32.png" />
+    <Content Include="Images\us.png" />
+    <Content Include="Images\UserKey_16x16.png" />
+    <Content Include="Images\UserKey_32x32.png" />
+    <Content Include="Images\users %281%29.png" />
+    <Content Include="Images\Views_16x16.png" />
+    <Content Include="Images\Views_32x32.png" />
+    <Content Include="Images\View_16x16.png" />
+    <Content Include="Images\View_32x32.png" />
+    <Content Include="Images\warning.png" />
+    <Content Include="Images\XtraBars.png" />
+    <Content Include="SQL\CheckLogin.sql" />
+    <Content Include="SQL\Khuyen_GetBaogiaTheoNhomKhachhang.sql" />
+    <Content Include="SQL\Khuyen_GetDonhang.sql" />
+    <Content Include="SQL\Khuyen_GetHanghoa.sql" />
+    <Content Include="SQL\Khuyen_GetHanghoaTheoNhom.sql" />
+    <Content Include="SQL\Khuyen_GetKhachhang.sql" />
+    <Content Include="SQL\Khuyen_GetPhieuxuatTheoDonhang.sql" />
+    <Content Include="SQL\Tin_DeletePhieunhap.sql" />
+    <Content Include="SQL\Tin_GetChitietPhieunhapTheoPhieunhap.sql" />
+    <Content Include="SQL\Tin_GetHanghoaActive.sql" />
+    <Content Include="SQL\Tin_GetNhomKhachhangActive.sql" />
+    <Content Include="SQL\Tin_GetPhieunhapTheoMa.sql" />
+    <Content Include="SQL\Tin_GetPhieunhapTheoThang.sql" />
+    <Content Include="SQL\Tin_GetThuoctinHanghoaTheoHanghoa.sql" />
+    <Content Include="SQL\Tin_GetTinhtrangPhieunhapCurrent.sql" />
+    <Content Include="SQL\Tin_GetTonkhoMoinhatHanghoaTheoKho.sql" />
+    <Content Include="SQL\Tin_UpdateTonkhoNhap.sql" />
+    <Content Include="SQL\Tri_GetDongiaTheoNhomKhachhang.sql" />
+    <Content Include="SQL\Tri_GetChitietDonhangTheoDonhang.sql" />
+    <Content Include="SQL\Tri_GetDonhangTheoId.sql" />
+    <Content Include="SQL\Tri_GetHanghoaTheoNhomKhachhang.sql" />
+    <Content Include="SQL\Tri_GetKhachhangDemo.sql" />
+    <Content Include="SQL\Tri_GetKhachhangTheoNhomKhachhang.sql" />
+    <Content Include="SQL\Tri_GetNguyennhanTheoLoai.sql" />
+    <Content Include="SQL\Tri_GetSoluongTon.sql" />
+    <Content Include="SQL\Tri_GetSoduDaukyTheoNgay.sql" />
+    <Content Include="SQL\Tri_GetTonkhoTheoNgayThangnam.sql" />
+    <Content Include="SQL\Tri_GetThangNamNhapXuat.sql" />
+    <Content Include="SQL\Tri_GetTinhtrangDalap.sql" />
+    <Content Include="SQL\Tri_GetTinhtrangDonhangCurrent.sql" />
+    <Content Include="SQL\Tri_GetTinhtrangTheoLoai.sql" />
+    <Content Include="SQL\Tri_GetNhanvien.sql" />
+    <Content Include="SQL\Tri_GetKho.sql" />
+    <Content Include="SQL\Tri_GetNhaCungcap.sql" />
+    <Content Include="SQL\Tri_GetNhanvienActive.sql" />
+    <Content Include="SQL\Tri_GetDonhangTheoThang.sql" />
+    <Content Include="SQL\Tri_GetNhanvienTheoPhongban.sql" />
+    <Content Include="SQL\Tri_GetNhomKhachhangActive.sql" />
+    <Content Include="SQL\Tri_GetQuanhuyenActive.sql" />
+    <Content Include="SQL\Tri_GetQuanhuyenTheoTinhthanh.sql" />
+    <Content Include="SQL\Tri_GetTinhthanhActive.sql" />
+    <Content Include="SQL\Tri_GetQuanhuyenActiveTheoTinhthanh.sql" />
+    <Content Include="SQL\Tri_GetTinhthanhVoiTenKhuvuc.sql" />
+    <Content Include="SQL\Tri_GetKhuvucActive.sql" />
+    <Content Include="SQL\Tri_GetTinhthanhTheoKhuvuc.sql" />
+    <Content Include="DLL\AutoFramework.dll" />
+    <Content Include="DLL\AutoService.dll" />
+    <Content Include="DLL\BMIModel.dll" />
+    <Content Include="DLL\BusinessObject.dll" />
+    <Content Include="DLL\CoreService.dll" />
+    <Content Include="DLL\DataObject.dll" />
+    <Content Include="DLL\EmailFramework.dll" />
+    <Content Include="DLL\ExcelFramework.dll" />
+    <Content Include="DLL\GeoPointDev.dll" />
+    <Content Include="SQL\Vinh_GetChitietDonhangTheoDonHang.sql" />
+    <Content Include="SQL\Vinh_GetChitietPhieuxuatTheoDonHang.sql" />
+    <Content Include="SQL\Vinh_GetChitietPhieuxuatTheoPhieuxuat.sql" />
+    <Content Include="SQL\Vinh_GetDonhangTheoDonhangId.sql" />
+    <Content Include="SQL\Vinh_GetDonviActive.sql" />
+    <Content Include="SQL\Vinh_GetKhoActive.sql" />
+    <Content Include="SQL\Vinh_GetNguyennhanLydoActive.sql" />
+    <Content Include="SQL\Vinh_GetNhanvienTheoUserId.sql" />
+    <Content Include="SQL\Vinh_GetNhomHanghoaActive.sql" />
+    <Content Include="SQL\Tri_GetPhongbanActive.sql" />
+    <Content Include="SQL\Vinh_GetPhieuxuatTheoMa.sql" />
+    <Content Include="SQL\Vinh_GetTinhtrangActive.sql" />
+    <Content Include="SQL\Vinh_GetTinhtrangPhieuxuatMoiNhatTheoPhieuxuat.sql" />
+    <Content Include="SQL\Vinh_GetTinhtrangPhieuxuatTheoPhieuxuat.sql" />
+    <Content Include="SQL\Vinh_GetTonKhoMoiNhatTheoHangHoa_Kho.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\B2B.Forms\B2B.Forms.csproj">
+      <Project>{c9aff529-f678-4a84-8b45-cb3cb9912057}</Project>
+      <Name>B2B.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVP\B2B.Presenter\B2B.Presenter.csproj">
+      <Project>{5b45dc0a-83b4-4315-b257-059ffc8d039b}</Project>
+      <Name>B2B.Presenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVP\B2B.View\B2B.View.csproj">
+      <Project>{030284d4-8111-4425-8a59-f8fffe20848b}</Project>
+      <Name>B2B.View</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
