@@ -167,7 +167,14 @@ namespace B2B.Forms
 
         private void savetDongiaSimpleButton_Click(object sender, EventArgs e)
         {
-            presenter.Save();
+            if (presenter.Save())
+            {
+                XtraMessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                XtraMessageBox.Show("Lưu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void edittDongiaSimpleButton_Click(object sender, EventArgs e)
@@ -181,7 +188,7 @@ namespace B2B.Forms
                 using (var f = new DongiaDetailForm(DongiaCurrent))
                 {
                     if (f.ShowDialog(this) == DialogResult.Cancel)
-                    {
+                    {                        
                         RefreshData();
                     }
                 }

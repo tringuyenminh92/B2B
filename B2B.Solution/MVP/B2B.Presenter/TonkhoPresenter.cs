@@ -38,6 +38,7 @@ namespace B2B.Presenter
         /// </summary>
         public void DisplayThangnamNhapxuat()
         {
+            
             View.ThangnamNhapxuatItems = Model.Get<ThangnamNhapxuatModel>("Tri_GetThangNamNhapXuat");
             View.RefreshDataThangnam();
         }

@@ -36,6 +36,9 @@
     <Reference Include="BusinessObject">
       <HintPath>..\B2B.Main\DLL\BusinessObject.dll</HintPath>
     </Reference>
+    <Reference Include="DatabaseHelper">
+      <HintPath>..\B2B.Main\DLL\DatabaseHelper.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -43,6 +46,7 @@
     <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
@@ -57,11 +61,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackupForm.Designer.cs">
+      <DependentUpon>BackupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaogiaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaogiaForm.Designer.cs">
       <DependentUpon>BaogiaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongnoNhapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongnoNhapForm.Designer.cs">
+      <DependentUpon>CongnoNhapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongnoXuatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongnoXuatForm.designer.cs">
+      <DependentUpon>CongnoXuatForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DongiaDetailForm.cs">
       <SubType>Form</SubType>
@@ -146,6 +168,12 @@
     </Compile>
     <Compile Include="KhuvucDetailForm.Designer.cs">
       <DependentUpon>KhuvucDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KiemkeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KiemkeForm.Designer.cs">
+      <DependentUpon>KiemkeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MyPictureEdit.cs">
       <SubType>Component</SubType>
@@ -234,6 +262,18 @@
     <Compile Include="PhieunhapForm.Designer.cs">
       <DependentUpon>PhieunhapForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhieuchiDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhieuchiDetailForm.Designer.cs">
+      <DependentUpon>PhieuchiDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuthuDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhieuthuDetailForm.Designer.cs">
+      <DependentUpon>PhieuthuDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhieuxuatDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +315,18 @@
     </Compile>
     <Compile Include="QuanhuyenDetailForm.Designer.cs">
       <DependentUpon>QuanhuyenDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestoreForm.Designer.cs">
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThuchiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThuchiForm.Designer.cs">
+      <DependentUpon>ThuchiForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ThuoctinhHanghoaDetailForm.cs">
       <SubType>Form</SubType>
@@ -332,8 +384,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BackupForm.resx">
+      <DependentUpon>BackupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaogiaForm.resx">
       <DependentUpon>BaogiaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongnoNhapForm.resx">
+      <DependentUpon>CongnoNhapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongnoXuatForm.resx">
+      <DependentUpon>CongnoXuatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DongiaDetailForm.resx">
       <DependentUpon>DongiaDetailForm.cs</DependentUpon>
@@ -377,6 +438,9 @@
     <EmbeddedResource Include="KhuvucDetailForm.resx">
       <DependentUpon>KhuvucDetailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KiemkeForm.resx">
+      <DependentUpon>KiemkeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NguyennhanDetailForm.resx">
       <DependentUpon>NguyennhanDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,6 +483,12 @@
     <EmbeddedResource Include="PhieunhapForm.resx">
       <DependentUpon>PhieunhapForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhieuchiDetailForm.resx">
+      <DependentUpon>PhieuchiDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhieuthuDetailForm.resx">
+      <DependentUpon>PhieuthuDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhieuxuatDetailForm.resx">
       <DependentUpon>PhieuxuatDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +511,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanhuyenDetailForm.resx">
       <DependentUpon>QuanhuyenDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestoreForm.resx">
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThuchiForm.resx">
+      <DependentUpon>ThuchiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThuoctinhHanghoaDetailForm.resx">
       <DependentUpon>ThuoctinhHanghoaDetailForm.cs</DependentUpon>
@@ -471,23 +547,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MVP\B2B.Model\B2B.Model.csproj">
-      <Project>{357c1811-0e0c-4840-9e4d-ecf898faa1a2}</Project>
-      <Name>B2B.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MVP\B2B.Presenter\B2B.Presenter.csproj">
-      <Project>{5b45dc0a-83b4-4315-b257-059ffc8d039b}</Project>
-      <Name>B2B.Presenter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MVP\B2B.View\B2B.View.csproj">
-      <Project>{030284d4-8111-4425-8a59-f8fffe20848b}</Project>
-      <Name>B2B.View</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\B2B.Main\App.config">
-      <Link>App.config</Link>
-    </None>
     <None Include="Properties\DataSources\B2B.Model.ChitietDonhangModel.datasource" />
     <None Include="Properties\DataSources\B2B.Model.ChitietPhieunhapModel.datasource" />
     <None Include="Properties\DataSources\B2B.Model.ChitietPhieuxuatModel.datasource" />
@@ -511,6 +570,7 @@
     <None Include="Properties\DataSources\B2B.Model.PhongbanModel.datasource" />
     <None Include="Properties\DataSources\B2B.Model.QuanhuyenModel.datasource" />
     <None Include="Properties\DataSources\B2B.Model.ThangnamNhapxuatModel.datasource" />
+    <None Include="Properties\DataSources\B2B.Model.ThuchiModel1.datasource" />
     <None Include="Properties\DataSources\B2B.Model.ThuoctinhHanghoaModel.datasource" />
     <None Include="Properties\DataSources\B2B.Model.TinhthanhModel.datasource" />
     <None Include="Properties\DataSources\B2B.Model.TinhtrangDonhangModel.datasource" />
@@ -518,8 +578,28 @@
     <None Include="Properties\DataSources\B2B.Model.TinhtrangPhieunhapModel.datasource" />
     <None Include="Properties\DataSources\B2B.Model.TinhtrangPhieuxuatModel.datasource" />
     <None Include="Properties\DataSources\B2B.Model.TonkhoModel.datasource" />
-    <None Include="Properties\DataSources\B2B.Model.TonkhoTheoNgayModel.datasource" />
     <None Include="Properties\DataSources\B2B.Model.UserModel.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\B2B.Reports\B2B.Reports.csproj">
+      <Project>{58cbb3e6-e881-4718-9fba-3c691ac35f23}</Project>
+      <Name>B2B.Reports</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVP\B2B.Model\B2B.Model.csproj">
+      <Project>{357c1811-0e0c-4840-9e4d-ecf898faa1a2}</Project>
+      <Name>B2B.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVP\B2B.Presenter\B2B.Presenter.csproj">
+      <Project>{5b45dc0a-83b4-4315-b257-059ffc8d039b}</Project>
+      <Name>B2B.Presenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVP\B2B.View\B2B.View.csproj">
+      <Project>{030284d4-8111-4425-8a59-f8fffe20848b}</Project>
+      <Name>B2B.View</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExportToPDF_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

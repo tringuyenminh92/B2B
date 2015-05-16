@@ -14,25 +14,14 @@ namespace B2B.View
 {
     public interface IPhieunhapView:IView
     {
-        //Guid? KhoCurrentId { get; }
-
         List<PhieunhapModel> PhieunhapItems { get; set; }
-
-        //List<NhaCungcapModel> NhacungcapItems { get; set; }
-
         void RefreshDataNhacungcap();
 
         //List<KhoModel> KhoItems { get; set; }
 
         void RefreshDataKho();
-
-        //Guid? NhacungcapCurrentId { get; }
-
-
         PhieunhapModel PhieunhapCurrent { get;}
-
         DateTime filterValue { get; set; }
         NhanvienModel NhanvienCapnhat { get; set; }
-
     }
 }

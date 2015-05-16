@@ -39,7 +39,7 @@ begin
 				left join Nhanvien nv on d.NhanvienCapnhatId=nv.NhanvienId
 				left join Khachhang k on d.KhachhangId=k.KhachhangId
 				left join Kho kh on d.KhoId=kh.KhoId
-	where Month(d.Ngaylap)=@thang and Year(d.Ngaylap)=@nam
+	where Month(d.Ngaylap)=@thang and Year(d.Ngaylap)=@nam and d.LoaiDonhang = 0
 	order by d.Ngaylap ASC,d.HanDonhang ASC
 end
 	

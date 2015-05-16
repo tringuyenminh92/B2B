@@ -213,7 +213,11 @@ namespace B2B.Forms
         private void nhomHanghoaIdTextEdit_EditValueChanged(object sender, EventArgs e)
         {
             var nhh = nhomHanghoaIdTextEdit.GetSelectedDataRow() as NhomHanghoaModel;
-            Value.TenNhomhanghoa = nhh.TenNhomHanghoa;
+            if(nhh != null)
+            {
+                Value.TenNhomhanghoa = nhh.TenNhomHanghoa;
+            }
+            
         }
 
     }

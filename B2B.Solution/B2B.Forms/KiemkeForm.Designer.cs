@@ -30,12 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label khoIdLabel;
-            System.Windows.Forms.Label ngaylapLabel;
-            System.Windows.Forms.Label nhanvienIdLabel;
             System.Windows.Forms.Label hanghoaIdLabel;
-            System.Windows.Forms.Label ghichuLabel;
-            System.Windows.Forms.Label soluongThucLabel;
-            System.Windows.Forms.Label soluongTonLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KiemkeForm));
             this.kiemkeModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kiemkeModelGridControl = new DevExpress.XtraGrid.GridControl();
@@ -55,35 +50,37 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.locKhoGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.khoTextEdit = new System.Windows.Forms.ComboBox();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.chitietKiemkeModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.chitietKiemkeModelGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.thongtinChunggroupBox = new System.Windows.Forms.GroupBox();
-            this.ngaylapDateEdit = new DevExpress.XtraEditors.DateEdit();
-            this.nhavienTextEdit = new System.Windows.Forms.ComboBox();
-            this.soluongThucSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.soluongTonSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.chitietKiemkegroupControl = new DevExpress.XtraEditors.GroupControl();
-            this.ghichuTextEdit = new DevExpress.XtraEditors.MemoEdit();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.CancelSimpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.OkSimpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.clearChitietPhieunhapSimpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.deleteChitietPhieunhapSimpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.addChitietPhieunhapSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.khoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.InformationGroupControl = new DevExpress.XtraEditors.GroupControl();
-            this.exportPhieunhapSimpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.savePhieunhapSimpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.deletePhieunhapSimpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.addPhieunhapSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.saveKiemkeSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.addKiemkeSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.deleteKiemkeSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.exportKiemkeSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.chitietKiemkeModelGridControl = new DevExpress.XtraGrid.GridControl();
+            this.chitietKiemkeModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chitietKiemkeModelGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colChitietKiemkeId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKiemkeId1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHanghoaId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSoluongTon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSoluongThuc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStep1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVersion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenHanghoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGhichu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSoluongLech = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colState1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NoGridColumnChitietKiemke = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chitietKiemkegroupControl = new DevExpress.XtraEditors.GroupControl();
+            this.hanghoaTextEdit = new System.Windows.Forms.ComboBox();
+            this.hanghoaModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deleteChitietKiemkeSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.addChitietKiemkeSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.listChitietKiemkeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listChitietKiemkeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             khoIdLabel = new System.Windows.Forms.Label();
-            ngaylapLabel = new System.Windows.Forms.Label();
-            nhanvienIdLabel = new System.Windows.Forms.Label();
             hanghoaIdLabel = new System.Windows.Forms.Label();
-            ghichuLabel = new System.Windows.Forms.Label();
-            soluongThucLabel = new System.Windows.Forms.Label();
-            soluongTonLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kiemkeModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kiemkeModelGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kiemkeModelGridView)).BeginInit();
@@ -91,50 +88,61 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.locKhoGroupControl)).BeginInit();
             this.locKhoGroupControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkeModelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkeModelGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.thongtinChunggroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soluongThucSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soluongTonSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkegroupControl)).BeginInit();
-            this.chitietKiemkegroupControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ghichuTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InformationGroupControl)).BeginInit();
             this.InformationGroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkeModelGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkeModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkeModelGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkegroupControl)).BeginInit();
+            this.chitietKiemkegroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hanghoaModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listChitietKiemkeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listChitietKiemkeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // khoIdLabel
             // 
             khoIdLabel.AutoSize = true;
-            khoIdLabel.Location = new System.Drawing.Point(91, 30);
+            khoIdLabel.Location = new System.Drawing.Point(16, 31);
             khoIdLabel.Name = "khoIdLabel";
             khoIdLabel.Size = new System.Drawing.Size(29, 13);
             khoIdLabel.TabIndex = 0;
             khoIdLabel.Text = "Kho:";
             // 
+            // hanghoaIdLabel
+            // 
+            hanghoaIdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            hanghoaIdLabel.AutoSize = true;
+            hanghoaIdLabel.Location = new System.Drawing.Point(88, 31);
+            hanghoaIdLabel.Name = "hanghoaIdLabel";
+            hanghoaIdLabel.Size = new System.Drawing.Size(57, 13);
+            hanghoaIdLabel.TabIndex = 1;
+            hanghoaIdLabel.Text = "Hàng hóa:";
+            // 
             // kiemkeModelBindingSource
             // 
             this.kiemkeModelBindingSource.DataSource = typeof(B2B.Model.KiemkeModel);
+            this.kiemkeModelBindingSource.PositionChanged += new System.EventHandler(this.kiemkeModelBindingSource_PositionChanged);
             // 
             // kiemkeModelGridControl
             // 
             this.kiemkeModelGridControl.DataSource = this.kiemkeModelBindingSource;
             this.kiemkeModelGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kiemkeModelGridControl.Location = new System.Drawing.Point(2, 58);
+            this.kiemkeModelGridControl.Location = new System.Drawing.Point(2, 60);
             this.kiemkeModelGridControl.MainView = this.kiemkeModelGridView;
             this.kiemkeModelGridControl.Name = "kiemkeModelGridControl";
-            this.kiemkeModelGridControl.Size = new System.Drawing.Size(414, 329);
+            this.kiemkeModelGridControl.Size = new System.Drawing.Size(342, 472);
             this.kiemkeModelGridControl.TabIndex = 5;
             this.kiemkeModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.kiemkeModelGridView});
             // 
             // kiemkeModelGridView
             // 
+            this.kiemkeModelGridView.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.kiemkeModelGridView.Appearance.Row.Options.UseBackColor = true;
             this.kiemkeModelGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colKiemkeId,
             this.colKhoId,
@@ -151,9 +159,11 @@
             this.kiemkeModelGridView.GridControl = this.kiemkeModelGridControl;
             this.kiemkeModelGridView.Name = "kiemkeModelGridView";
             this.kiemkeModelGridView.OptionsBehavior.Editable = false;
+            this.kiemkeModelGridView.OptionsView.EnableAppearanceOddRow = true;
             this.kiemkeModelGridView.OptionsView.ShowAutoFilterRow = true;
             this.kiemkeModelGridView.OptionsView.ShowFooter = true;
             this.kiemkeModelGridView.OptionsView.ShowGroupPanel = false;
+            this.kiemkeModelGridView.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.kiemkeModelGridView_CustomColumnDisplayText);
             // 
             // colKiemkeId
             // 
@@ -185,8 +195,8 @@
             this.colNgaylap.FieldName = "Ngaylap";
             this.colNgaylap.Name = "colNgaylap";
             this.colNgaylap.Visible = true;
-            this.colNgaylap.VisibleIndex = 3;
-            this.colNgaylap.Width = 326;
+            this.colNgaylap.VisibleIndex = 2;
+            this.colNgaylap.Width = 436;
             // 
             // colActive
             // 
@@ -204,9 +214,7 @@
             // 
             this.colCode.FieldName = "Code";
             this.colCode.Name = "colCode";
-            this.colCode.Visible = true;
-            this.colCode.VisibleIndex = 1;
-            this.colCode.Width = 165;
+            this.colCode.Width = 188;
             // 
             // colTenNhanvien
             // 
@@ -214,8 +222,8 @@
             this.colTenNhanvien.FieldName = "TenNhanvien";
             this.colTenNhanvien.Name = "colTenNhanvien";
             this.colTenNhanvien.Visible = true;
-            this.colTenNhanvien.VisibleIndex = 2;
-            this.colTenNhanvien.Width = 311;
+            this.colTenNhanvien.VisibleIndex = 1;
+            this.colTenNhanvien.Width = 452;
             // 
             // colTenKho
             // 
@@ -229,8 +237,6 @@
             this.colState.FieldName = "State";
             this.colState.Name = "colState";
             this.colState.OptionsColumn.ReadOnly = true;
-            this.colState.Visible = true;
-            this.colState.VisibleIndex = 4;
             this.colState.Width = 129;
             // 
             // noGridColumn
@@ -241,16 +247,17 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
             this.noGridColumn.Visible = true;
             this.noGridColumn.VisibleIndex = 0;
-            this.noGridColumn.Width = 113;
+            this.noGridColumn.Width = 156;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.kiemkeModelGridControl);
             this.panelControl1.Controls.Add(this.locKhoGroupControl);
+            this.panelControl1.Controls.Add(this.InformationGroupControl);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(418, 389);
+            this.panelControl1.Size = new System.Drawing.Size(346, 588);
             this.panelControl1.TabIndex = 6;
             // 
             // locKhoGroupControl
@@ -260,326 +267,301 @@
             this.locKhoGroupControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.locKhoGroupControl.Location = new System.Drawing.Point(2, 2);
             this.locKhoGroupControl.Name = "locKhoGroupControl";
-            this.locKhoGroupControl.Size = new System.Drawing.Size(414, 56);
+            this.locKhoGroupControl.Size = new System.Drawing.Size(342, 58);
             this.locKhoGroupControl.TabIndex = 6;
             this.locKhoGroupControl.Text = "Lọc theo kho";
             // 
             // khoTextEdit
             // 
+            this.khoTextEdit.DataSource = this.khoModelBindingSource;
+            this.khoTextEdit.DisplayMember = "TenKho";
             this.khoTextEdit.FormattingEnabled = true;
-            this.khoTextEdit.Location = new System.Drawing.Point(135, 24);
+            this.khoTextEdit.Location = new System.Drawing.Point(51, 27);
             this.khoTextEdit.Name = "khoTextEdit";
             this.khoTextEdit.Size = new System.Drawing.Size(121, 21);
             this.khoTextEdit.TabIndex = 1;
+            this.khoTextEdit.ValueMember = "KhoId";
+            // 
+            // khoModelBindingSource
+            // 
+            this.khoModelBindingSource.DataSource = typeof(B2B.Model.KhoModel);
+            this.khoModelBindingSource.PositionChanged += new System.EventHandler(this.khoModelBindingSource_PositionChanged);
+            // 
+            // InformationGroupControl
+            // 
+            this.InformationGroupControl.Controls.Add(this.saveKiemkeSimpleButton);
+            this.InformationGroupControl.Controls.Add(this.addKiemkeSimpleButton);
+            this.InformationGroupControl.Controls.Add(this.deleteKiemkeSimpleButton);
+            this.InformationGroupControl.Controls.Add(this.exportKiemkeSimpleButton);
+            this.InformationGroupControl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.InformationGroupControl.Location = new System.Drawing.Point(2, 532);
+            this.InformationGroupControl.Margin = new System.Windows.Forms.Padding(2);
+            this.InformationGroupControl.Name = "InformationGroupControl";
+            this.InformationGroupControl.Size = new System.Drawing.Size(342, 54);
+            this.InformationGroupControl.TabIndex = 8;
+            this.InformationGroupControl.Text = "Thao tác Nhóm khách hàng";
+            this.InformationGroupControl.Paint += new System.Windows.Forms.PaintEventHandler(this.InformationGroupControl_Paint);
+            // 
+            // saveKiemkeSimpleButton
+            // 
+            this.saveKiemkeSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("saveKiemkeSimpleButton.Image")));
+            this.saveKiemkeSimpleButton.Location = new System.Drawing.Point(183, 27);
+            this.saveKiemkeSimpleButton.Name = "saveKiemkeSimpleButton";
+            this.saveKiemkeSimpleButton.Size = new System.Drawing.Size(70, 20);
+            this.saveKiemkeSimpleButton.TabIndex = 30;
+            this.saveKiemkeSimpleButton.Text = "Save";
+            this.saveKiemkeSimpleButton.Click += new System.EventHandler(this.saveKiemkeSimpleButton_Click_1);
+            // 
+            // addKiemkeSimpleButton
+            // 
+            this.addKiemkeSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.addKiemkeSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("addKiemkeSimpleButton.Image")));
+            this.addKiemkeSimpleButton.Location = new System.Drawing.Point(258, 27);
+            this.addKiemkeSimpleButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addKiemkeSimpleButton.Name = "addKiemkeSimpleButton";
+            this.addKiemkeSimpleButton.Size = new System.Drawing.Size(70, 20);
+            this.addKiemkeSimpleButton.TabIndex = 28;
+            this.addKiemkeSimpleButton.Text = "Thêm";
+            this.addKiemkeSimpleButton.Click += new System.EventHandler(this.addKiemkeSimpleButton_Click);
+            // 
+            // deleteKiemkeSimpleButton
+            // 
+            this.deleteKiemkeSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.deleteKiemkeSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteKiemkeSimpleButton.Image")));
+            this.deleteKiemkeSimpleButton.Location = new System.Drawing.Point(83, 30);
+            this.deleteKiemkeSimpleButton.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteKiemkeSimpleButton.Name = "deleteKiemkeSimpleButton";
+            this.deleteKiemkeSimpleButton.Size = new System.Drawing.Size(70, 20);
+            this.deleteKiemkeSimpleButton.TabIndex = 29;
+            this.deleteKiemkeSimpleButton.Text = "Xóa";
+            this.deleteKiemkeSimpleButton.Click += new System.EventHandler(this.deletePhieunhapSimpleButton_Click);
+            // 
+            // exportKiemkeSimpleButton
+            // 
+            this.exportKiemkeSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.exportKiemkeSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("exportKiemkeSimpleButton.Image")));
+            this.exportKiemkeSimpleButton.Location = new System.Drawing.Point(9, 30);
+            this.exportKiemkeSimpleButton.Margin = new System.Windows.Forms.Padding(2);
+            this.exportKiemkeSimpleButton.Name = "exportKiemkeSimpleButton";
+            this.exportKiemkeSimpleButton.Size = new System.Drawing.Size(70, 20);
+            this.exportKiemkeSimpleButton.TabIndex = 27;
+            this.exportKiemkeSimpleButton.Text = "Export";
+            this.exportKiemkeSimpleButton.Click += new System.EventHandler(this.exportKiemkeSimpleButton_Click);
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.chitietKiemkeModelGridControl);
             this.panelControl2.Controls.Add(this.chitietKiemkegroupControl);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(418, 0);
+            this.panelControl2.Location = new System.Drawing.Point(346, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(876, 389);
+            this.panelControl2.Size = new System.Drawing.Size(948, 588);
             this.panelControl2.TabIndex = 7;
-            // 
-            // chitietKiemkeModelBindingSource
-            // 
-            this.chitietKiemkeModelBindingSource.DataSource = typeof(B2B.Model.ChitietKiemkeModel);
             // 
             // chitietKiemkeModelGridControl
             // 
             this.chitietKiemkeModelGridControl.DataSource = this.chitietKiemkeModelBindingSource;
             this.chitietKiemkeModelGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chitietKiemkeModelGridControl.Location = new System.Drawing.Point(2, 184);
-            this.chitietKiemkeModelGridControl.MainView = this.gridView1;
+            this.chitietKiemkeModelGridControl.Location = new System.Drawing.Point(2, 62);
+            this.chitietKiemkeModelGridControl.MainView = this.chitietKiemkeModelGridView;
             this.chitietKiemkeModelGridControl.Name = "chitietKiemkeModelGridControl";
-            this.chitietKiemkeModelGridControl.Size = new System.Drawing.Size(872, 203);
+            this.chitietKiemkeModelGridControl.Size = new System.Drawing.Size(944, 524);
             this.chitietKiemkeModelGridControl.TabIndex = 1;
             this.chitietKiemkeModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.chitietKiemkeModelGridView});
             // 
-            // gridView1
+            // chitietKiemkeModelBindingSource
             // 
-            this.gridView1.GridControl = this.chitietKiemkeModelGridControl;
-            this.gridView1.Name = "gridView1";
+            this.chitietKiemkeModelBindingSource.DataSource = typeof(B2B.Model.ChitietKiemkeModel);
             // 
-            // thongtinChunggroupBox
+            // chitietKiemkeModelGridView
             // 
-            this.thongtinChunggroupBox.Controls.Add(this.nhavienTextEdit);
-            this.thongtinChunggroupBox.Controls.Add(nhanvienIdLabel);
-            this.thongtinChunggroupBox.Controls.Add(ngaylapLabel);
-            this.thongtinChunggroupBox.Controls.Add(this.ngaylapDateEdit);
-            this.thongtinChunggroupBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.thongtinChunggroupBox.Location = new System.Drawing.Point(613, 21);
-            this.thongtinChunggroupBox.Name = "thongtinChunggroupBox";
-            this.thongtinChunggroupBox.Size = new System.Drawing.Size(257, 159);
-            this.thongtinChunggroupBox.TabIndex = 0;
-            this.thongtinChunggroupBox.TabStop = false;
-            this.thongtinChunggroupBox.Text = "Thông tin chung";
+            this.chitietKiemkeModelGridView.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.chitietKiemkeModelGridView.Appearance.Row.Options.UseBackColor = true;
+            this.chitietKiemkeModelGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colChitietKiemkeId,
+            this.colKiemkeId1,
+            this.colHanghoaId,
+            this.colSoluongTon,
+            this.colSoluongThuc,
+            this.colStep1,
+            this.colVersion1,
+            this.colTenHanghoa,
+            this.colGhichu,
+            this.colSoluongLech,
+            this.colState1,
+            this.NoGridColumnChitietKiemke});
+            this.chitietKiemkeModelGridView.GridControl = this.chitietKiemkeModelGridControl;
+            this.chitietKiemkeModelGridView.Name = "chitietKiemkeModelGridView";
+            this.chitietKiemkeModelGridView.OptionsView.EnableAppearanceOddRow = true;
+            this.chitietKiemkeModelGridView.OptionsView.ShowAutoFilterRow = true;
+            this.chitietKiemkeModelGridView.OptionsView.ShowFooter = true;
+            this.chitietKiemkeModelGridView.OptionsView.ShowGroupPanel = false;
+            this.chitietKiemkeModelGridView.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.chitietKiemkeModelGridView_CustomColumnDisplayText);
             // 
-            // ngaylapDateEdit
+            // colChitietKiemkeId
             // 
-            this.ngaylapDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kiemkeModelBindingSource, "Ngaylap", true));
-            this.ngaylapDateEdit.EditValue = null;
-            this.ngaylapDateEdit.Location = new System.Drawing.Point(77, 65);
-            this.ngaylapDateEdit.Name = "ngaylapDateEdit";
-            this.ngaylapDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ngaylapDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ngaylapDateEdit.Size = new System.Drawing.Size(168, 20);
-            this.ngaylapDateEdit.TabIndex = 1;
+            this.colChitietKiemkeId.FieldName = "ChitietKiemkeId";
+            this.colChitietKiemkeId.Name = "colChitietKiemkeId";
             // 
-            // ngaylapLabel
+            // colKiemkeId1
             // 
-            ngaylapLabel.AutoSize = true;
-            ngaylapLabel.Location = new System.Drawing.Point(12, 68);
-            ngaylapLabel.Name = "ngaylapLabel";
-            ngaylapLabel.Size = new System.Drawing.Size(53, 13);
-            ngaylapLabel.TabIndex = 0;
-            ngaylapLabel.Text = "Ngày lập:";
+            this.colKiemkeId1.FieldName = "KiemkeId";
+            this.colKiemkeId1.Name = "colKiemkeId1";
             // 
-            // nhanvienIdLabel
+            // colHanghoaId
             // 
-            nhanvienIdLabel.AutoSize = true;
-            nhanvienIdLabel.Location = new System.Drawing.Point(12, 35);
-            nhanvienIdLabel.Name = "nhanvienIdLabel";
-            nhanvienIdLabel.Size = new System.Drawing.Size(59, 13);
-            nhanvienIdLabel.TabIndex = 2;
-            nhanvienIdLabel.Text = "Nhân viên:";
+            this.colHanghoaId.FieldName = "HanghoaId";
+            this.colHanghoaId.Name = "colHanghoaId";
+            this.colHanghoaId.OptionsColumn.ReadOnly = true;
             // 
-            // nhavienTextEdit
+            // colSoluongTon
             // 
-            this.nhavienTextEdit.FormattingEnabled = true;
-            this.nhavienTextEdit.Location = new System.Drawing.Point(77, 32);
-            this.nhavienTextEdit.Name = "nhavienTextEdit";
-            this.nhavienTextEdit.Size = new System.Drawing.Size(168, 21);
-            this.nhavienTextEdit.TabIndex = 3;
+            this.colSoluongTon.Caption = "Số lượng tồn";
+            this.colSoluongTon.FieldName = "SoluongTon";
+            this.colSoluongTon.Name = "colSoluongTon";
+            this.colSoluongTon.OptionsColumn.ReadOnly = true;
+            this.colSoluongTon.Visible = true;
+            this.colSoluongTon.VisibleIndex = 2;
+            this.colSoluongTon.Width = 156;
             // 
-            // hanghoaIdLabel
+            // colSoluongThuc
             // 
-            hanghoaIdLabel.AutoSize = true;
-            hanghoaIdLabel.Location = new System.Drawing.Point(14, 45);
-            hanghoaIdLabel.Name = "hanghoaIdLabel";
-            hanghoaIdLabel.Size = new System.Drawing.Size(57, 13);
-            hanghoaIdLabel.TabIndex = 1;
-            hanghoaIdLabel.Text = "Hàng hóa:";
+            this.colSoluongThuc.Caption = "Số lượng thực";
+            this.colSoluongThuc.FieldName = "SoluongThuc";
+            this.colSoluongThuc.Name = "colSoluongThuc";
+            this.colSoluongThuc.Visible = true;
+            this.colSoluongThuc.VisibleIndex = 3;
+            this.colSoluongThuc.Width = 144;
             // 
-            // ghichuLabel
+            // colStep1
             // 
-            ghichuLabel.AutoSize = true;
-            ghichuLabel.Location = new System.Drawing.Point(14, 93);
-            ghichuLabel.Name = "ghichuLabel";
-            ghichuLabel.Size = new System.Drawing.Size(46, 13);
-            ghichuLabel.TabIndex = 3;
-            ghichuLabel.Text = "Ghi chú:";
+            this.colStep1.FieldName = "Step";
+            this.colStep1.Name = "colStep1";
             // 
-            // soluongThucSpinEdit
+            // colVersion1
             // 
-            this.soluongThucSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.chitietKiemkeModelBindingSource, "SoluongThuc", true));
-            this.soluongThucSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.soluongThucSpinEdit.Location = new System.Drawing.Point(95, 69);
-            this.soluongThucSpinEdit.Name = "soluongThucSpinEdit";
-            this.soluongThucSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.soluongThucSpinEdit.Size = new System.Drawing.Size(195, 20);
-            this.soluongThucSpinEdit.TabIndex = 6;
+            this.colVersion1.FieldName = "Version";
+            this.colVersion1.Name = "colVersion1";
             // 
-            // soluongThucLabel
+            // colTenHanghoa
             // 
-            soluongThucLabel.AutoSize = true;
-            soluongThucLabel.Location = new System.Drawing.Point(14, 72);
-            soluongThucLabel.Name = "soluongThucLabel";
-            soluongThucLabel.Size = new System.Drawing.Size(78, 13);
-            soluongThucLabel.TabIndex = 5;
-            soluongThucLabel.Text = "Số lượng thực:";
+            this.colTenHanghoa.Caption = "Hàng hóa";
+            this.colTenHanghoa.FieldName = "TenHanghoa";
+            this.colTenHanghoa.Name = "colTenHanghoa";
+            this.colTenHanghoa.OptionsColumn.ReadOnly = true;
+            this.colTenHanghoa.Visible = true;
+            this.colTenHanghoa.VisibleIndex = 1;
+            this.colTenHanghoa.Width = 259;
             // 
-            // soluongTonSpinEdit
+            // colGhichu
             // 
-            this.soluongTonSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.chitietKiemkeModelBindingSource, "SoluongTon", true));
-            this.soluongTonSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.soluongTonSpinEdit.Location = new System.Drawing.Point(384, 42);
-            this.soluongTonSpinEdit.Name = "soluongTonSpinEdit";
-            this.soluongTonSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.soluongTonSpinEdit.Size = new System.Drawing.Size(195, 20);
-            this.soluongTonSpinEdit.TabIndex = 8;
+            this.colGhichu.Caption = "Ghi chú";
+            this.colGhichu.FieldName = "Ghichu";
+            this.colGhichu.Name = "colGhichu";
+            this.colGhichu.Visible = true;
+            this.colGhichu.VisibleIndex = 5;
+            this.colGhichu.Width = 285;
             // 
-            // soluongTonLabel
+            // colSoluongLech
             // 
-            soluongTonLabel.AutoSize = true;
-            soluongTonLabel.Location = new System.Drawing.Point(295, 45);
-            soluongTonLabel.Name = "soluongTonLabel";
-            soluongTonLabel.Size = new System.Drawing.Size(72, 13);
-            soluongTonLabel.TabIndex = 7;
-            soluongTonLabel.Text = "Số lượng tồn:";
+            this.colSoluongLech.Caption = "Số lượng lệch";
+            this.colSoluongLech.FieldName = "SoluongLech";
+            this.colSoluongLech.Name = "colSoluongLech";
+            this.colSoluongLech.OptionsColumn.ReadOnly = true;
+            this.colSoluongLech.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
+            this.colSoluongLech.Visible = true;
+            this.colSoluongLech.VisibleIndex = 4;
+            this.colSoluongLech.Width = 148;
+            // 
+            // colState1
+            // 
+            this.colState1.FieldName = "State";
+            this.colState1.Name = "colState1";
+            this.colState1.OptionsColumn.ReadOnly = true;
+            this.colState1.Width = 93;
+            // 
+            // NoGridColumnChitietKiemke
+            // 
+            this.NoGridColumnChitietKiemke.Caption = "STT";
+            this.NoGridColumnChitietKiemke.Name = "NoGridColumnChitietKiemke";
+            this.NoGridColumnChitietKiemke.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
+            this.NoGridColumnChitietKiemke.Visible = true;
+            this.NoGridColumnChitietKiemke.VisibleIndex = 0;
+            this.NoGridColumnChitietKiemke.Width = 52;
             // 
             // chitietKiemkegroupControl
             // 
-            this.chitietKiemkegroupControl.Controls.Add(this.CancelSimpleButton);
-            this.chitietKiemkegroupControl.Controls.Add(this.comboBox1);
-            this.chitietKiemkegroupControl.Controls.Add(this.OkSimpleButton);
-            this.chitietKiemkegroupControl.Controls.Add(soluongTonLabel);
-            this.chitietKiemkegroupControl.Controls.Add(this.soluongTonSpinEdit);
-            this.chitietKiemkegroupControl.Controls.Add(this.clearChitietPhieunhapSimpleButton);
-            this.chitietKiemkegroupControl.Controls.Add(this.deleteChitietPhieunhapSimpleButton);
-            this.chitietKiemkegroupControl.Controls.Add(soluongThucLabel);
-            this.chitietKiemkegroupControl.Controls.Add(this.soluongThucSpinEdit);
-            this.chitietKiemkegroupControl.Controls.Add(ghichuLabel);
+            this.chitietKiemkegroupControl.Controls.Add(this.hanghoaTextEdit);
+            this.chitietKiemkegroupControl.Controls.Add(this.deleteChitietKiemkeSimpleButton);
             this.chitietKiemkegroupControl.Controls.Add(hanghoaIdLabel);
-            this.chitietKiemkegroupControl.Controls.Add(this.addChitietPhieunhapSimpleButton);
-            this.chitietKiemkegroupControl.Controls.Add(this.thongtinChunggroupBox);
-            this.chitietKiemkegroupControl.Controls.Add(this.ghichuTextEdit);
+            this.chitietKiemkegroupControl.Controls.Add(this.addChitietKiemkeSimpleButton);
             this.chitietKiemkegroupControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.chitietKiemkegroupControl.Location = new System.Drawing.Point(2, 2);
             this.chitietKiemkegroupControl.Name = "chitietKiemkegroupControl";
-            this.chitietKiemkegroupControl.Size = new System.Drawing.Size(872, 182);
+            this.chitietKiemkegroupControl.Size = new System.Drawing.Size(944, 60);
             this.chitietKiemkegroupControl.TabIndex = 0;
             this.chitietKiemkegroupControl.Text = "Chi tiết kiểm kê";
             // 
-            // ghichuTextEdit
+            // hanghoaTextEdit
             // 
-            this.ghichuTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.chitietKiemkeModelBindingSource, "Ghichu", true));
-            this.ghichuTextEdit.Location = new System.Drawing.Point(95, 95);
-            this.ghichuTextEdit.Name = "ghichuTextEdit";
-            this.ghichuTextEdit.Size = new System.Drawing.Size(484, 50);
-            this.ghichuTextEdit.TabIndex = 4;
-            this.ghichuTextEdit.UseOptimizedRendering = true;
+            this.hanghoaTextEdit.DataSource = this.hanghoaModelBindingSource;
+            this.hanghoaTextEdit.DisplayMember = "TenHanghoa";
+            this.hanghoaTextEdit.FormattingEnabled = true;
+            this.hanghoaTextEdit.Location = new System.Drawing.Point(79, 28);
+            this.hanghoaTextEdit.Name = "hanghoaTextEdit";
+            this.hanghoaTextEdit.Size = new System.Drawing.Size(195, 21);
+            this.hanghoaTextEdit.TabIndex = 9;
+            this.hanghoaTextEdit.ValueMember = "HanghoaId";
             // 
-            // comboBox1
+            // hanghoaModelBindingSource
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(95, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 21);
-            this.comboBox1.TabIndex = 9;
+            this.hanghoaModelBindingSource.DataSource = typeof(B2B.Model.HanghoaModel);
             // 
-            // CancelSimpleButton
+            // deleteChitietKiemkeSimpleButton
             // 
-            this.CancelSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("CancelSimpleButton.Image")));
-            this.CancelSimpleButton.Location = new System.Drawing.Point(467, 154);
-            this.CancelSimpleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.CancelSimpleButton.Name = "CancelSimpleButton";
-            this.CancelSimpleButton.Size = new System.Drawing.Size(70, 20);
-            this.CancelSimpleButton.TabIndex = 15;
-            this.CancelSimpleButton.Text = "Cancel";
+            this.deleteChitietKiemkeSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteChitietKiemkeSimpleButton.Image")));
+            this.deleteChitietKiemkeSimpleButton.Location = new System.Drawing.Point(353, 28);
+            this.deleteChitietKiemkeSimpleButton.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteChitietKiemkeSimpleButton.Name = "deleteChitietKiemkeSimpleButton";
+            this.deleteChitietKiemkeSimpleButton.Size = new System.Drawing.Size(70, 20);
+            this.deleteChitietKiemkeSimpleButton.TabIndex = 13;
+            this.deleteChitietKiemkeSimpleButton.Text = "Delete";
+            this.deleteChitietKiemkeSimpleButton.Click += new System.EventHandler(this.deleteChitietKiemkeSimpleButton_Click);
             // 
-            // OkSimpleButton
+            // addChitietKiemkeSimpleButton
             // 
-            this.OkSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("OkSimpleButton.Image")));
-            this.OkSimpleButton.Location = new System.Drawing.Point(382, 154);
-            this.OkSimpleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.OkSimpleButton.Name = "OkSimpleButton";
-            this.OkSimpleButton.Size = new System.Drawing.Size(70, 20);
-            this.OkSimpleButton.TabIndex = 14;
-            this.OkSimpleButton.Text = "OK";
+            this.addChitietKiemkeSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("addChitietKiemkeSimpleButton.Image")));
+            this.addChitietKiemkeSimpleButton.Location = new System.Drawing.Point(279, 28);
+            this.addChitietKiemkeSimpleButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addChitietKiemkeSimpleButton.Name = "addChitietKiemkeSimpleButton";
+            this.addChitietKiemkeSimpleButton.Size = new System.Drawing.Size(70, 20);
+            this.addChitietKiemkeSimpleButton.TabIndex = 11;
+            this.addChitietKiemkeSimpleButton.Text = "Add";
+            this.addChitietKiemkeSimpleButton.Click += new System.EventHandler(this.addChitietKiemkeSimpleButton_Click);
             // 
-            // clearChitietPhieunhapSimpleButton
+            // listChitietKiemkeBindingSource
             // 
-            this.clearChitietPhieunhapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("clearChitietPhieunhapSimpleButton.Image")));
-            this.clearChitietPhieunhapSimpleButton.Location = new System.Drawing.Point(213, 154);
-            this.clearChitietPhieunhapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.clearChitietPhieunhapSimpleButton.Name = "clearChitietPhieunhapSimpleButton";
-            this.clearChitietPhieunhapSimpleButton.Size = new System.Drawing.Size(70, 20);
-            this.clearChitietPhieunhapSimpleButton.TabIndex = 12;
-            this.clearChitietPhieunhapSimpleButton.Text = "Clear";
+            this.listChitietKiemkeBindingSource.DataMember = "ListChitietKiemke";
+            this.listChitietKiemkeBindingSource.DataSource = this.kiemkeModelBindingSource;
             // 
-            // deleteChitietPhieunhapSimpleButton
+            // listChitietKiemkeBindingSource1
             // 
-            this.deleteChitietPhieunhapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteChitietPhieunhapSimpleButton.Image")));
-            this.deleteChitietPhieunhapSimpleButton.Location = new System.Drawing.Point(297, 154);
-            this.deleteChitietPhieunhapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.deleteChitietPhieunhapSimpleButton.Name = "deleteChitietPhieunhapSimpleButton";
-            this.deleteChitietPhieunhapSimpleButton.Size = new System.Drawing.Size(70, 20);
-            this.deleteChitietPhieunhapSimpleButton.TabIndex = 13;
-            this.deleteChitietPhieunhapSimpleButton.Text = "Delete";
-            // 
-            // addChitietPhieunhapSimpleButton
-            // 
-            this.addChitietPhieunhapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("addChitietPhieunhapSimpleButton.Image")));
-            this.addChitietPhieunhapSimpleButton.Location = new System.Drawing.Point(129, 154);
-            this.addChitietPhieunhapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.addChitietPhieunhapSimpleButton.Name = "addChitietPhieunhapSimpleButton";
-            this.addChitietPhieunhapSimpleButton.Size = new System.Drawing.Size(70, 20);
-            this.addChitietPhieunhapSimpleButton.TabIndex = 11;
-            this.addChitietPhieunhapSimpleButton.Text = "Add";
-            // 
-            // InformationGroupControl
-            // 
-            this.InformationGroupControl.Controls.Add(this.addPhieunhapSimpleButton);
-            this.InformationGroupControl.Controls.Add(this.deletePhieunhapSimpleButton);
-            this.InformationGroupControl.Controls.Add(this.exportPhieunhapSimpleButton);
-            this.InformationGroupControl.Controls.Add(this.savePhieunhapSimpleButton);
-            this.InformationGroupControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.InformationGroupControl.Location = new System.Drawing.Point(0, 389);
-            this.InformationGroupControl.Margin = new System.Windows.Forms.Padding(2);
-            this.InformationGroupControl.Name = "InformationGroupControl";
-            this.InformationGroupControl.Size = new System.Drawing.Size(1294, 54);
-            this.InformationGroupControl.TabIndex = 8;
-            this.InformationGroupControl.Text = "Thao tác Nhóm khách hàng";
-            // 
-            // exportPhieunhapSimpleButton
-            // 
-            this.exportPhieunhapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.exportPhieunhapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("exportPhieunhapSimpleButton.Image")));
-            this.exportPhieunhapSimpleButton.Location = new System.Drawing.Point(87, 28);
-            this.exportPhieunhapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.exportPhieunhapSimpleButton.Name = "exportPhieunhapSimpleButton";
-            this.exportPhieunhapSimpleButton.Size = new System.Drawing.Size(70, 20);
-            this.exportPhieunhapSimpleButton.TabIndex = 27;
-            this.exportPhieunhapSimpleButton.Text = "Export";
-            // 
-            // savePhieunhapSimpleButton
-            // 
-            this.savePhieunhapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.savePhieunhapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("savePhieunhapSimpleButton.Image")));
-            this.savePhieunhapSimpleButton.Location = new System.Drawing.Point(1212, 27);
-            this.savePhieunhapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.savePhieunhapSimpleButton.Name = "savePhieunhapSimpleButton";
-            this.savePhieunhapSimpleButton.Size = new System.Drawing.Size(70, 20);
-            this.savePhieunhapSimpleButton.TabIndex = 25;
-            this.savePhieunhapSimpleButton.Text = "Lưu";
-            // 
-            // deletePhieunhapSimpleButton
-            // 
-            this.deletePhieunhapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.deletePhieunhapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("deletePhieunhapSimpleButton.Image")));
-            this.deletePhieunhapSimpleButton.Location = new System.Drawing.Point(12, 28);
-            this.deletePhieunhapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.deletePhieunhapSimpleButton.Name = "deletePhieunhapSimpleButton";
-            this.deletePhieunhapSimpleButton.Size = new System.Drawing.Size(70, 20);
-            this.deletePhieunhapSimpleButton.TabIndex = 29;
-            this.deletePhieunhapSimpleButton.Text = "Xóa";
-            // 
-            // addPhieunhapSimpleButton
-            // 
-            this.addPhieunhapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.addPhieunhapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("addPhieunhapSimpleButton.Image")));
-            this.addPhieunhapSimpleButton.Location = new System.Drawing.Point(161, 28);
-            this.addPhieunhapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.addPhieunhapSimpleButton.Name = "addPhieunhapSimpleButton";
-            this.addPhieunhapSimpleButton.Size = new System.Drawing.Size(70, 20);
-            this.addPhieunhapSimpleButton.TabIndex = 28;
-            this.addPhieunhapSimpleButton.Text = "Thêm";
+            this.listChitietKiemkeBindingSource1.DataMember = "ListChitietKiemke";
+            this.listChitietKiemkeBindingSource1.DataSource = this.kiemkeModelBindingSource;
             // 
             // KiemkeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1294, 443);
+            this.ClientSize = new System.Drawing.Size(1294, 588);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.InformationGroupControl);
             this.Name = "KiemkeForm";
             this.Text = "Kiểm kê";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.kiemkeModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kiemkeModelGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kiemkeModelGridView)).EndInit();
@@ -588,23 +570,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.locKhoGroupControl)).EndInit();
             this.locKhoGroupControl.ResumeLayout(false);
             this.locKhoGroupControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.khoModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InformationGroupControl)).EndInit();
+            this.InformationGroupControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkeModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkeModelGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.thongtinChunggroupBox.ResumeLayout(false);
-            this.thongtinChunggroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soluongThucSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soluongTonSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkeModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkeModelGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chitietKiemkegroupControl)).EndInit();
             this.chitietKiemkegroupControl.ResumeLayout(false);
             this.chitietKiemkegroupControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ghichuTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InformationGroupControl)).EndInit();
-            this.InformationGroupControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.hanghoaModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listChitietKiemkeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listChitietKiemkeBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -632,24 +611,31 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private System.Windows.Forms.BindingSource chitietKiemkeModelBindingSource;
         private DevExpress.XtraGrid.GridControl chitietKiemkeModelGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView chitietKiemkeModelGridView;
         private DevExpress.XtraEditors.GroupControl chitietKiemkegroupControl;
-        private DevExpress.XtraEditors.SpinEdit soluongTonSpinEdit;
-        private DevExpress.XtraEditors.SpinEdit soluongThucSpinEdit;
-        private System.Windows.Forms.GroupBox thongtinChunggroupBox;
-        private System.Windows.Forms.ComboBox nhavienTextEdit;
-        private DevExpress.XtraEditors.DateEdit ngaylapDateEdit;
-        private DevExpress.XtraEditors.MemoEdit ghichuTextEdit;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private DevExpress.XtraEditors.SimpleButton CancelSimpleButton;
-        private DevExpress.XtraEditors.SimpleButton OkSimpleButton;
-        private DevExpress.XtraEditors.SimpleButton clearChitietPhieunhapSimpleButton;
-        private DevExpress.XtraEditors.SimpleButton deleteChitietPhieunhapSimpleButton;
-        private DevExpress.XtraEditors.SimpleButton addChitietPhieunhapSimpleButton;
+        private System.Windows.Forms.ComboBox hanghoaTextEdit;
+        private DevExpress.XtraEditors.SimpleButton deleteChitietKiemkeSimpleButton;
+        private DevExpress.XtraEditors.SimpleButton addChitietKiemkeSimpleButton;
         private DevExpress.XtraEditors.GroupControl InformationGroupControl;
-        private DevExpress.XtraEditors.SimpleButton exportPhieunhapSimpleButton;
-        private DevExpress.XtraEditors.SimpleButton savePhieunhapSimpleButton;
-        private DevExpress.XtraEditors.SimpleButton addPhieunhapSimpleButton;
-        private DevExpress.XtraEditors.SimpleButton deletePhieunhapSimpleButton;
+        private DevExpress.XtraEditors.SimpleButton exportKiemkeSimpleButton;
+        private DevExpress.XtraEditors.SimpleButton addKiemkeSimpleButton;
+        private DevExpress.XtraEditors.SimpleButton deleteKiemkeSimpleButton;
+        private System.Windows.Forms.BindingSource hanghoaModelBindingSource;
+        private System.Windows.Forms.BindingSource khoModelBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colChitietKiemkeId;
+        private DevExpress.XtraGrid.Columns.GridColumn colKiemkeId1;
+        private DevExpress.XtraGrid.Columns.GridColumn colHanghoaId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSoluongTon;
+        private DevExpress.XtraGrid.Columns.GridColumn colSoluongThuc;
+        private DevExpress.XtraGrid.Columns.GridColumn colStep1;
+        private DevExpress.XtraGrid.Columns.GridColumn colVersion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenHanghoa;
+        private DevExpress.XtraGrid.Columns.GridColumn colGhichu;
+        private DevExpress.XtraGrid.Columns.GridColumn colSoluongLech;
+        private DevExpress.XtraGrid.Columns.GridColumn colState1;
+        private DevExpress.XtraGrid.Columns.GridColumn NoGridColumnChitietKiemke;
+        private System.Windows.Forms.BindingSource listChitietKiemkeBindingSource;
+        private System.Windows.Forms.BindingSource listChitietKiemkeBindingSource1;
+        private DevExpress.XtraEditors.SimpleButton saveKiemkeSimpleButton;
     }
 }

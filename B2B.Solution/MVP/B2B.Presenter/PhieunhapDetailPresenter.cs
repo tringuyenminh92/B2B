@@ -46,12 +46,12 @@ namespace B2B.Presenter
             {
                 var listNhacungcap = new List<NhaCungcapModel>
                 {
-                    new NhaCungcapModel
-                    {
-                        NhaCungcapId = new Guid("00000000-0000-0000-0000-000000000000"),
-                        TenNhaCungcap = "Tất cả",
-                        Active = false,
-                    }
+                    //new NhaCungcapModel
+                    //{
+                    //    NhaCungcapId = new Guid("00000000-0000-0000-0000-000000000000"),
+                    //    TenNhaCungcap = "Tất cả",
+                    //    Active = false,
+                    //}
                 };
                 listNhacungcap.AddRange(Model.Get<NhaCungcapModel>("sys_NhacungcapSelect"));
                 View.NhacungcapItems = listNhacungcap;
@@ -72,12 +72,12 @@ namespace B2B.Presenter
             {
                 var listKho = new List<KhoModel>
                 {
-                    new KhoModel
-                    {
-                        KhoId = new Guid("00000000-0000-0000-0000-000000000000"),
-                        TenKho = "Tất cả",
-                        Active = false,
-                    }
+                    //new KhoModel
+                    //{
+                    //    KhoId = new Guid("00000000-0000-0000-0000-000000000000"),
+                    //    TenKho = "Tất cả",
+                    //    Active = false,
+                   // }
                 };
                 listKho.AddRange(Model.Get<KhoModel>("sys_KhoSelect"));
                 View.KhoItems = listKho;
@@ -89,6 +89,22 @@ namespace B2B.Presenter
                 if (isErrorEnabled)
                 {
                     logger.Error("sys_KhoSelect", ex);
+                }
+            }
+        }
+        public void DisplayNguyennhanLydo()
+        {
+            try
+            {
+                View.NguyennhanLydoItems = Model.Get<NguyennhanLydoModel>("sys_NguyennhanLydoSelect");
+                View.RefeshNguyennhanLydo();
+            }
+            catch(Exception ex)
+            {
+                //Check log flag and log error to file.
+                if (isErrorEnabled)
+                {
+                    logger.Error("sys_NguyennhanLydoSelect", ex);
                 }
             }
         }
@@ -113,14 +129,14 @@ namespace B2B.Presenter
         {
             try
             {
-                View.TinhtrangItems = Model.Get<TinhtrangModel>("sys_TinhtrangSelect");
+                View.TinhtrangItems = Model.Get<TinhtrangModel>("Tin_GetTinhtrangCuaPhieunhap");
             }
             catch (Exception ex)
             {
                 //Check log flag and log error to file.
                 if (isErrorEnabled)
                 {
-                    logger.Error("sys_TinhtrangSelect", ex);
+                    logger.Error("Tin_GetTinhtrangCuaPhieunhap", ex);
                 }
             }
         }

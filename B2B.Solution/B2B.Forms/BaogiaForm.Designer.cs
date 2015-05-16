@@ -129,8 +129,8 @@
             this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.Controls.Add(this.hanghoaModelGridControl);
             this.splitContainer1.Panel2.Controls.Add(this.BaogiaActionGroupControl);
-            this.splitContainer1.Size = new System.Drawing.Size(869, 455);
-            this.splitContainer1.SplitterDistance = 288;
+            this.splitContainer1.Size = new System.Drawing.Size(884, 455);
+            this.splitContainer1.SplitterDistance = 337;
             this.splitContainer1.TabIndex = 0;
             // 
             // khachhangModelGridControl
@@ -145,7 +145,7 @@
             this.khachhangModelGridControl.Name = "khachhangModelGridControl";
             this.khachhangModelGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.khachhangModelGridControl.Size = new System.Drawing.Size(288, 455);
+            this.khachhangModelGridControl.Size = new System.Drawing.Size(337, 455);
             this.khachhangModelGridControl.TabIndex = 0;
             this.khachhangModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.khachhangModelGridView});
@@ -198,6 +198,7 @@
             this.khachhangModelGridView.OptionsBehavior.Editable = false;
             this.khachhangModelGridView.OptionsView.ShowAutoFilterRow = true;
             this.khachhangModelGridView.OptionsView.ShowFooter = true;
+            this.khachhangModelGridView.OptionsView.ShowGroupPanel = false;
             // 
             // colKhachhangId
             // 
@@ -273,7 +274,7 @@
             this.colTenNhomkhachhang.OptionsColumn.AllowEdit = false;
             this.colTenNhomkhachhang.Visible = true;
             this.colTenNhomkhachhang.VisibleIndex = 3;
-            this.colTenNhomkhachhang.Width = 203;
+            this.colTenNhomkhachhang.Width = 93;
             // 
             // colCode1
             // 
@@ -282,7 +283,7 @@
             this.colCode1.OptionsColumn.AllowEdit = false;
             this.colCode1.Visible = true;
             this.colCode1.VisibleIndex = 1;
-            this.colCode1.Width = 164;
+            this.colCode1.Width = 71;
             // 
             // colHotenKhachhang
             // 
@@ -292,7 +293,7 @@
             this.colHotenKhachhang.OptionsColumn.AllowEdit = false;
             this.colHotenKhachhang.Visible = true;
             this.colHotenKhachhang.VisibleIndex = 2;
-            this.colHotenKhachhang.Width = 275;
+            this.colHotenKhachhang.Width = 121;
             // 
             // colCMND
             // 
@@ -393,7 +394,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
             this.NoGridColumn1.Visible = true;
             this.NoGridColumn1.VisibleIndex = 0;
-            this.NoGridColumn1.Width = 51;
+            this.NoGridColumn1.Width = 34;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -410,7 +411,7 @@
             this.hanghoaModelGridControl.Name = "hanghoaModelGridControl";
             this.hanghoaModelGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit2});
-            this.hanghoaModelGridControl.Size = new System.Drawing.Size(577, 372);
+            this.hanghoaModelGridControl.Size = new System.Drawing.Size(543, 372);
             this.hanghoaModelGridControl.TabIndex = 1;
             this.hanghoaModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.baogiaModelGridView});
@@ -446,6 +447,7 @@
             this.baogiaModelGridView.Name = "baogiaModelGridView";
             this.baogiaModelGridView.OptionsView.ShowAutoFilterRow = true;
             this.baogiaModelGridView.OptionsView.ShowFooter = true;
+            this.baogiaModelGridView.OptionsView.ShowGroupPanel = false;
             this.baogiaModelGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colGhichu, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.baogiaModelGridView.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.baogiaModelGridView_CustomColumnDisplayText);
@@ -497,7 +499,7 @@
             this.colCode.OptionsColumn.ReadOnly = true;
             this.colCode.Visible = true;
             this.colCode.VisibleIndex = 1;
-            this.colCode.Width = 124;
+            this.colCode.Width = 102;
             // 
             // colTenHanghoa
             // 
@@ -507,7 +509,7 @@
             this.colTenHanghoa.OptionsColumn.ReadOnly = true;
             this.colTenHanghoa.Visible = true;
             this.colTenHanghoa.VisibleIndex = 2;
-            this.colTenHanghoa.Width = 214;
+            this.colTenHanghoa.Width = 162;
             // 
             // colBarcode
             // 
@@ -540,7 +542,7 @@
             this.colTenDonVi.OptionsColumn.ReadOnly = true;
             this.colTenDonVi.Visible = true;
             this.colTenDonVi.VisibleIndex = 3;
-            this.colTenDonVi.Width = 103;
+            this.colTenDonVi.Width = 66;
             // 
             // colDongia
             // 
@@ -555,7 +557,7 @@
             this.colGiaHienthi.OptionsColumn.ReadOnly = true;
             this.colGiaHienthi.Visible = true;
             this.colGiaHienthi.VisibleIndex = 4;
-            this.colGiaHienthi.Width = 155;
+            this.colGiaHienthi.Width = 106;
             // 
             // colState
             // 
@@ -567,10 +569,11 @@
             // 
             this.colChon.Caption = "Chọn";
             this.colChon.ColumnEdit = this.repositoryItemCheckEdit2;
+            this.colChon.FieldName = "ChonBaogia";
             this.colChon.Name = "colChon";
             this.colChon.Visible = true;
             this.colChon.VisibleIndex = 5;
-            this.colChon.Width = 40;
+            this.colChon.Width = 43;
             // 
             // repositoryItemCheckEdit2
             // 
@@ -586,7 +589,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
             this.NoGridColumn.Visible = true;
             this.NoGridColumn.VisibleIndex = 0;
-            this.NoGridColumn.Width = 57;
+            this.NoGridColumn.Width = 46;
             // 
             // BaogiaActionGroupControl
             // 
@@ -594,31 +597,32 @@
             this.BaogiaActionGroupControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BaogiaActionGroupControl.Location = new System.Drawing.Point(0, 372);
             this.BaogiaActionGroupControl.Name = "BaogiaActionGroupControl";
-            this.BaogiaActionGroupControl.Size = new System.Drawing.Size(577, 83);
+            this.BaogiaActionGroupControl.Size = new System.Drawing.Size(543, 83);
             this.BaogiaActionGroupControl.TabIndex = 0;
             this.BaogiaActionGroupControl.Text = "Thao tác Báo giá";
             // 
             // exportBaogiaSimpleButton
             // 
-            this.exportBaogiaSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.exportBaogiaSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.exportBaogiaSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("exportBaogiaSimpleButton.Image")));
-            this.exportBaogiaSimpleButton.Location = new System.Drawing.Point(390, 32);
+            this.exportBaogiaSimpleButton.Location = new System.Drawing.Point(444, 31);
             this.exportBaogiaSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.exportBaogiaSimpleButton.Name = "exportBaogiaSimpleButton";
-            this.exportBaogiaSimpleButton.Size = new System.Drawing.Size(70, 27);
+            this.exportBaogiaSimpleButton.Size = new System.Drawing.Size(88, 41);
             this.exportBaogiaSimpleButton.TabIndex = 6;
             this.exportBaogiaSimpleButton.Text = "Export";
+            this.exportBaogiaSimpleButton.Click += new System.EventHandler(this.exportBaogiaSimpleButton_Click);
             // 
             // BaogiaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 455);
+            this.ClientSize = new System.Drawing.Size(884, 455);
             this.Controls.Add(this.splitContainer1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(885, 494);
+            this.MaximumSize = new System.Drawing.Size(900, 494);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(885, 494);
+            this.MinimumSize = new System.Drawing.Size(900, 494);
             this.Name = "BaogiaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo Giá";

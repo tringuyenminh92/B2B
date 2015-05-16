@@ -42,21 +42,21 @@ namespace B2B.Forms
             presenter.DisplayThuoctinhHanghoaTheoHanghoa();
         }
 
-        private void hanghoaModelGridView_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
-        {
-            if (e.Column.FieldName == "")
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
+        //private void hanghoaModelGridView_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        //{
+        //    if (e.Column.FieldName == "")
+        //    {
+        //        e.DisplayText = (e.RowHandle + 1).ToString();
+        //    }
+        //}
 
-        private void thuoctinhHanghoaGridView_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
-        {
-            if (e.Column.FieldName == "")
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
+        //private void thuoctinhHanghoaGridView_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        //{
+        //    if (e.Column.FieldName == "")
+        //    {
+        //        e.DisplayText = (e.RowHandle + 1).ToString();
+        //    }
+        //}
 
         private void deleteThuoctinhHanghoaSimpleButton_Click(object sender, EventArgs e)
         {
@@ -87,8 +87,8 @@ namespace B2B.Forms
 
         private void addThuoctinhHanghoaSimpleButton_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 using (var currentStream = new MemoryStream())
                 {
                     thuoctinhHanghoaModelGridView.SaveLayoutToStream(currentStream);
@@ -97,28 +97,28 @@ namespace B2B.Forms
                     memStream.Seek(0, SeekOrigin.Begin);
                     if (presenter.Addnew())
                     {
-                        using (var f = new ThuoctinhHanghoaDetailForm(ThuoctinhHanghoaCurrent as ThuoctinhHanghoaModel))
+                        thuoctinhHanghoaModelGridView.MoveLast();
+                        using (var f = new ThuoctinhHanghoaDetailForm(ThuoctinhHanghoaCurrent))
                         {
-                            thuoctinhHanghoaModelGridView.MoveLast();
                             if (f.ShowDialog(this) == DialogResult.Cancel)
                             {
                                 presenter.Delete();
                             }
                         }
                     }
-                    thuoctinhHanghoaModelGridView.RestoreLayoutFromStream(currentStream);
-                    currentStream.Seek(0, SeekOrigin.Begin);
+                    //thuoctinhHanghoaModelGridView.RestoreLayoutFromStream(currentStream);
+                    //currentStream.Seek(0, SeekOrigin.Begin);
                 }
-            }
-            catch (System.Exception ex)
-            {
-                //Check log flag and log error to file.
-                if (isErrorEnabled)
-                {
-                    logger.Error("None", ex);
-                }
-                return;
-            }  
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    //Check log flag and log error to file.
+            //    if (isErrorEnabled)
+            //    {
+            //        logger.Error("None", ex);
+            //    }
+            //    return;
+            //}  
         }
 
         private void editThuoctinhHanghoaSimpleButton_Click(object sender, EventArgs e)
@@ -150,7 +150,14 @@ namespace B2B.Forms
 
         private void saveThuoctinhHanghoaSimpleButton_Click(object sender, EventArgs e)
         {
-            presenter.Save();
+            if (presenter.Save())
+            {
+                XtraMessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                XtraMessageBox.Show("Lưu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void reloadThuoctinhHanghoaSimpleButton_Click(object sender, EventArgs e)
@@ -163,10 +170,6 @@ namespace B2B.Forms
             get
             {
                 return hanghoaModelBindingSource.Current as HanghoaModel;
-            }
-            set
-            {
-                throw new NotImplementedException();
             }
         }
 
@@ -200,10 +203,6 @@ namespace B2B.Forms
             {
                 return thuoctinhHanghoaModelBindingSource.Current as ThuoctinhHanghoaModel;
             }
-            set
-            {
-                throw new NotImplementedException();
-            }
         }
 
         public void RefreshData()
@@ -216,9 +215,17 @@ namespace B2B.Forms
             get { return hanghoaIdTextEdit.EditValue as Guid?; }
         }
 
+        private void thuoctinhHanghoaModelGridView_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName == "")
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
+
         private void hanghoaIdTextEdit_EditValueChanged(object sender, EventArgs e)
         {
-            presenter.DisplayHanghoa();
+            presenter.DisplayThuoctinhHanghoaTheoHanghoa();
         }
     }
 }

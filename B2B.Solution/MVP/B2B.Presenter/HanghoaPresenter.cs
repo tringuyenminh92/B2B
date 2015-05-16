@@ -65,18 +65,20 @@ namespace B2B.Presenter
 
                 var NhomHannghoaCurrent = View.NhomHanghoaItems.FirstOrDefault(p => p.NhomHanghoaId == currentId);
 
-                if(NhomHannghoaCurrent != null)
+                if (NhomHannghoaCurrent != null)
                 {
-                    if(NhomHannghoaCurrent.Active == false)
+                    if (NhomHannghoaCurrent.Active == false)
                     {
                         return false;
                     }
-                    View.HanghoaItems.Add(new HanghoaModel() 
-                    { 
+                    View.HanghoaItems.Add(new HanghoaModel()
+                    {
+                        Code = DateTime.Now.ToString("ddMMyyyyffff"),
+                        HanghoaId = Guid.NewGuid(),
                         NgayCapnhat = DateTime.Now,
                         NhomHanghoaId = currentId,
                         TenNhomhanghoa = NhomHannghoaCurrent.TenNhomHanghoa,
-                        Active = true 
+                        Active = true
                     });
                 }
                 View.RefreshData();
@@ -95,25 +97,70 @@ namespace B2B.Presenter
 
         public bool Save()
         {
-            try
-            {
+            //try
+            //{
+                var items = new List<AutoItem>();
+                items.Add(new AutoItem
+                {
+                    Name = "UserId",
+                    SqlType = System.Data.SqlDbType.UniqueIdentifier,
+                    Value = ModelCore.UserId
+                });
+                var nhanviens = Model.Get<NhanvienModel>(new AutoObject
+                {
+                    Items = items,
+                    SpName = "Vinh_GetNhanvienTheoUserId"
+                });
+
+                var nhanvienCurrent = nhanviens[0];
+
+                var hanghoaItemsNew = View.HanghoaItems.Where(p => p.State == RowState.Insert).ToList();
+
+
                 foreach (var item in View.HanghoaItems)
                 {
                     item.NgayCapnhat = DateTime.Now;
                 }
                 Model.Set(View.HanghoaItems);
+
+                var khoItems = Model.Get<KhoModel>("Tri_GetKho");
+                var tonkhoItems = new List<TonkhoModel>();
+                foreach (var hh in hanghoaItemsNew)
+                {
+                    foreach (var kho in khoItems)
+                    {
+                        tonkhoItems.Add(new TonkhoModel()
+                        {
+                            HanghoaId = hh.HanghoaId,
+                            KhoId = kho.KhoId,
+                            Ngay = DateTime.Now.Day,
+                            Thang = DateTime.Now.Month,
+                            Nam = DateTime.Now.Year,
+                            NgayCapnhat = DateTime.Now,
+                            SoduDauky = 0,
+                            SoluongNhap = 0,
+                            SoluongXuat = 0,
+                            SoluongTon = 0,
+                            NhanvienCapnhat = nhanvienCurrent.NhanvienId,
+                            Active = true,
+                            ThanhtienNhap = 0,
+                            ThanhtienXuat = 0
+                        });
+                    }
+                }
+                Model.Set(tonkhoItems);
                 View.RefreshData();
                 return true;
-            }
-            catch (System.Exception ex)
-            {
-                //Check log flag and log error to file.
-                if (isErrorEnabled)
-                {
-                    logger.Error("Save", ex);
-                }
-                return false;
-            }
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    //Check log flag and log error to file.
+            //    if (isErrorEnabled)
+            //    {
+            //        logger.Error("Save", ex);
+            //    }
+            //    return false;
+            //}
         }
 
         public void Delete()
@@ -183,7 +230,7 @@ namespace B2B.Presenter
                 {
                     return;
                 }
-                
+
                 var items = new List<AutoItem>();
                 items.Add(new AutoItem
                 {
@@ -202,12 +249,12 @@ namespace B2B.Presenter
             }
             catch (System.Exception ex)
             {
-            	//Check log flag and log error to file.
-            	if (isErrorEnabled)
-            	{
+                //Check log flag and log error to file.
+                if (isErrorEnabled)
+                {
                     logger.Error(string.Format("Name: {0} SpName: {1}", "NhomHanghoaId", "Khuyen_GetHanghoaTheoNhom"), ex);
-            	}
-            	return;
+                }
+                return;
             }
         }
     }

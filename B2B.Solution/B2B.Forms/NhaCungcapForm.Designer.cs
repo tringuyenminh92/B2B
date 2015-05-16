@@ -161,144 +161,160 @@
             // nganhangLabel
             // 
             nganhangLabel.AutoSize = true;
-            nganhangLabel.Location = new System.Drawing.Point(23, 69);
+            nganhangLabel.Location = new System.Drawing.Point(12, 36);
+            nganhangLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             nganhangLabel.Name = "nganhangLabel";
-            nganhangLabel.Size = new System.Drawing.Size(122, 25);
+            nganhangLabel.Size = new System.Drawing.Size(63, 13);
             nganhangLabel.TabIndex = 78;
             nganhangLabel.Text = "Ngân hàng:";
             // 
             // soTaikhoanLabel
             // 
             soTaikhoanLabel.AutoSize = true;
-            soTaikhoanLabel.Location = new System.Drawing.Point(423, 69);
+            soTaikhoanLabel.Location = new System.Drawing.Point(212, 36);
+            soTaikhoanLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             soTaikhoanLabel.Name = "soTaikhoanLabel";
-            soTaikhoanLabel.Size = new System.Drawing.Size(135, 25);
+            soTaikhoanLabel.Size = new System.Drawing.Size(70, 13);
             soTaikhoanLabel.TabIndex = 81;
             soTaikhoanLabel.Text = "Số tài khoản:";
             // 
             // tenTaikhoanLabel
             // 
             tenTaikhoanLabel.AutoSize = true;
-            tenTaikhoanLabel.Location = new System.Drawing.Point(23, 127);
+            tenTaikhoanLabel.Location = new System.Drawing.Point(12, 66);
+            tenTaikhoanLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tenTaikhoanLabel.Name = "tenTaikhoanLabel";
-            tenTaikhoanLabel.Size = new System.Drawing.Size(147, 25);
+            tenTaikhoanLabel.Size = new System.Drawing.Size(76, 13);
             tenTaikhoanLabel.TabIndex = 82;
             tenTaikhoanLabel.Text = "Tên tài khoản:";
             // 
             // ngayCapnhatLabel
             // 
             ngayCapnhatLabel.AutoSize = true;
-            ngayCapnhatLabel.Location = new System.Drawing.Point(423, 127);
+            ngayCapnhatLabel.Location = new System.Drawing.Point(212, 66);
+            ngayCapnhatLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             ngayCapnhatLabel.Name = "ngayCapnhatLabel";
-            ngayCapnhatLabel.Size = new System.Drawing.Size(155, 25);
+            ngayCapnhatLabel.Size = new System.Drawing.Size(81, 13);
             ngayCapnhatLabel.TabIndex = 80;
             ngayCapnhatLabel.Text = "Ngày cập nhật:";
             // 
             // faxLabel
             // 
             faxLabel.AutoSize = true;
-            faxLabel.Location = new System.Drawing.Point(433, 271);
+            faxLabel.Location = new System.Drawing.Point(216, 141);
+            faxLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             faxLabel.Name = "faxLabel";
-            faxLabel.Size = new System.Drawing.Size(51, 25);
+            faxLabel.Size = new System.Drawing.Size(29, 13);
             faxLabel.TabIndex = 57;
             faxLabel.Text = "Fax:";
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(435, 221);
+            emailLabel.Location = new System.Drawing.Point(218, 115);
+            emailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(70, 25);
+            emailLabel.Size = new System.Drawing.Size(35, 13);
             emailLabel.TabIndex = 53;
             emailLabel.Text = "Email:";
             // 
             // activeLabel
             // 
             activeLabel.AutoSize = true;
-            activeLabel.Location = new System.Drawing.Point(437, 67);
+            activeLabel.Location = new System.Drawing.Point(218, 35);
+            activeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             activeLabel.Name = "activeLabel";
-            activeLabel.Size = new System.Drawing.Size(75, 25);
+            activeLabel.Size = new System.Drawing.Size(41, 13);
             activeLabel.TabIndex = 43;
             activeLabel.Text = "Active:";
             // 
             // websiteLabel
             // 
             websiteLabel.AutoSize = true;
-            websiteLabel.Location = new System.Drawing.Point(437, 321);
+            websiteLabel.Location = new System.Drawing.Point(218, 167);
+            websiteLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             websiteLabel.Name = "websiteLabel";
-            websiteLabel.Size = new System.Drawing.Size(93, 25);
+            websiteLabel.Size = new System.Drawing.Size(50, 13);
             websiteLabel.TabIndex = 76;
             websiteLabel.Text = "Website:";
             // 
             // tinhthanhIdLabel
             // 
             tinhthanhIdLabel.AutoSize = true;
-            tinhthanhIdLabel.Location = new System.Drawing.Point(27, 321);
+            tinhthanhIdLabel.Location = new System.Drawing.Point(14, 167);
+            tinhthanhIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tinhthanhIdLabel.Name = "tinhthanhIdLabel";
-            tinhthanhIdLabel.Size = new System.Drawing.Size(114, 25);
+            tinhthanhIdLabel.Size = new System.Drawing.Size(58, 13);
             tinhthanhIdLabel.TabIndex = 75;
             tinhthanhIdLabel.Text = "Tỉnh thành";
             // 
             // codeLabel
             // 
             codeLabel.AutoSize = true;
-            codeLabel.Location = new System.Drawing.Point(27, 71);
+            codeLabel.Location = new System.Drawing.Point(14, 37);
+            codeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             codeLabel.Name = "codeLabel";
-            codeLabel.Size = new System.Drawing.Size(66, 25);
+            codeLabel.Size = new System.Drawing.Size(36, 13);
             codeLabel.TabIndex = 46;
             codeLabel.Text = "Code:";
             // 
             // mobileLabel
             // 
             mobileLabel.AutoSize = true;
-            mobileLabel.Location = new System.Drawing.Point(435, 171);
+            mobileLabel.Location = new System.Drawing.Point(218, 89);
+            mobileLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             mobileLabel.Name = "mobileLabel";
-            mobileLabel.Size = new System.Drawing.Size(79, 25);
+            mobileLabel.Size = new System.Drawing.Size(41, 13);
             mobileLabel.TabIndex = 63;
             mobileLabel.Text = "Mobile:";
             // 
             // tenNhaCungcapLabel
             // 
             tenNhaCungcapLabel.AutoSize = true;
-            tenNhaCungcapLabel.Location = new System.Drawing.Point(27, 171);
+            tenNhaCungcapLabel.Location = new System.Drawing.Point(14, 89);
+            tenNhaCungcapLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tenNhaCungcapLabel.Name = "tenNhaCungcapLabel";
-            tenNhaCungcapLabel.Size = new System.Drawing.Size(149, 25);
+            tenNhaCungcapLabel.Size = new System.Drawing.Size(76, 13);
             tenNhaCungcapLabel.TabIndex = 73;
             tenNhaCungcapLabel.Text = "Nhà cung cấp:";
             // 
             // diachiLabel
             // 
             diachiLabel.AutoSize = true;
-            diachiLabel.Location = new System.Drawing.Point(27, 221);
+            diachiLabel.Location = new System.Drawing.Point(14, 115);
+            diachiLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             diachiLabel.Name = "diachiLabel";
-            diachiLabel.Size = new System.Drawing.Size(84, 25);
+            diachiLabel.Size = new System.Drawing.Size(43, 13);
             diachiLabel.TabIndex = 49;
             diachiLabel.Text = "Địa chỉ:";
             // 
             // telLabel
             // 
             telLabel.AutoSize = true;
-            telLabel.Location = new System.Drawing.Point(435, 121);
+            telLabel.Location = new System.Drawing.Point(218, 63);
+            telLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             telLabel.Name = "telLabel";
-            telLabel.Size = new System.Drawing.Size(47, 25);
+            telLabel.Size = new System.Drawing.Size(25, 13);
             telLabel.TabIndex = 71;
             telLabel.Text = "Tel:";
             // 
             // tenCongtyLabel
             // 
             tenCongtyLabel.AutoSize = true;
-            tenCongtyLabel.Location = new System.Drawing.Point(27, 121);
+            tenCongtyLabel.Location = new System.Drawing.Point(14, 63);
+            tenCongtyLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tenCongtyLabel.Name = "tenCongtyLabel";
-            tenCongtyLabel.Size = new System.Drawing.Size(91, 25);
+            tenCongtyLabel.Size = new System.Drawing.Size(49, 13);
             tenCongtyLabel.TabIndex = 72;
             tenCongtyLabel.Text = "Công ty:";
             // 
             // quanhuyenIdLabel
             // 
             quanhuyenIdLabel.AutoSize = true;
-            quanhuyenIdLabel.Location = new System.Drawing.Point(27, 271);
+            quanhuyenIdLabel.Location = new System.Drawing.Point(14, 141);
+            quanhuyenIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             quanhuyenIdLabel.Name = "quanhuyenIdLabel";
-            quanhuyenIdLabel.Size = new System.Drawing.Size(133, 25);
+            quanhuyenIdLabel.Size = new System.Drawing.Size(70, 13);
             quanhuyenIdLabel.TabIndex = 69;
             quanhuyenIdLabel.Text = "Quận huyện:";
             // 
@@ -308,9 +324,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             ghichuLabel.AutoSize = true;
-            ghichuLabel.Location = new System.Drawing.Point(37, 631);
+            ghichuLabel.Location = new System.Drawing.Point(18, 328);
+            ghichuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             ghichuLabel.Name = "ghichuLabel";
-            ghichuLabel.Size = new System.Drawing.Size(91, 25);
+            ghichuLabel.Size = new System.Drawing.Size(46, 13);
             ghichuLabel.TabIndex = 79;
             ghichuLabel.Text = "Ghi chú:";
             // 
@@ -323,17 +340,19 @@
             this.LeftPanelControl.Controls.Add(this.xtraTabControl1);
             this.LeftPanelControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPanelControl.Location = new System.Drawing.Point(0, 0);
+            this.LeftPanelControl.Margin = new System.Windows.Forms.Padding(2);
             this.LeftPanelControl.Name = "LeftPanelControl";
-            this.LeftPanelControl.Size = new System.Drawing.Size(864, 917);
+            this.LeftPanelControl.Size = new System.Drawing.Size(432, 687);
             this.LeftPanelControl.TabIndex = 3;
             // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(2, 2);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(860, 913);
+            this.xtraTabControl1.Size = new System.Drawing.Size(428, 683);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -344,8 +363,9 @@
             this.xtraTabPage1.Controls.Add(this.CobanGroupControl);
             this.xtraTabPage1.Controls.Add(ghichuLabel);
             this.xtraTabPage1.Controls.Add(this.ghichuTextEdit);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(854, 873);
+            this.xtraTabPage1.Size = new System.Drawing.Size(422, 655);
             this.xtraTabPage1.Text = "Thông tin";
             // 
             // GiaodichGroupControl
@@ -359,50 +379,55 @@
             this.GiaodichGroupControl.Controls.Add(ngayCapnhatLabel);
             this.GiaodichGroupControl.Controls.Add(this.ngayCapnhatDateEdit);
             this.GiaodichGroupControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GiaodichGroupControl.Location = new System.Drawing.Point(0, 394);
+            this.GiaodichGroupControl.Location = new System.Drawing.Point(0, 205);
+            this.GiaodichGroupControl.Margin = new System.Windows.Forms.Padding(2);
             this.GiaodichGroupControl.Name = "GiaodichGroupControl";
-            this.GiaodichGroupControl.Size = new System.Drawing.Size(854, 208);
+            this.GiaodichGroupControl.Size = new System.Drawing.Size(422, 108);
             this.GiaodichGroupControl.TabIndex = 82;
             this.GiaodichGroupControl.Text = "Giao dịch";
             // 
             // nganhangTextEdit
             // 
             this.nganhangTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "Nganhang", true));
-            this.nganhangTextEdit.Location = new System.Drawing.Point(192, 62);
+            this.nganhangTextEdit.Location = new System.Drawing.Point(96, 32);
+            this.nganhangTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.nganhangTextEdit.Name = "nganhangTextEdit";
             this.nganhangTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.nganhangTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.nganhangTextEdit.Properties.ReadOnly = true;
-            this.nganhangTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.nganhangTextEdit.Size = new System.Drawing.Size(98, 20);
             this.nganhangTextEdit.TabIndex = 77;
             // 
             // soTaikhoanTextEdit
             // 
             this.soTaikhoanTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "SoTaikhoan", true));
-            this.soTaikhoanTextEdit.Location = new System.Drawing.Point(604, 66);
+            this.soTaikhoanTextEdit.Location = new System.Drawing.Point(302, 34);
+            this.soTaikhoanTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.soTaikhoanTextEdit.Name = "soTaikhoanTextEdit";
             this.soTaikhoanTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.soTaikhoanTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.soTaikhoanTextEdit.Properties.ReadOnly = true;
-            this.soTaikhoanTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.soTaikhoanTextEdit.Size = new System.Drawing.Size(98, 20);
             this.soTaikhoanTextEdit.TabIndex = 75;
             // 
             // tenTaikhoanTextEdit
             // 
             this.tenTaikhoanTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "TenTaikhoan", true));
-            this.tenTaikhoanTextEdit.Location = new System.Drawing.Point(192, 120);
+            this.tenTaikhoanTextEdit.Location = new System.Drawing.Point(96, 62);
+            this.tenTaikhoanTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.tenTaikhoanTextEdit.Name = "tenTaikhoanTextEdit";
             this.tenTaikhoanTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenTaikhoanTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenTaikhoanTextEdit.Properties.ReadOnly = true;
-            this.tenTaikhoanTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.tenTaikhoanTextEdit.Size = new System.Drawing.Size(98, 20);
             this.tenTaikhoanTextEdit.TabIndex = 76;
             // 
             // ngayCapnhatDateEdit
             // 
             this.ngayCapnhatDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "NgayCapnhat", true));
             this.ngayCapnhatDateEdit.EditValue = null;
-            this.ngayCapnhatDateEdit.Location = new System.Drawing.Point(604, 124);
+            this.ngayCapnhatDateEdit.Location = new System.Drawing.Point(302, 64);
+            this.ngayCapnhatDateEdit.Margin = new System.Windows.Forms.Padding(2);
             this.ngayCapnhatDateEdit.Name = "ngayCapnhatDateEdit";
             this.ngayCapnhatDateEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.ngayCapnhatDateEdit.Properties.Appearance.Options.UseBackColor = true;
@@ -411,7 +436,7 @@
             this.ngayCapnhatDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngayCapnhatDateEdit.Properties.ReadOnly = true;
-            this.ngayCapnhatDateEdit.Size = new System.Drawing.Size(197, 32);
+            this.ngayCapnhatDateEdit.Size = new System.Drawing.Size(98, 20);
             this.ngayCapnhatDateEdit.TabIndex = 79;
             // 
             // CobanGroupControl
@@ -442,141 +467,154 @@
             this.CobanGroupControl.Controls.Add(quanhuyenIdLabel);
             this.CobanGroupControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.CobanGroupControl.Location = new System.Drawing.Point(0, 0);
+            this.CobanGroupControl.Margin = new System.Windows.Forms.Padding(2);
             this.CobanGroupControl.Name = "CobanGroupControl";
-            this.CobanGroupControl.Size = new System.Drawing.Size(854, 394);
+            this.CobanGroupControl.Size = new System.Drawing.Size(422, 205);
             this.CobanGroupControl.TabIndex = 81;
             this.CobanGroupControl.Text = "Cơ bản";
             // 
             // tenTinhthanhTextEdit
             // 
             this.tenTinhthanhTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "TenTinhthanh", true));
-            this.tenTinhthanhTextEdit.Location = new System.Drawing.Point(192, 314);
+            this.tenTinhthanhTextEdit.Location = new System.Drawing.Point(96, 163);
+            this.tenTinhthanhTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.tenTinhthanhTextEdit.Name = "tenTinhthanhTextEdit";
             this.tenTinhthanhTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenTinhthanhTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenTinhthanhTextEdit.Properties.ReadOnly = true;
-            this.tenTinhthanhTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.tenTinhthanhTextEdit.Size = new System.Drawing.Size(98, 20);
             this.tenTinhthanhTextEdit.TabIndex = 78;
             // 
             // tenQuanhuyenTextEdit
             // 
             this.tenQuanhuyenTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "TenQuanhuyen", true));
-            this.tenQuanhuyenTextEdit.Location = new System.Drawing.Point(192, 268);
+            this.tenQuanhuyenTextEdit.Location = new System.Drawing.Point(96, 139);
+            this.tenQuanhuyenTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.tenQuanhuyenTextEdit.Name = "tenQuanhuyenTextEdit";
             this.tenQuanhuyenTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenQuanhuyenTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenQuanhuyenTextEdit.Properties.ReadOnly = true;
-            this.tenQuanhuyenTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.tenQuanhuyenTextEdit.Size = new System.Drawing.Size(98, 20);
             this.tenQuanhuyenTextEdit.TabIndex = 77;
             // 
             // tenCongtyTextEdit
             // 
             this.tenCongtyTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "TenCongty", true));
-            this.tenCongtyTextEdit.Location = new System.Drawing.Point(192, 115);
+            this.tenCongtyTextEdit.Location = new System.Drawing.Point(96, 60);
+            this.tenCongtyTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.tenCongtyTextEdit.Name = "tenCongtyTextEdit";
             this.tenCongtyTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenCongtyTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenCongtyTextEdit.Properties.ReadOnly = true;
-            this.tenCongtyTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.tenCongtyTextEdit.Size = new System.Drawing.Size(98, 20);
             this.tenCongtyTextEdit.TabIndex = 47;
             // 
             // faxTextEdit
             // 
             this.faxTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "Fax", true));
-            this.faxTextEdit.Location = new System.Drawing.Point(604, 268);
+            this.faxTextEdit.Location = new System.Drawing.Point(302, 139);
+            this.faxTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.faxTextEdit.Name = "faxTextEdit";
             this.faxTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.faxTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.faxTextEdit.Properties.ReadOnly = true;
-            this.faxTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.faxTextEdit.Size = new System.Drawing.Size(98, 20);
             this.faxTextEdit.TabIndex = 58;
             // 
             // emailTextEdit
             // 
             this.emailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "Email", true));
-            this.emailTextEdit.Location = new System.Drawing.Point(604, 218);
+            this.emailTextEdit.Location = new System.Drawing.Point(302, 113);
+            this.emailTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.emailTextEdit.Name = "emailTextEdit";
             this.emailTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.emailTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.emailTextEdit.Properties.ReadOnly = true;
-            this.emailTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.emailTextEdit.Size = new System.Drawing.Size(98, 20);
             this.emailTextEdit.TabIndex = 56;
             // 
             // activeCheckEdit
             // 
             this.activeCheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "Active", true));
             this.activeCheckEdit.EditValue = true;
-            this.activeCheckEdit.Location = new System.Drawing.Point(602, 65);
+            this.activeCheckEdit.Location = new System.Drawing.Point(301, 34);
+            this.activeCheckEdit.Margin = new System.Windows.Forms.Padding(2);
             this.activeCheckEdit.Name = "activeCheckEdit";
             this.activeCheckEdit.Properties.Caption = "";
             this.activeCheckEdit.Properties.ReadOnly = true;
-            this.activeCheckEdit.Size = new System.Drawing.Size(41, 19);
+            this.activeCheckEdit.Size = new System.Drawing.Size(20, 19);
             this.activeCheckEdit.TabIndex = 45;
             // 
             // websiteTextEdit
             // 
             this.websiteTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "Website", true));
-            this.websiteTextEdit.Location = new System.Drawing.Point(604, 314);
+            this.websiteTextEdit.Location = new System.Drawing.Point(302, 163);
+            this.websiteTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.websiteTextEdit.Name = "websiteTextEdit";
             this.websiteTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.websiteTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.websiteTextEdit.Properties.ReadOnly = true;
-            this.websiteTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.websiteTextEdit.Size = new System.Drawing.Size(98, 20);
             this.websiteTextEdit.TabIndex = 64;
             // 
             // tenNhaCungcapTextEdit
             // 
             this.tenNhaCungcapTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "TenNhaCungcap", true));
-            this.tenNhaCungcapTextEdit.Location = new System.Drawing.Point(192, 166);
+            this.tenNhaCungcapTextEdit.Location = new System.Drawing.Point(96, 86);
+            this.tenNhaCungcapTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.tenNhaCungcapTextEdit.Name = "tenNhaCungcapTextEdit";
             this.tenNhaCungcapTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenNhaCungcapTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenNhaCungcapTextEdit.Properties.ReadOnly = true;
-            this.tenNhaCungcapTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.tenNhaCungcapTextEdit.Size = new System.Drawing.Size(98, 20);
             this.tenNhaCungcapTextEdit.TabIndex = 48;
             // 
             // mobileTextEdit
             // 
             this.mobileTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "Mobile", true));
-            this.mobileTextEdit.Location = new System.Drawing.Point(604, 168);
+            this.mobileTextEdit.Location = new System.Drawing.Point(302, 87);
+            this.mobileTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.mobileTextEdit.Name = "mobileTextEdit";
             this.mobileTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.mobileTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.mobileTextEdit.Properties.ReadOnly = true;
-            this.mobileTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.mobileTextEdit.Size = new System.Drawing.Size(98, 20);
             this.mobileTextEdit.TabIndex = 54;
             // 
             // codeTextEdit
             // 
             this.codeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "Code", true));
-            this.codeTextEdit.Location = new System.Drawing.Point(192, 64);
+            this.codeTextEdit.Location = new System.Drawing.Point(96, 33);
+            this.codeTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.codeTextEdit.Name = "codeTextEdit";
             this.codeTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.codeTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.codeTextEdit.Properties.ReadOnly = true;
-            this.codeTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.codeTextEdit.Size = new System.Drawing.Size(98, 20);
             this.codeTextEdit.TabIndex = 44;
             // 
             // telTextEdit
             // 
             this.telTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "Tel", true));
-            this.telTextEdit.Location = new System.Drawing.Point(604, 118);
+            this.telTextEdit.Location = new System.Drawing.Point(302, 61);
+            this.telTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.telTextEdit.Name = "telTextEdit";
             this.telTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.telTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.telTextEdit.Properties.ReadOnly = true;
-            this.telTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.telTextEdit.Size = new System.Drawing.Size(98, 20);
             this.telTextEdit.TabIndex = 55;
             // 
             // diachiTextEdit
             // 
             this.diachiTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "Diachi", true));
-            this.diachiTextEdit.Location = new System.Drawing.Point(192, 217);
+            this.diachiTextEdit.Location = new System.Drawing.Point(96, 113);
+            this.diachiTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.diachiTextEdit.Name = "diachiTextEdit";
             this.diachiTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.diachiTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.diachiTextEdit.Properties.ReadOnly = true;
-            this.diachiTextEdit.Size = new System.Drawing.Size(197, 32);
+            this.diachiTextEdit.Size = new System.Drawing.Size(98, 20);
             this.diachiTextEdit.TabIndex = 50;
             // 
             // ghichuTextEdit
@@ -585,12 +623,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ghichuTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhaCungcapModelBindingSource, "Ghichu", true));
-            this.ghichuTextEdit.Location = new System.Drawing.Point(207, 629);
+            this.ghichuTextEdit.Location = new System.Drawing.Point(104, 327);
+            this.ghichuTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.ghichuTextEdit.Name = "ghichuTextEdit";
             this.ghichuTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.ghichuTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.ghichuTextEdit.Properties.ReadOnly = true;
-            this.ghichuTextEdit.Size = new System.Drawing.Size(594, 224);
+            this.ghichuTextEdit.Size = new System.Drawing.Size(295, 324);
             this.ghichuTextEdit.TabIndex = 80;
             this.ghichuTextEdit.UseOptimizedRendering = true;
             // 
@@ -599,21 +638,24 @@
             this.panelControl1.Controls.Add(this.nhaCungcapModelGridControl);
             this.panelControl1.Controls.Add(this.InformationGroupControl);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(864, 0);
+            this.panelControl1.Location = new System.Drawing.Point(432, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(829, 917);
+            this.panelControl1.Size = new System.Drawing.Size(916, 687);
             this.panelControl1.TabIndex = 4;
             // 
             // nhaCungcapModelGridControl
             // 
             this.nhaCungcapModelGridControl.DataSource = this.nhaCungcapModelBindingSource;
             this.nhaCungcapModelGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nhaCungcapModelGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.nhaCungcapModelGridControl.Location = new System.Drawing.Point(2, 2);
             this.nhaCungcapModelGridControl.MainView = this.nhaCungcapModelGridView;
+            this.nhaCungcapModelGridControl.Margin = new System.Windows.Forms.Padding(2);
             this.nhaCungcapModelGridControl.Name = "nhaCungcapModelGridControl";
             this.nhaCungcapModelGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
-            this.nhaCungcapModelGridControl.Size = new System.Drawing.Size(825, 786);
+            this.nhaCungcapModelGridControl.Size = new System.Drawing.Size(912, 617);
             this.nhaCungcapModelGridControl.TabIndex = 4;
             this.nhaCungcapModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.nhaCungcapModelGridView});
@@ -821,9 +863,10 @@
             this.InformationGroupControl.Controls.Add(this.exportNhaCungcapSimpleButton);
             this.InformationGroupControl.Controls.Add(this.saveNhaCungcapSimpleButton);
             this.InformationGroupControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.InformationGroupControl.Location = new System.Drawing.Point(2, 788);
+            this.InformationGroupControl.Location = new System.Drawing.Point(2, 619);
+            this.InformationGroupControl.Margin = new System.Windows.Forms.Padding(2);
             this.InformationGroupControl.Name = "InformationGroupControl";
-            this.InformationGroupControl.Size = new System.Drawing.Size(825, 127);
+            this.InformationGroupControl.Size = new System.Drawing.Size(912, 66);
             this.InformationGroupControl.TabIndex = 3;
             this.InformationGroupControl.Text = "Thao tác Nhà cung cấp";
             // 
@@ -831,9 +874,10 @@
             // 
             this.addNhaCungcapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.addNhaCungcapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("addNhaCungcapSimpleButton.Image")));
-            this.addNhaCungcapSimpleButton.Location = new System.Drawing.Point(319, 48);
+            this.addNhaCungcapSimpleButton.Location = new System.Drawing.Point(160, 25);
+            this.addNhaCungcapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.addNhaCungcapSimpleButton.Name = "addNhaCungcapSimpleButton";
-            this.addNhaCungcapSimpleButton.Size = new System.Drawing.Size(139, 52);
+            this.addNhaCungcapSimpleButton.Size = new System.Drawing.Size(70, 27);
             this.addNhaCungcapSimpleButton.TabIndex = 28;
             this.addNhaCungcapSimpleButton.Text = "Thêm";
             this.addNhaCungcapSimpleButton.Click += new System.EventHandler(this.addNhaCungcapSimpleButton_Click);
@@ -842,9 +886,10 @@
             // 
             this.deleteNhaCungcapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.deleteNhaCungcapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteNhaCungcapSimpleButton.Image")));
-            this.deleteNhaCungcapSimpleButton.Location = new System.Drawing.Point(21, 48);
+            this.deleteNhaCungcapSimpleButton.Location = new System.Drawing.Point(10, 25);
+            this.deleteNhaCungcapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.deleteNhaCungcapSimpleButton.Name = "deleteNhaCungcapSimpleButton";
-            this.deleteNhaCungcapSimpleButton.Size = new System.Drawing.Size(139, 52);
+            this.deleteNhaCungcapSimpleButton.Size = new System.Drawing.Size(70, 27);
             this.deleteNhaCungcapSimpleButton.TabIndex = 29;
             this.deleteNhaCungcapSimpleButton.Text = "Xóa";
             this.deleteNhaCungcapSimpleButton.Click += new System.EventHandler(this.deleteNhaCungcapSimpleButton_Click);
@@ -853,9 +898,10 @@
             // 
             this.editNhaCungcapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.editNhaCungcapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("editNhaCungcapSimpleButton.Image")));
-            this.editNhaCungcapSimpleButton.Location = new System.Drawing.Point(505, 48);
+            this.editNhaCungcapSimpleButton.Location = new System.Drawing.Point(752, 25);
+            this.editNhaCungcapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.editNhaCungcapSimpleButton.Name = "editNhaCungcapSimpleButton";
-            this.editNhaCungcapSimpleButton.Size = new System.Drawing.Size(139, 52);
+            this.editNhaCungcapSimpleButton.Size = new System.Drawing.Size(70, 27);
             this.editNhaCungcapSimpleButton.TabIndex = 26;
             this.editNhaCungcapSimpleButton.Text = "Sửa";
             this.editNhaCungcapSimpleButton.Click += new System.EventHandler(this.editNhaCungcapSimpleButton_Click);
@@ -864,9 +910,10 @@
             // 
             this.exportNhaCungcapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.exportNhaCungcapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("exportNhaCungcapSimpleButton.Image")));
-            this.exportNhaCungcapSimpleButton.Location = new System.Drawing.Point(170, 48);
+            this.exportNhaCungcapSimpleButton.Location = new System.Drawing.Point(85, 25);
+            this.exportNhaCungcapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.exportNhaCungcapSimpleButton.Name = "exportNhaCungcapSimpleButton";
-            this.exportNhaCungcapSimpleButton.Size = new System.Drawing.Size(139, 52);
+            this.exportNhaCungcapSimpleButton.Size = new System.Drawing.Size(70, 27);
             this.exportNhaCungcapSimpleButton.TabIndex = 27;
             this.exportNhaCungcapSimpleButton.Text = "Excel";
             // 
@@ -874,27 +921,30 @@
             // 
             this.saveNhaCungcapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.saveNhaCungcapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("saveNhaCungcapSimpleButton.Image")));
-            this.saveNhaCungcapSimpleButton.Location = new System.Drawing.Point(656, 48);
+            this.saveNhaCungcapSimpleButton.Location = new System.Drawing.Point(828, 25);
+            this.saveNhaCungcapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveNhaCungcapSimpleButton.Name = "saveNhaCungcapSimpleButton";
-            this.saveNhaCungcapSimpleButton.Size = new System.Drawing.Size(139, 52);
+            this.saveNhaCungcapSimpleButton.Size = new System.Drawing.Size(70, 27);
             this.saveNhaCungcapSimpleButton.TabIndex = 25;
             this.saveNhaCungcapSimpleButton.Text = "Lưu";
             this.saveNhaCungcapSimpleButton.Click += new System.EventHandler(this.saveNhaCungcapSimpleButton_Click);
             // 
             // NhaCungcapForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1697, 921);
+            this.ClientSize = new System.Drawing.Size(1348, 687);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.LeftPanelControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1723, 992);
+            this.MaximumSize = new System.Drawing.Size(1364, 726);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1723, 992);
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "NhaCungcapForm";
             this.Text = "Nhà Cung Cấp ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.nhaCungcapModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftPanelControl)).EndInit();
             this.LeftPanelControl.ResumeLayout(false);

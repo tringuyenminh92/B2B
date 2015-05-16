@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaogiaView.cs" />
+    <Compile Include="ICongnoNhapView.cs" />
+    <Compile Include="ICongnoXuatView.cs" />
     <Compile Include="IDongiaDetailView.cs" />
     <Compile Include="IDongiaView.cs" />
     <Compile Include="IDonhangDetailView.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="IKhoDetailView.cs" />
     <Compile Include="IKhoView.cs" />
     <Compile Include="IKhuvucTinhthanhView.cs" />
+    <Compile Include="IKiemkeView.cs" />
     <Compile Include="IMainView.cs" />
     <Compile Include="INguyennhanDetailView.cs" />
     <Compile Include="INguyennhanView.cs" />
@@ -67,12 +70,17 @@
     <Compile Include="INhanvienView.cs" />
     <Compile Include="INhomHanghoaView.cs" />
     <Compile Include="INhomKhachhangView.cs" />
+    <Compile Include="IPhieuchiDetailView.cs" />
+    <Compile Include="IPhieuGiaohangReportView.cs" />
     <Compile Include="IPhieunhapDetailView.cs" />
     <Compile Include="IPhieunhapView.cs" />
+    <Compile Include="IPhieuThuchiReportView.cs" />
+    <Compile Include="IPhieuthuDetailView.cs" />
     <Compile Include="IPhieuxuatDetailView.cs" />
     <Compile Include="IPhieuxuatView.cs" />
     <Compile Include="IPhongbanView.cs" />
     <Compile Include="IQuanhuyenDetailView.cs" />
+    <Compile Include="IThuchiView.cs" />
     <Compile Include="IThuoctinhHanghoaView.cs" />
     <Compile Include="ITinhthanhDetailView.cs" />
     <Compile Include="ITinhthanhQuanhuyenView.cs" />

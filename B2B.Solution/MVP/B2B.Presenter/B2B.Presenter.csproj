@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaogiaPresenter.cs" />
+    <Compile Include="CongnoNhapPresenter.cs" />
+    <Compile Include="CongnoXuatPresenter.cs" />
     <Compile Include="DongiaDetailPresenter.cs" />
     <Compile Include="DongiaPresenter.cs" />
     <Compile Include="DonhangDetailPresenter.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="KhoDetailPresenter.cs" />
     <Compile Include="KhoPresenter.cs" />
     <Compile Include="KhuvucTinhthanhPresenter.cs" />
+    <Compile Include="KiemkePresenter.cs" />
     <Compile Include="MainPresenter.cs" />
     <Compile Include="NguyennhanDetailPresenter.cs" />
     <Compile Include="NguyennhanPresenter.cs" />
@@ -74,13 +77,18 @@
     <Compile Include="NhanvienPresenter.cs" />
     <Compile Include="NhomHanghoaPresenter.cs" />
     <Compile Include="NhomKhachhangPresenter.cs" />
+    <Compile Include="PhieuchiDetailPresenter.cs" />
+    <Compile Include="PhieuGiaohangReportPresenter.cs" />
     <Compile Include="PhieunhapDetailPresenter.cs" />
     <Compile Include="PhieunhapPresenter.cs" />
+    <Compile Include="PhieuThuchiReportPresenter.cs" />
+    <Compile Include="PhieuthuDetailPresenter.cs" />
     <Compile Include="PhieuxuatDetailPresenter.cs" />
     <Compile Include="PhieuxuatPresenter.cs" />
     <Compile Include="PhongbanPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanhuyenDetailPresenter.cs" />
+    <Compile Include="ThuchiPresenter.cs" />
     <Compile Include="ThuoctinhHanghoaPresenter.cs" />
     <Compile Include="TinhthanhDetailPresenter.cs" />
     <Compile Include="TinhthanhQuanhuyenPresenter.cs" />

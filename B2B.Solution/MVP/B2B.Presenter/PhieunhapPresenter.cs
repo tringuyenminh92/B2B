@@ -78,7 +78,6 @@ namespace B2B.Presenter
                     });
 
                 }
-                List<PhieunhapModel> dsd = View.PhieunhapItems;
                 View.RefreshData();
             //}
             //catch (Exception ex)
@@ -90,59 +89,6 @@ namespace B2B.Presenter
             //    }
             //}
         }
-
-        //public void DisplayNhacungcap()
-        //{
-        //    try
-        //    {
-        //        var listNhacungcap = new List<NhaCungcapModel>
-        //        {
-        //            new NhaCungcapModel
-        //            {
-        //                NhaCungcapId = new Guid("00000000-0000-0000-0000-000000000000"),
-        //                TenNhaCungcap = "Tất cả",
-        //                Active = false,
-        //            }
-        //        };
-        //        listNhacungcap.AddRange(Model.Get<NhaCungcapModel>("sys_NhacungcapSelect"));
-        //        View.NhacungcapItems = listNhacungcap;
-        //        View.RefreshDataNhacungcap();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //Check log flag and log error to file.
-        //        if (isErrorEnabled)
-        //        {
-        //            logger.Error("sys_NhacungcapSelect", ex);
-        //        }
-        //    }
-        //}
-        //public void DisplayKho()
-        //{
-        //    try
-        //    {
-        //        var listKho = new List<KhoModel>
-        //        {
-        //            new KhoModel
-        //            {
-        //                KhoId = new Guid("00000000-0000-0000-0000-000000000000"),
-        //                TenKho = "Tất cả",
-        //                Active = false,
-        //            }
-        //        };
-        //        listKho.AddRange(Model.Get<KhoModel>("sys_KhoSelect"));
-        //        View.KhoItems = listKho;
-        //        View.RefreshDataKho();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //Check log flag and log error to file.
-        //        if (isErrorEnabled)
-        //        {
-        //            logger.Error("sys_KhoSelect", ex);
-        //        }
-        //    }
-        //}
 
         public void DisplayNhanvienCapnhat()
         {
@@ -188,34 +134,40 @@ namespace B2B.Presenter
         {
             //try
             //{
-            var items = new List<AutoItem>
-            {
-                new AutoItem
+                if (hanghoaId != null)
                 {
-                    Name = "KhoId",
-                    Value = khoId.Value,
-                    SqlType = SqlDbType.UniqueIdentifier
-                },
-                new AutoItem
-                {
-                    Name = "HanghoaId",
-                    Value = hanghoaId.Value,
-                    SqlType = SqlDbType.UniqueIdentifier
-                }
-            };
-            //var tondemo = Model.Get<TonkhoModel>("sys_TonkhoSelect");
-            var tonkhoitems = Model.Get<TonkhoModel>(new AutoObject
-            {
-                Items = items,
-                SpName = "Tin_GetTonkhoMoinhatHanghoaTheoKho"
-            });
-            if (tonkhoitems.Count > 0)
-            {
-                var tonkhoitem = tonkhoitems[0];
+                    if (khoId != null)
+                    {
+                        var items = new List<AutoItem>
+                        {
+                            new AutoItem
+                            {
+                                Name = "KhoId",
+                                Value = khoId.Value,
+                                SqlType = SqlDbType.UniqueIdentifier
+                            },
+                            new AutoItem
+                            {
+                                Name = "HanghoaId",
+                                Value = hanghoaId.Value,
+                                SqlType = SqlDbType.UniqueIdentifier
+                            }
+                        };
+                        //var tondemo = Model.Get<TonkhoModel>("sys_TonkhoSelect");
+                        var tonkhoitems = Model.Get<TonkhoModel>(new AutoObject
+                        {
+                            Items = items,
+                            SpName = "Tin_GetTonkhoMoinhatHanghoaTheoKho"
+                        });
+                        if (tonkhoitems.Count > 0)
+                        {
+                            var tonkhoitem = tonkhoitems[0];
 
-                return tonkhoitem;
-            }
-            return null;
+                            return tonkhoitem;
+                        }
+                    }
+                }
+                return null;
 
             //}
             //catch (Exception ex)
@@ -230,7 +182,7 @@ namespace B2B.Presenter
         }
         public Guid? GetPhieunhapTheoMa(PhieunhapModel p)
         {
-            var items = new List<AutoItem>()
+            var items = new List<AutoItem>
             {
                 new AutoItem
                 {
@@ -254,33 +206,41 @@ namespace B2B.Presenter
             foreach (var p in phieunhapitem.ListChitietPhieuNhap)
             {
                 // dong ton kho max cua hang hoa
-                var Current = GetHanghoaTheoTonkhoCurrent(p.HanghoaId, phieunhapitem.KhoId);
+                var current = GetHanghoaTheoTonkhoCurrent(p.HanghoaId, phieunhapitem.KhoId);
                 //se co nut cấu hình tồn kho ban đầu
+                //if (current == null)
+                //{
+                //    return null;
+                //}
                 var tonkhoitem = new TonkhoModel
                 {
                     HanghoaId = p.HanghoaId,
                     KhoId = phieunhapitem.KhoId,
                     NgayCapnhat = DateTime.Now,
-                    SoduDauky = Current.SoluongTon,
+                    Ngay=DateTime.Now.Day,
+                    Thang=DateTime.Now.Month,
+                    Nam=DateTime.Now.Year,
+                    SoduDauky = current.SoluongTon,
                     SoluongNhap = p.Soluong,
-                    SoluongTonDukien = p.Soluong + Current.SoluongTonDukien,
+                    SoluongTonDukien = p.Soluong + current.SoluongTonDukien,
                     SoluongXuat = 0,
-                    SoluongTon = Current.SoluongTon,
+                    SoluongTon = current.SoluongTon,
                     NhanvienCapnhat = phieunhapitem.NhanvienId,
-                    Active = true
+                    Active = true,
+                    ThanhtienNhap=p.Thanhtien
 
                     //set 
 
                 };
                 if (codeTinhtrang == "TTPN03") //Hủy
                 {
-                    tonkhoitem.SoluongTonDukien = Current.SoluongTonDukien - p.Soluong;
+                    tonkhoitem.SoluongTonDukien = current.SoluongTonDukien - p.Soluong;
 
                 }
                 if (codeTinhtrang == "TTPN02") //Chốt
                 {
-                    tonkhoitem.SoluongTonDukien = Current.SoluongTonDukien;
-                    tonkhoitem.SoluongTon = Current.SoluongTon + p.Soluong;
+                    tonkhoitem.SoluongTonDukien = current.SoluongTonDukien;
+                    tonkhoitem.SoluongTon = current.SoluongTon + p.Soluong;
 
 
                 }
@@ -306,60 +266,28 @@ namespace B2B.Presenter
         {
             //try
             //{
-            //Guid? khocurrentId = View.KhoCurrentId;
-            //if (khocurrentId == null)
-            //{
-            //    return false;
-            //}
-            //KhoModel khoCurrent = View.KhoItems.FirstOrDefault(p => p.KhoId == khocurrentId);
-            //if (khoCurrent != null)
-            //{
-            //    if (khoCurrent.Active == false)
-            //    {
-            //        return false;
-            //    }
-            //}
-            //Guid? nhacungcapCurrentId = View.NhacungcapCurrentId;
-            ////
-            //if (nhacungcapCurrentId == null)
-            //{
-            //    return false;
-            //}
-            //NhaCungcapModel nhacungcapCurrent =
-            //    View.NhacungcapItems.FirstOrDefault(p => p.NhaCungcapId == nhacungcapCurrentId);
-            //if (nhacungcapCurrent != null)
-            //{
-            //    if (nhacungcapCurrent.Active == false)
-            //        return false;
-            //}
-
-            //if (nhacungcapCurrent != null)
-            //    if (khoCurrent != null)
-            //    {
-
+                    var kho = Model.Get<KhoModel>("sys_KhoSelect").FirstOrDefault();
+                    var nhacungcap = Model.Get<NhaCungcapModel>("sys_NhaCungcapSelect").FirstOrDefault();
+                    var nguyennhanLydo = Model.Get<NguyennhanLydoModel>("sys_NguyennhanLydoSelect").FirstOrDefault();
                     var pn = new PhieunhapModel
                     {
-
-                        //KhoId = khocurrentId,
-                        //TenKho = khoCurrent.TenKho,
+                        NhacungcapId=nhacungcap.NhaCungcapId,
+                        KhoId=kho.KhoId,
+                        NguyennhanLydo = nguyennhanLydo.NguyennhanLydoId,
                         NhanvienId = View.NhanvienCapnhat.NhanvienId,
-                        //NhacungcapId = nhacungcapCurrentId,
-                        //TenNhaCungcap = nhacungcapCurrent.TenNhaCungcap,
                         TenNhanvien = View.NhanvienCapnhat.HovatenNhanvien,
                         Ngaylap = DateTime.Now,
                         ListChitietPhieuNhap = new List<ChitietPhieunhapModel>(),
-                        ListTinhtrangPhieunhap = new List<TinhtrangPhieunhapModel>(),
-
+                        ListTinhtrangPhieunhap = new List<TinhtrangPhieunhapModel>()
                     };
-                    var tinhtrangItems = Model.Get<TinhtrangModel>("sys_TinhtrangSelect");
+                    var tinhtrangItems = Model.Get<TinhtrangModel>("Tin_GetTinhtrangCuaPhieunhap");
                     if (tinhtrangItems != null)
                     {
-                        var tinhtrangdalap = tinhtrangItems.FirstOrDefault(p => p.Code == "TTPN01") as TinhtrangModel;
+                        var tinhtrangdalap = tinhtrangItems.FirstOrDefault(p => p.Code == "TTPN01");
                         //Set Tinh Trang ID da lap
-                        pn.TinhtrangPhieunhapCurrentId = tinhtrangdalap.TinhtrangId;
+                        if (tinhtrangdalap != null) pn.TinhtrangPhieunhapCurrentId = tinhtrangdalap.TinhtrangId;
                     }
-                    View.PhieunhapItems.Add(pn);
-                //}
+                View.PhieunhapItems.Add(pn);
 
             //Cập nhật thêm tình trạng
             //cập nhật tình trạng trước khi cập nhật vào tồn(lấy luôn cái tình trạng trên gd khỏi phải lọc database rùi lấy)
@@ -376,7 +304,7 @@ namespace B2B.Presenter
             //    return false;
             //}
         }
-
+        //________________________________Save_____________________________________
         /// <summary>
         /// Saves this instance.
         /// </summary>
@@ -390,74 +318,7 @@ namespace B2B.Presenter
                 View.PhieunhapItems.Where(
                     p => (p.State == RowState.Insert || p.State == RowState.Update || p.State == RowState.Delete))
                     .Select(p=>p).ToList();
-            ////_____________Thử group by_________________
-            //var phieunhapLuu1 = phieunhapLuu;
-            //foreach (var p in phieunhapLuu1)
-            //{
-            //    //p.ListChitietPhieuNhap = p.ListChitietPhieuNhap.GroupBy(l => l.HanghoaId).SelectMany(k => k.Select(kl => new ChitietPhieunhapModel
-            //    //{
-            //    //    ChitietPhieunhapId = kl.ChitietPhieunhapId,
-            //    //    PhieunhapId = kl.PhieunhapId,
-            //    //    HanghoaId = kl.HanghoaId,
-            //    //    Soluong = k.Sum(c => c.Soluong),
-            //    //    HSD = kl.HSD,
-            //    //    NSX = kl.NSX,
-            //    //    Gianhap = kl.Gianhap,
-            //    //    Barcode = kl.Barcode,
-            //    //    TenHanghoa = kl.TenHanghoa,
-            //    //    Ghichu = kl.Ghichu,
-
-            //    //})).ToList<ChitietPhieunhapModel>();
-            //    p.ListChitietPhieuNhap = p.ListChitietPhieuNhap.GroupBy(l => l.HanghoaId).SelectMany(k => k.Select(kl => new ChitietPhieunhapModel
-            //    {
-            //        ChitietPhieunhapId = kl.ChitietPhieunhapId,
-            //        PhieunhapId = kl.PhieunhapId,
-            //        HanghoaId = kl.HanghoaId,
-            //        Soluong = k.Sum(c => c.Soluong),
-            //        HSD = kl.HSD,
-            //        NSX = kl.NSX,
-            //        Gianhap = kl.Gianhap,
-            //        Barcode = kl.Barcode,
-            //        TenHanghoa = kl.TenHanghoa,
-            //        Ghichu = kl.Ghichu,
-
-            //    })).ToList<ChitietPhieunhapModel>();
-            //}
-            ////nen xem xet dung first();
-            //var hj = phieunhapLuu1;
-            ////__________________________________________________
-            //phieunhapCapnhatTonkho dùng để lấy những phiếu nhập cần cập nhật và group theo hàng hóa và sum lại trong chi tiết phiếu nhập
-            //var phieunhapCapnhatTonkho =
-            //    View.PhieunhapItems.Where(p => p.ListChitietPhieuNhap.Count(ct => (ct.State == RowState.Update || ct.State == RowState.Insert)) > 0).ToList();
-            //foreach (var pn in phieunhapCapnhatTonkho)
-            //{
-
-            //    pn.ListChitietPhieuNhap = pn.ListChitietPhieuNhap.GroupBy(p => p.HanghoaId).Select(u =>new ChitietPhieunhapModel {
-            //        ChitietPhieunhapId=u.First().ChitietPhieunhapId,
-            //        Soluong=u.Sum(e=>e.Soluong),
-            //        PhieunhapId=u.First().PhieunhapId,
-            //        HanghoaId=u.First().HanghoaId,
-            //        Gianhap=u.First().Gianhap,
-            //        HSD=u.First().HSD,
-            //        NSX=u.First().NSX,
-            //        TenHanghoa=u.First().Ghichu,
-            //        Thanhtien=u.Sum(e=>e.Thanhtien),
-            //        Ghichu=u.First().Ghichu,
-            //        //State=u.First().State,
-            //        Step=u.First().Step,
-            //        Barcode=u.First().Barcode,
-            //        Version=u.First().Version
-            //    }).ToList();
-                
-            //}
-            //var democnton = phieunhapCapnhatTonkho;
-            //Model.Set(View.PhieunhapItems);//2
-            //Model.Set(phieunhapLuu);
-            ////Cập nhật tình trạng phiếu nhập
-
-            //var tonkhoitems = new List<TonkhoModel>();
-
-            //foreach (PhieunhapModel p in View.PhieunhapItems) //2
+            var phieunhapInsert = View.PhieunhapItems.Where(p=>(p.State == RowState.Insert)).Select(p => p).ToList();
             var phieunhapCapnhatTonkho = View.PhieunhapItems.Where(p => (p.State == RowState.Insert || p.State == RowState.Update)).ToList();
             Model.Set(phieunhapLuu);
             //var phieunhapCapnhatTonkho =
@@ -471,8 +332,17 @@ namespace B2B.Presenter
                     NhanvienCapnhat = p.NhanvienId,
                     NgayCapnhat = DateTime.Now
                 };
-                Model.Set(tinhtrangPhieunhapCurrent);
-                Model.Set(p.ListChitietPhieuNhap); //(chỗ này nguy hiểm có thể sai cần xem lại)
+                //Cong no
+                var pninsert = phieunhapInsert.Where(x => x.PhieunhapId == p.PhieunhapId).ToList();
+                bool f = true;
+                if(pninsert.Count<1)
+                {
+                    f = false;
+                }
+                var congnoNhap = CapnhatCongnoNhap(p,f);
+                Model.Set(congnoNhap);//save cong no Nhap;
+                Model.Set(tinhtrangPhieunhapCurrent);//Save tinh trang 
+                Model.Set(p.ListChitietPhieuNhap); //(chỗ này nguy hiểm có thể sai cần xem lại)//save chi tiet phieu nhap
             }
             //_________________________________group by________
             foreach (var pn in phieunhapCapnhatTonkho)
@@ -538,7 +408,7 @@ namespace B2B.Presenter
             //    return false;
             //}
         }
-
+        //_________________________Delete___________________________________
         public bool Delete()
         {
             try
@@ -566,6 +436,56 @@ namespace B2B.Presenter
                 }
                 return false;
             }
+        }
+        //_______________________________Cap nhat cong no nhap_________________________________
+        public CongnoNhapModel CapnhatCongnoNhap(PhieunhapModel pn, bool f)
+        {
+            var tinhtrangHuy = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.Code == "TTPN003");
+            var items = new List<AutoItem>
+            {
+                new AutoItem
+                {
+                    Name = "NhacungcapId",
+                    Value = pn.NhacungcapId,
+                    SqlType = SqlDbType.UniqueIdentifier
+                }
+            };
+            var congnoItems = Model.Get<CongnoNhapModel>(new AutoObject 
+            { 
+                Items=items,
+                SpName="Tin_GetCongnoNhapMoinhatTheoNhacungcap"
+            });
+            CongnoNhapModel congnoNhapMoinhat; 
+            if(congnoItems.Count>0)
+            {
+                congnoNhapMoinhat=congnoItems[0];
+            }
+            else
+            {
+                congnoNhapMoinhat = new CongnoNhapModel() {Tongno=0.0,SoduTruocGiaodich=0 };
+            }
+            var cnn = new CongnoNhapModel
+            {
+                NhaCungcapId=pn.NhacungcapId,
+                NgayGiaodich=DateTime.Now,
+                SoduTruocGiaodich=congnoNhapMoinhat.Tongno,
+                SotienGiaodich=pn.Tongtien,
+                NhanvienId=pn.NhanvienId,
+                Ghichu=pn.Ghichu,
+            };
+            if(pn.State==RowState.Insert||f==true)
+            {
+                if (congnoNhapMoinhat.Tongno == null)
+                {
+                    congnoNhapMoinhat.Tongno = 0;
+                }
+                cnn.Tongno = (double)( cnn.SotienGiaodich - congnoNhapMoinhat.Tongno);
+            }
+            else if(tinhtrangHuy != null && pn.TinhtrangPhieunhapCurrentId==tinhtrangHuy.TinhtrangId)
+            {
+                cnn.Tongno = congnoNhapMoinhat.Tongno + cnn.SotienGiaodich;
+            }
+            return cnn;
         }
     }
 }

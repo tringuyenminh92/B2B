@@ -39,8 +39,9 @@
             System.Windows.Forms.Label hanghoaIdLabel;
             System.Windows.Forms.Label gianhapLabel;
             System.Windows.Forms.Label tinhtrangPhieunhapIdLabel;
+            System.Windows.Forms.Label nguyennhanLydoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieunhapDetailForm));
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.chitietPhieunhapPanelControl = new DevExpress.XtraEditors.PanelControl();
             this.chitietPhieunhapModelGridControl = new DevExpress.XtraGrid.GridControl();
             this.chitietPhieunhapModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ChitietPhieunhapModelGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -60,7 +61,7 @@
             this.colState = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NoGridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chitietPhieunhapGroupBox = new System.Windows.Forms.GroupBox();
             this.gianhapSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.CancelSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.OkSimpleButton = new DevExpress.XtraEditors.SimpleButton();
@@ -96,10 +97,12 @@
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.thongtinchungGroupBox = new System.Windows.Forms.GroupBox();
+            this.nguyennhanLydoTextEdit = new System.Windows.Forms.ComboBox();
+            this.phieunhapModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nguyennhanLydoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nhacungcapIdTextEdit = new System.Windows.Forms.ComboBox();
             this.nhaCungcapModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phieunhapModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.khoIdTextEdit = new System.Windows.Forms.ComboBox();
             this.khoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tinhtrangPhieunhapIdTextEdit = new System.Windows.Forms.ComboBox();
@@ -118,14 +121,15 @@
             hanghoaIdLabel = new System.Windows.Forms.Label();
             gianhapLabel = new System.Windows.Forms.Label();
             tinhtrangPhieunhapIdLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
+            nguyennhanLydoLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.chitietPhieunhapPanelControl)).BeginInit();
+            this.chitietPhieunhapPanelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chitietPhieunhapModelGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chitietPhieunhapModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChitietPhieunhapModelGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.chitietPhieunhapGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gianhapSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hSDDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hSDDateEdit.Properties)).BeginInit();
@@ -134,9 +138,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.hanghoaIdTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hanghoaModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nhaCungcapModelBindingSource)).BeginInit();
+            this.thongtinchungGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phieunhapModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nguyennhanLydoModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhaCungcapModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhtrangModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -150,7 +155,7 @@
             // 
             khoIdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             khoIdLabel.AutoSize = true;
-            khoIdLabel.Location = new System.Drawing.Point(27, 35);
+            khoIdLabel.Location = new System.Drawing.Point(27, 23);
             khoIdLabel.Name = "khoIdLabel";
             khoIdLabel.Size = new System.Drawing.Size(56, 13);
             khoIdLabel.TabIndex = 2;
@@ -160,7 +165,7 @@
             // 
             nhacungcapIdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             nhacungcapIdLabel.AutoSize = true;
-            nhacungcapIdLabel.Location = new System.Drawing.Point(26, 87);
+            nhacungcapIdLabel.Location = new System.Drawing.Point(26, 70);
             nhacungcapIdLabel.Name = "nhacungcapIdLabel";
             nhacungcapIdLabel.Size = new System.Drawing.Size(76, 13);
             nhacungcapIdLabel.TabIndex = 4;
@@ -170,7 +175,7 @@
             // 
             nhanvienIdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             nhanvienIdLabel.AutoSize = true;
-            nhanvienIdLabel.Location = new System.Drawing.Point(26, 61);
+            nhanvienIdLabel.Location = new System.Drawing.Point(26, 44);
             nhanvienIdLabel.Name = "nhanvienIdLabel";
             nhanvienIdLabel.Size = new System.Drawing.Size(66, 13);
             nhanvienIdLabel.TabIndex = 6;
@@ -180,7 +185,7 @@
             // 
             ngaylapLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             ngaylapLabel.AutoSize = true;
-            ngaylapLabel.Location = new System.Drawing.Point(26, 114);
+            ngaylapLabel.Location = new System.Drawing.Point(26, 98);
             ngaylapLabel.Name = "ngaylapLabel";
             ngaylapLabel.Size = new System.Drawing.Size(63, 13);
             ngaylapLabel.TabIndex = 10;
@@ -235,30 +240,39 @@
             // 
             tinhtrangPhieunhapIdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             tinhtrangPhieunhapIdLabel.AutoSize = true;
-            tinhtrangPhieunhapIdLabel.Location = new System.Drawing.Point(23, 143);
+            tinhtrangPhieunhapIdLabel.Location = new System.Drawing.Point(27, 124);
             tinhtrangPhieunhapIdLabel.Name = "tinhtrangPhieunhapIdLabel";
             tinhtrangPhieunhapIdLabel.Size = new System.Drawing.Size(60, 13);
             tinhtrangPhieunhapIdLabel.TabIndex = 35;
             tinhtrangPhieunhapIdLabel.Text = "Tình trạng:";
             // 
-            // panelControl2
+            // nguyennhanLydoLabel
             // 
-            this.panelControl2.Controls.Add(this.chitietPhieunhapModelGridControl);
-            this.panelControl2.Controls.Add(this.panelControl1);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 0);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1289, 687);
-            this.panelControl2.TabIndex = 1;
+            nguyennhanLydoLabel.AutoSize = true;
+            nguyennhanLydoLabel.Location = new System.Drawing.Point(27, 151);
+            nguyennhanLydoLabel.Name = "nguyennhanLydoLabel";
+            nguyennhanLydoLabel.Size = new System.Drawing.Size(75, 13);
+            nguyennhanLydoLabel.TabIndex = 39;
+            nguyennhanLydoLabel.Text = "Nguyên nhân:";
+            // 
+            // chitietPhieunhapPanelControl
+            // 
+            this.chitietPhieunhapPanelControl.Controls.Add(this.chitietPhieunhapModelGridControl);
+            this.chitietPhieunhapPanelControl.Controls.Add(this.panelControl1);
+            this.chitietPhieunhapPanelControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chitietPhieunhapPanelControl.Location = new System.Drawing.Point(0, 0);
+            this.chitietPhieunhapPanelControl.Name = "chitietPhieunhapPanelControl";
+            this.chitietPhieunhapPanelControl.Size = new System.Drawing.Size(1289, 687);
+            this.chitietPhieunhapPanelControl.TabIndex = 1;
             // 
             // chitietPhieunhapModelGridControl
             // 
             this.chitietPhieunhapModelGridControl.DataSource = this.chitietPhieunhapModelBindingSource;
             this.chitietPhieunhapModelGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chitietPhieunhapModelGridControl.Location = new System.Drawing.Point(2, 176);
+            this.chitietPhieunhapModelGridControl.Location = new System.Drawing.Point(2, 185);
             this.chitietPhieunhapModelGridControl.MainView = this.ChitietPhieunhapModelGridView;
             this.chitietPhieunhapModelGridControl.Name = "chitietPhieunhapModelGridControl";
-            this.chitietPhieunhapModelGridControl.Size = new System.Drawing.Size(1285, 509);
+            this.chitietPhieunhapModelGridControl.Size = new System.Drawing.Size(1285, 500);
             this.chitietPhieunhapModelGridControl.TabIndex = 1;
             this.chitietPhieunhapModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ChitietPhieunhapModelGridView});
@@ -269,6 +283,8 @@
             // 
             // ChitietPhieunhapModelGridView
             // 
+            this.ChitietPhieunhapModelGridView.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ChitietPhieunhapModelGridView.Appearance.Row.Options.UseBackColor = true;
             this.ChitietPhieunhapModelGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colChitietPhieunhapId,
             this.colPhieunhapId,
@@ -288,6 +304,7 @@
             this.ChitietPhieunhapModelGridView.GridControl = this.chitietPhieunhapModelGridControl;
             this.ChitietPhieunhapModelGridView.Name = "ChitietPhieunhapModelGridView";
             this.ChitietPhieunhapModelGridView.OptionsBehavior.Editable = false;
+            this.ChitietPhieunhapModelGridView.OptionsView.EnableAppearanceOddRow = true;
             this.ChitietPhieunhapModelGridView.OptionsView.ShowAutoFilterRow = true;
             this.ChitietPhieunhapModelGridView.OptionsView.ShowFooter = true;
             this.ChitietPhieunhapModelGridView.OptionsView.ShowGroupPanel = false;
@@ -407,42 +424,41 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.groupBox2);
-            this.panelControl1.Controls.Add(this.groupBox1);
+            this.panelControl1.Controls.Add(this.chitietPhieunhapGroupBox);
+            this.panelControl1.Controls.Add(this.thongtinchungGroupBox);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1285, 174);
+            this.panelControl1.Size = new System.Drawing.Size(1285, 183);
             this.panelControl1.TabIndex = 49;
             // 
-            // groupBox2
+            // chitietPhieunhapGroupBox
             // 
-            this.groupBox2.Controls.Add(gianhapLabel);
-            this.groupBox2.Controls.Add(this.gianhapSpinEdit);
-            this.groupBox2.Controls.Add(this.CancelSimpleButton);
-            this.groupBox2.Controls.Add(this.OkSimpleButton);
-            this.groupBox2.Controls.Add(this.clearChitietPhieunhapSimpleButton);
-            this.groupBox2.Controls.Add(this.deleteChitietPhieunhapSimpleButton);
-            this.groupBox2.Controls.Add(this.addChitietPhieunhapSimpleButton);
-            this.groupBox2.Controls.Add(ghichuLabel);
-            this.groupBox2.Controls.Add(hanghoaIdLabel);
-            this.groupBox2.Controls.Add(this.hSDDateEdit);
-            this.groupBox2.Controls.Add(this.ghichuTextEdit);
-            this.groupBox2.Controls.Add(this.soluongSpinEdit);
-            this.groupBox2.Controls.Add(hSDLabel);
-            this.groupBox2.Controls.Add(soluongLabel);
-            this.groupBox2.Controls.Add(this.hanghoaIdTextEdit);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(2, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(900, 170);
-            this.groupBox2.TabIndex = 48;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Chi tiết phiếu nhập";
+            this.chitietPhieunhapGroupBox.Controls.Add(gianhapLabel);
+            this.chitietPhieunhapGroupBox.Controls.Add(this.gianhapSpinEdit);
+            this.chitietPhieunhapGroupBox.Controls.Add(this.CancelSimpleButton);
+            this.chitietPhieunhapGroupBox.Controls.Add(this.OkSimpleButton);
+            this.chitietPhieunhapGroupBox.Controls.Add(this.clearChitietPhieunhapSimpleButton);
+            this.chitietPhieunhapGroupBox.Controls.Add(this.deleteChitietPhieunhapSimpleButton);
+            this.chitietPhieunhapGroupBox.Controls.Add(this.addChitietPhieunhapSimpleButton);
+            this.chitietPhieunhapGroupBox.Controls.Add(ghichuLabel);
+            this.chitietPhieunhapGroupBox.Controls.Add(hanghoaIdLabel);
+            this.chitietPhieunhapGroupBox.Controls.Add(this.hSDDateEdit);
+            this.chitietPhieunhapGroupBox.Controls.Add(this.ghichuTextEdit);
+            this.chitietPhieunhapGroupBox.Controls.Add(this.soluongSpinEdit);
+            this.chitietPhieunhapGroupBox.Controls.Add(hSDLabel);
+            this.chitietPhieunhapGroupBox.Controls.Add(soluongLabel);
+            this.chitietPhieunhapGroupBox.Controls.Add(this.hanghoaIdTextEdit);
+            this.chitietPhieunhapGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chitietPhieunhapGroupBox.Location = new System.Drawing.Point(2, 2);
+            this.chitietPhieunhapGroupBox.Name = "chitietPhieunhapGroupBox";
+            this.chitietPhieunhapGroupBox.Size = new System.Drawing.Size(900, 179);
+            this.chitietPhieunhapGroupBox.TabIndex = 48;
+            this.chitietPhieunhapGroupBox.TabStop = false;
+            this.chitietPhieunhapGroupBox.Text = "Chi tiết phiếu nhập";
             // 
             // gianhapSpinEdit
             // 
-            this.gianhapSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.chitietPhieunhapModelBindingSource, "Gianhap", true));
             this.gianhapSpinEdit.EditValue = new decimal(new int[] {
             0,
             0,
@@ -512,8 +528,7 @@
             // 
             // hSDDateEdit
             // 
-            this.hSDDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.chitietPhieunhapModelBindingSource, "HSD", true));
-            this.hSDDateEdit.EditValue = null;
+            this.hSDDateEdit.EditValue = new System.DateTime(2015, 5, 14, 13, 32, 54, 775);
             this.hSDDateEdit.Location = new System.Drawing.Point(410, 20);
             this.hSDDateEdit.Name = "hSDDateEdit";
             this.hSDDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -525,15 +540,15 @@
             // 
             // ghichuTextEdit
             // 
+            this.ghichuTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.chitietPhieunhapModelBindingSource, "Ghichu", true));
             this.ghichuTextEdit.Location = new System.Drawing.Point(98, 76);
             this.ghichuTextEdit.Name = "ghichuTextEdit";
-            this.ghichuTextEdit.Size = new System.Drawing.Size(774, 81);
+            this.ghichuTextEdit.Size = new System.Drawing.Size(774, 97);
             this.ghichuTextEdit.TabIndex = 4;
             this.ghichuTextEdit.UseOptimizedRendering = true;
             // 
             // soluongSpinEdit
             // 
-            this.soluongSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.chitietPhieunhapModelBindingSource, "Soluong", true));
             this.soluongSpinEdit.EditValue = new decimal(new int[] {
             0,
             0,
@@ -734,25 +749,47 @@
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.OptionsColumn.ReadOnly = true;
             // 
-            // groupBox1
+            // thongtinchungGroupBox
             // 
-            this.groupBox1.Controls.Add(this.nhacungcapIdTextEdit);
-            this.groupBox1.Controls.Add(this.khoIdTextEdit);
-            this.groupBox1.Controls.Add(this.tinhtrangPhieunhapIdTextEdit);
-            this.groupBox1.Controls.Add(tinhtrangPhieunhapIdLabel);
-            this.groupBox1.Controls.Add(khoIdLabel);
-            this.groupBox1.Controls.Add(nhacungcapIdLabel);
-            this.groupBox1.Controls.Add(nhanvienIdLabel);
-            this.groupBox1.Controls.Add(this.ngaylapDateEdit);
-            this.groupBox1.Controls.Add(ngaylapLabel);
-            this.groupBox1.Controls.Add(this.nhanvienIdTextEdit);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox1.Location = new System.Drawing.Point(902, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(381, 170);
-            this.groupBox1.TabIndex = 47;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin chung";
+            this.thongtinchungGroupBox.Controls.Add(nguyennhanLydoLabel);
+            this.thongtinchungGroupBox.Controls.Add(this.nguyennhanLydoTextEdit);
+            this.thongtinchungGroupBox.Controls.Add(this.nhacungcapIdTextEdit);
+            this.thongtinchungGroupBox.Controls.Add(this.khoIdTextEdit);
+            this.thongtinchungGroupBox.Controls.Add(this.tinhtrangPhieunhapIdTextEdit);
+            this.thongtinchungGroupBox.Controls.Add(tinhtrangPhieunhapIdLabel);
+            this.thongtinchungGroupBox.Controls.Add(khoIdLabel);
+            this.thongtinchungGroupBox.Controls.Add(nhacungcapIdLabel);
+            this.thongtinchungGroupBox.Controls.Add(nhanvienIdLabel);
+            this.thongtinchungGroupBox.Controls.Add(this.ngaylapDateEdit);
+            this.thongtinchungGroupBox.Controls.Add(ngaylapLabel);
+            this.thongtinchungGroupBox.Controls.Add(this.nhanvienIdTextEdit);
+            this.thongtinchungGroupBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.thongtinchungGroupBox.Location = new System.Drawing.Point(902, 2);
+            this.thongtinchungGroupBox.Name = "thongtinchungGroupBox";
+            this.thongtinchungGroupBox.Size = new System.Drawing.Size(381, 179);
+            this.thongtinchungGroupBox.TabIndex = 47;
+            this.thongtinchungGroupBox.TabStop = false;
+            this.thongtinchungGroupBox.Text = "Thông tin chung";
+            // 
+            // nguyennhanLydoTextEdit
+            // 
+            this.nguyennhanLydoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.phieunhapModelBindingSource, "NguyennhanLydo", true));
+            this.nguyennhanLydoTextEdit.DataSource = this.nguyennhanLydoModelBindingSource;
+            this.nguyennhanLydoTextEdit.DisplayMember = "Noidung";
+            this.nguyennhanLydoTextEdit.FormattingEnabled = true;
+            this.nguyennhanLydoTextEdit.Location = new System.Drawing.Point(123, 148);
+            this.nguyennhanLydoTextEdit.Name = "nguyennhanLydoTextEdit";
+            this.nguyennhanLydoTextEdit.Size = new System.Drawing.Size(232, 21);
+            this.nguyennhanLydoTextEdit.TabIndex = 39;
+            this.nguyennhanLydoTextEdit.ValueMember = "NguyennhanLydoId";
+            // 
+            // phieunhapModelBindingSource
+            // 
+            this.phieunhapModelBindingSource.DataSource = typeof(B2B.Model.PhieunhapModel);
+            // 
+            // nguyennhanLydoModelBindingSource
+            // 
+            this.nguyennhanLydoModelBindingSource.DataSource = typeof(B2B.Model.NguyennhanLydoModel);
             // 
             // nhacungcapIdTextEdit
             // 
@@ -761,7 +798,7 @@
             this.nhacungcapIdTextEdit.DataSource = this.nhaCungcapModelBindingSource;
             this.nhacungcapIdTextEdit.DisplayMember = "TenNhaCungcap";
             this.nhacungcapIdTextEdit.FormattingEnabled = true;
-            this.nhacungcapIdTextEdit.Location = new System.Drawing.Point(123, 80);
+            this.nhacungcapIdTextEdit.Location = new System.Drawing.Point(123, 67);
             this.nhacungcapIdTextEdit.Name = "nhacungcapIdTextEdit";
             this.nhacungcapIdTextEdit.Size = new System.Drawing.Size(232, 21);
             this.nhacungcapIdTextEdit.TabIndex = 38;
@@ -771,10 +808,6 @@
             // 
             this.nhaCungcapModelBindingSource.DataSource = typeof(B2B.Model.NhaCungcapModel);
             // 
-            // phieunhapModelBindingSource
-            // 
-            this.phieunhapModelBindingSource.DataSource = typeof(B2B.Model.PhieunhapModel);
-            // 
             // khoIdTextEdit
             // 
             this.khoIdTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khoModelBindingSource, "KhoId", true));
@@ -782,7 +815,7 @@
             this.khoIdTextEdit.DataSource = this.khoModelBindingSource;
             this.khoIdTextEdit.DisplayMember = "TenKho";
             this.khoIdTextEdit.FormattingEnabled = true;
-            this.khoIdTextEdit.Location = new System.Drawing.Point(123, 27);
+            this.khoIdTextEdit.Location = new System.Drawing.Point(123, 15);
             this.khoIdTextEdit.Name = "khoIdTextEdit";
             this.khoIdTextEdit.Size = new System.Drawing.Size(232, 21);
             this.khoIdTextEdit.TabIndex = 37;
@@ -799,7 +832,7 @@
             this.tinhtrangPhieunhapIdTextEdit.DataSource = this.tinhtrangModelBindingSource;
             this.tinhtrangPhieunhapIdTextEdit.DisplayMember = "TenTinhtrang";
             this.tinhtrangPhieunhapIdTextEdit.FormattingEnabled = true;
-            this.tinhtrangPhieunhapIdTextEdit.Location = new System.Drawing.Point(123, 136);
+            this.tinhtrangPhieunhapIdTextEdit.Location = new System.Drawing.Point(123, 121);
             this.tinhtrangPhieunhapIdTextEdit.Name = "tinhtrangPhieunhapIdTextEdit";
             this.tinhtrangPhieunhapIdTextEdit.Size = new System.Drawing.Size(232, 21);
             this.tinhtrangPhieunhapIdTextEdit.TabIndex = 36;
@@ -814,7 +847,7 @@
             this.ngaylapDateEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ngaylapDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieunhapModelBindingSource, "Ngaylap", true));
             this.ngaylapDateEdit.EditValue = null;
-            this.ngaylapDateEdit.Location = new System.Drawing.Point(123, 107);
+            this.ngaylapDateEdit.Location = new System.Drawing.Point(123, 95);
             this.ngaylapDateEdit.Name = "ngaylapDateEdit";
             this.ngaylapDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -827,7 +860,7 @@
             // 
             this.nhanvienIdTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nhanvienIdTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieunhapModelBindingSource, "TenNhanvien", true));
-            this.nhanvienIdTextEdit.Location = new System.Drawing.Point(123, 54);
+            this.nhanvienIdTextEdit.Location = new System.Drawing.Point(123, 41);
             this.nhanvienIdTextEdit.Name = "nhanvienIdTextEdit";
             this.nhanvienIdTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.nhanvienIdTextEdit.Properties.Appearance.Options.UseBackColor = true;
@@ -845,11 +878,13 @@
             // 
             // PhieunhapDetailForm
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1289, 687);
-            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.chitietPhieunhapPanelControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1305, 726);
@@ -860,15 +895,15 @@
             this.Text = "Chi tiết phiếu nhập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PhieunhapDetailForm_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chitietPhieunhapPanelControl)).EndInit();
+            this.chitietPhieunhapPanelControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chitietPhieunhapModelGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chitietPhieunhapModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChitietPhieunhapModelGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.chitietPhieunhapGroupBox.ResumeLayout(false);
+            this.chitietPhieunhapGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gianhapSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hSDDateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hSDDateEdit.Properties)).EndInit();
@@ -877,10 +912,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.hanghoaIdTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hanghoaModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nhaCungcapModelBindingSource)).EndInit();
+            this.thongtinchungGroupBox.ResumeLayout(false);
+            this.thongtinchungGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phieunhapModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nguyennhanLydoModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhaCungcapModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhtrangModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit.Properties.CalendarTimeProperties)).EndInit();
@@ -894,16 +930,16 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.PanelControl chitietPhieunhapPanelControl;
         private DevExpress.XtraGrid.GridControl chitietPhieunhapModelGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView ChitietPhieunhapModelGridView;
         private System.Windows.Forms.BindingSource chitietPhieunhapModelBindingSource;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox thongtinchungGroupBox;
         private DevExpress.XtraEditors.DateEdit ngaylapDateEdit;
         private DevExpress.XtraEditors.DateEdit hSDDateEdit;
         private DevExpress.XtraEditors.SpinEdit soluongSpinEdit;
         private DevExpress.XtraEditors.MemoEdit ghichuTextEdit;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox chitietPhieunhapGroupBox;
         private DevExpress.XtraEditors.SimpleButton clearChitietPhieunhapSimpleButton;
         private DevExpress.XtraEditors.SimpleButton deleteChitietPhieunhapSimpleButton;
         private DevExpress.XtraEditors.SimpleButton addChitietPhieunhapSimpleButton;
@@ -962,5 +998,7 @@
         private System.Windows.Forms.ComboBox khoIdTextEdit;
         private System.Windows.Forms.BindingSource nhaCungcapModelBindingSource;
         private System.Windows.Forms.BindingSource khoModelBindingSource;
+        private System.Windows.Forms.ComboBox nguyennhanLydoTextEdit;
+        private System.Windows.Forms.BindingSource nguyennhanLydoModelBindingSource;
     }
 }

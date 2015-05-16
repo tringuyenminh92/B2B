@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***********************************
+Author: Lý Hoàng Tín
+Date Created: 09/01/2014
+Last Updated: 14/01/2014
+Updated By: Lý Hoàng Tín
+Update description: 
+************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,28 +17,24 @@ namespace B2B.View
 {
     public interface IKiemkeView:IView
     {
-        DateTime timeValue { get; }
 
-        void RefeshKiemke();
+        void RefreshKiemke();
 
         List<Model.KiemkeModel> KiemkeItems { get; set; }
-        KiemkeModel KiemkeCurrent { get; set; }
+        KiemkeModel KiemkeCurrent { get; }
         List<Model.ChitietKiemkeModel> ChitietKiemkeItems { get; set; }
-        ChitietKiemkeModel ChitietKiemkeCurrent { get; set; }
-        NhanvienModel NhanvienCapnhat { get; set; }
+        ChitietKiemkeModel ChitietKiemkeCurrent { get; }
 
         List<HanghoaModel> HanghoaItems { get; set; }
 
-        void RefeshHanghoa();
+        void RefreshHanghoa();
 
-        object KhoValue { get; set; }
+        Guid? KhoCurrentId { get; }
         Guid? HanghoaCurrentId { get; }
-        string TenHanghoaCurrent { get; }
-        int? SoluongTonValue { get; }
-        int? SoluongThucValue { get; }
-        string GhichuValue { get; }
+        void RefreshChitietKiemke();
 
+        List<KhoModel> Khoitems { get; set; }
 
-        void RefeshChitietKiemke();
+        void RefreshKho();
     }
 }

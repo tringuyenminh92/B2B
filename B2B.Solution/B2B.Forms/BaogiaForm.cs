@@ -93,5 +93,65 @@ namespace B2B.Forms
         {
             presenter.DisplayBaogiaTheoNhomKhachhang();
         }
+
+        private void exportBaogiaSimpleButton_Click(object sender, EventArgs e)
+        {
+            exportFile("*.xlsx");
+        }
+        void exportFile(string fType)
+        {
+            try
+            {
+                SaveFileDialog sfd = new SaveFileDialog
+                {
+                    CheckPathExists = true,
+                    InitialDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments),
+                    OverwritePrompt = true,
+                    Title = "Xuất dữ liệu thành tập tin định dạng " + fType,
+                    Filter = fType + "|" + fType
+                };
+                DialogResult dr = sfd.ShowDialog();
+                if (dr == System.Windows.Forms.DialogResult.OK || dr == System.Windows.Forms.DialogResult.Yes)
+                {
+                    hanghoaModelBindingSource.DataSource = (hanghoaModelBindingSource.DataSource as List<HanghoaModel>).Where(p=>p.ChonBaogia==true);
+                    hanghoaModelGridControl.RefreshDataSource();
+                    switch (fType)
+                    {
+                        case "*.html":
+                            hanghoaModelGridControl.ExportToHtml(sfd.FileName);
+                            break;
+                        case "*.pdf":
+                            hanghoaModelGridControl.ExportToPdf(sfd.FileName);
+                            break;
+                        case "*.txt":
+                            hanghoaModelGridControl.ExportToText(sfd.FileName);
+                            break;
+                        case "*.xls":
+                            hanghoaModelGridControl.ExportToXls(sfd.FileName);
+                            break;
+                        case "*.xlsx":
+                            hanghoaModelGridControl.ExportToXlsx(sfd.FileName);
+                            break;
+                        case "*.rtf":
+                            hanghoaModelGridControl.ExportToRtf(sfd.FileName);
+                            break;
+                        default:
+                            break;
+                    }
+                    //
+                    presenter.DisplayBaogiaTheoNhomKhachhang();
+                    
+                    dr = MessageBox.Show("Xuất dữ liệu thành công! Bạn có muốn mở tập tin vừa xuất ra không?", "Xác nhận mở tập tin", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (dr == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        System.Diagnostics.Process.Start(sfd.FileName);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Lỗi xuất dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

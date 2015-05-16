@@ -22,6 +22,8 @@ as
       ,px.[Version]
 	  ,px.[NguyennhanLydo]
 	  ,px.[TinhtrangPhieuxuatCurrentId]
+	  ,px.[NhanvienDonhang]
+      ,px.[Tongtien]
 	  ,nv.HovatenNhanvien as TenNhanvienLap
 	  ,k.TenKho as TenKho
 	  ,nv2.HovatenNhanvien as TenNhanvienGiaohang

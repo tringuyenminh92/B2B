@@ -244,8 +244,8 @@
             this.ClientSize = new System.Drawing.Size(702, 437);
             this.Controls.Add(this.InformationGroupControl);
             this.Controls.Add(this.panelControl1);
-            this.Enabled = false;
             this.Name = "ThuoctinhHanghoaDetailForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết thuộc tính hàng hóa ";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ThuoctinhHanghoaDetailForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

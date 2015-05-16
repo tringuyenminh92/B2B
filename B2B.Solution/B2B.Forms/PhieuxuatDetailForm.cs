@@ -33,6 +33,8 @@ namespace B2B.Forms
         PhieuxuatDetailPresenter presenter;
         PhieuxuatModel _valuePhieuxuat;
         public bool isEdit;
+        public bool isChotOrHuy;
+        Guid? tinhtrangTmp;
 
         public PhieuxuatDetailForm()
         {
@@ -56,15 +58,17 @@ namespace B2B.Forms
             presenter.DisplayChitietPhieuxuat();
             phieuxuatModelBindingSource.DataSource = valuePhieuxuat;
             chitietPhieuxuatModelBindingSource.DataSource = valuePhieuxuat.ChitietPhieuxuatItems;
+            tinhtrangTmp = valuePhieuxuat.TinhtrangPhieuxuatCurrentId;
             //tinhtrangPhieuxuatModelBindingSource.DataSource = TinhtrangPhieuxuatMoinhat;
         }
 
         private void OKSimpleButton_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(tinhtrangTmp.ToString());
             presenter.CapnhatChitietDonhang();
             presenter.CapnhatChitietPhieuxuat();
-            //var tinhtrang = tinhtrangPhieuxuatCurrentIdTextEdit.GetSelectedDataRow() as TinhtrangModel;
-            //ValuePhieuxuat.TenTinhtrangPhieuxuat = tinhtrang.TenTinhtrang;
+            presenter.CapnhatTongtien();
+            presenter.CapnhatTenTinhtrang();
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -219,18 +223,36 @@ namespace B2B.Forms
         {
             if (isEdit)
             {
-                chitietPhieuxuatgridView.OptionsBehavior.ReadOnly = true;
-                khoIdTextEdit.Enabled = false;
-                khoIdTextEdit.BackColor = Color.White;
+                if (ValuePhieuxuat.State != BusinessObject.RowState.Insert)
+                {
+                    chitietPhieuxuatgridView.OptionsBehavior.ReadOnly = true;
+                    khoIdTextEdit.Enabled = false;
+                    if (isChotOrHuy)
+                    {
+                        codeTextEdit.BackColor = ghichuTextEdit.BackColor = Color.White;
+                        panelTinhtrang.Enabled = panelThuoctinhCoban.Enabled = false;
+                    }
+                }
             }
         }
 
-        private void tinhtrangPhieuxuatCurrentIdTextEdit_EditValueChanged(object sender, EventArgs e)
+        //private void tinhtrangPhieuxuatCurrentIdTextEdit_EditValueChanged(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void nguyennhanLydoTextEdit_EditValueChanged(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void tinhtrangPhieuxuatCurrentIdTextEdit_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            //MessageBox.Show(tinhtrangPhieuxuatCurrentIdTextEdit.SelectedValue.ToString());
 
         }
 
-        private void nguyennhanLydoTextEdit_EditValueChanged(object sender, EventArgs e)
+        private void nhanvienGiaohangIdTextEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

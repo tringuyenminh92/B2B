@@ -103,9 +103,9 @@ namespace B2B.Forms
 
                     if (presenter.Addnew())
                     {
+                        donviModelGridView.MoveLast();
                         using (var f = new DonviDetailForm(DonviCurrent as DonviModel))
                         {
-                            donviModelGridView.MoveLast();
                             if (f.ShowDialog(this) == DialogResult.Cancel)
                             {
                                 presenter.Delete();

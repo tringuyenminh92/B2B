@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using B2B.View;
 using B2B.Model;
 using B2B.Presenter;
+using DevExpress.XtraEditors;
 using log4net;
 using System.Reflection;
 using DevExpress.XtraGrid.Views.Base;
@@ -43,6 +44,10 @@ namespace B2B.Forms
         /// </summary>
         private DonhangDetailPresenter presenter;
 
+        public bool isEnabled = true;
+
+        public bool isEdit = false;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DonhangDetailForm" /> class.
         /// </summary>
@@ -72,7 +77,7 @@ namespace B2B.Forms
 
         private void HideSoluongDagiaoDoivoiVansale()
         {
-            if(Value.LoaiDonhang==1)
+            if (Value.LoaiDonhang == 1)
             {
                 chitietDonhangModelGridView.Columns["SoluongGiao"].Visible = false;
                 chitietDonhangModelGridView.Columns["SoluongConlai"].Visible = false;
@@ -409,5 +414,73 @@ namespace B2B.Forms
                 donhangModelBindingSource.EndEdit();
             }
         }
+
+        private void HuySimpleButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn hủy", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                presenter.HuyDonhang();
+                this.DialogResult = DialogResult.Ignore;
+            }
+            this.Close();
+        }
+
+        private void DonhangDetailForm_Load(object sender, EventArgs e)
+        {
+            if (!isEnabled)
+            {
+
+                ThongtinKhachhangGroupControl.Enabled = false;
+                SystemInformationGroupControl.Enabled = false;
+                ThaotacGroupControl.Enabled = false;
+            }
+            if (isEdit)
+            {
+                khoIdComboBox.Enabled = false;
+                loaiDonhangComboBox.Enabled = false;
+            }
+        }
+
+        private void ChotSimpleButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn chốt", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                presenter.ChotDonhang();
+                this.DialogResult = DialogResult.Ignore;
+            }
+            this.Close();
+        }
+
+
+        public bool IsCongdon
+        {
+            get
+            {
+                return bool.Parse(congdonCheckEdit.EditValue.ToString());
+            }
+            set
+            {
+                congdonCheckEdit.EditValue = value;
+            }
+        }
+
+        private void congdonCheckEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            var obj = sender as CheckEdit;
+            if (obj != null)
+            {
+                if (bool.Parse(obj.EditValue.ToString()))
+                {
+                    phantramGiamSpinEdit.Enabled = false;
+                    phantramVATSpinEdit.Enabled = false;
+                    tiengiamHienthiSpinEdit.Enabled = false;
+                    congdonCheckEdit.Enabled = false;
+                    presenter.CongdonChitietItemsCurrent();
+                }
+            }
+
+        }
+
+
     }
 }

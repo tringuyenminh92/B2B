@@ -22,6 +22,8 @@ using B2B.Presenter;
 using System.IO;
 using B2B.View;
 using B2B.Model;
+using DevExpress.XtraReports.UI;
+using B2B.Reports;
 
 namespace B2B.Forms
 {
@@ -38,7 +40,6 @@ namespace B2B.Forms
         public PhieuxuatForm()
         {
             InitializeComponent();
-
             memStream = new MemoryStream();
             phieuxuatModelGridView.SaveLayoutToStream(memStream);
             memStream.Seek(0, SeekOrigin.Begin);
@@ -53,7 +54,8 @@ namespace B2B.Forms
 
         private void deletePhieuxuatSimpleButton_Click(object sender, EventArgs e)
         {
-            presenter.Delete();
+            //presenter.Delete();
+            presenter.HuyPhieuxuat();
         }
 
         public List<PhieuxuatModel> PhieuxuatItems
@@ -102,8 +104,8 @@ namespace B2B.Forms
 
         private void addPhieuxuatSimpleButton_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 using (var currentStream = new MemoryStream())
                 {
                   //  phieuxuatModelGridView.SaveLayoutToStream(currentStream);
@@ -117,24 +119,31 @@ namespace B2B.Forms
                         using (var f = new PhieuxuatDetailForm(PhieuxuatCurrent as PhieuxuatModel))
                         {
                             f.isEdit = false;
-                            if (f.ShowDialog(this) == DialogResult.Cancel)
+                            var result = f.ShowDialog(this);
+                            if (result == DialogResult.Cancel)
                             {
                                 presenter.Delete();
-                            }   
+                            }
+                            else if (result == DialogResult.OK)
+                            {
+                                presenter.Save();
+                            }
+                            presenter.DisplayPhieuxuatTheoDonhang();
+                            addPhieuthuSimpleButton.Enabled = presenter.LapPhieuthuButtonDisable();
                         }
                     }
                    // phieuxuatModelGridView.RestoreLayoutFromStream(currentStream);
                     // currentStream.Seek(0, SeekOrigin.Begin);
                 }
-            //}
-            //catch (System.Exception ex)
-            //{
-            //    //Check log flag and log error to file.
-            //    if (isErrorEnabled)
-            //    {
-            //        logger.Error("", ex);
-            //    }
-            //}
+            }
+            catch (System.Exception ex)
+            {
+                //Check log flag and log error to file.
+                if (isErrorEnabled)
+                {
+                    logger.Error("", ex);
+                }
+            }
         }
 
         private void editPhieuxuatSimpleButton_Click(object sender, EventArgs e)
@@ -147,12 +156,21 @@ namespace B2B.Forms
                 }
                 using (var f = new PhieuxuatDetailForm(PhieuxuatCurrent as PhieuxuatModel))
                 {
+                    if (presenter.CheckTinhtrangPhieuxuatChotHoacHuy()) { f.isChotOrHuy = true; }
                     f.isEdit = true;
-                    if (f.ShowDialog(this) == DialogResult.Cancel)
+                    var result = f.ShowDialog(this);
+                    if (result == DialogResult.Cancel)
                     {
                         //presenter.DisplayPhieuxuatTheoDonhang();
                     }
+                    else if (result == DialogResult.OK)
+                    {
+                        presenter.Save();
+                    }
+                    presenter.DisplayPhieuxuatTheoDonhang();
+                    addPhieuthuSimpleButton.Enabled = presenter.LapPhieuthuButtonDisable();
                 }
+                
             //}
             //catch (System.Exception ex)
             //{
@@ -168,6 +186,7 @@ namespace B2B.Forms
         private void donhangModelBindingSource_PositionChanged(object sender, EventArgs e)
         {
             presenter.DisplayPhieuxuatTheoDonhang();
+            addPhieuthuSimpleButton.Enabled = presenter.LapPhieuthuButtonDisable();
         }
 
         private void phieuxuatModelGridView_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
@@ -196,6 +215,8 @@ namespace B2B.Forms
             {
                 XtraMessageBox.Show("Lưu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            presenter.DisplayPhieuxuatTheoDonhang();
+            addPhieuthuSimpleButton.Enabled = presenter.LapPhieuthuButtonDisable();
         }
 
         public NhanvienModel _nhanvienCapnhat;
@@ -223,6 +244,40 @@ namespace B2B.Forms
         private void reloadDonhangSimpleButton_Click(object sender, EventArgs e)
         {
             presenter.DisplayDonhang();
+        }
+
+        private void btnPhieuGiaohang_Click(object sender, EventArgs e)
+        {
+            if (PhieuxuatCurrent == null)
+            {
+                return;
+            }
+            //PhieuGiaohang f = new PhieuGiaohang(PhieuxuatCurrent);
+            //PGH f = new PGH(PhieuxuatCurrent);
+            //f.ShowPreviewDialog();
+            PhieuGiaohangReport f = new PhieuGiaohangReport(PhieuxuatCurrent);
+            using (ReportPrintTool toot = new ReportPrintTool(f))
+            {
+                toot.ShowPreviewDialog();
+            }
+            
+
+        }
+
+        private void addPhieuthuSimpleButton_Click(object sender, EventArgs e)
+        {
+            ThuchiModel pt = new ThuchiModel();
+
+            presenter.AddPhieuthu(pt);
+            using (var f = new PhieuthuDetailForm(pt, false))
+            {
+                f.ShowDialog(this);
+            }
+        }
+
+        private void phieuxuatModelBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+            addPhieuthuSimpleButton.Enabled = presenter.LapPhieuthuButtonDisable();
         }
     }
 }

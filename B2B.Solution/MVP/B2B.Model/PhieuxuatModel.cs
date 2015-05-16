@@ -16,9 +16,11 @@ namespace B2B.Model
         private Nullable<Guid> _NhanvienGiaohangId;
         private Nullable<Guid> _NguyennhanLydo;
         private Nullable<Guid> _TinhtrangPhieuxuatCurrentId;
+        private Nullable<Guid> _NhanvienDonhang;
         private Nullable<Int32> _Step;
         private Nullable<DateTime> _Ngaylap;
         private Nullable<DateTime> _NgayCapnhat;
+        private Nullable<Double> _Tongtien;
         private Byte[] _Version;
         private String _Code;
         private String _TenTinhtrangPhieuxuat;
@@ -165,6 +167,24 @@ namespace B2B.Model
         }
         
         
+        [DisplayName("NhanvienDonhang")]
+        public Nullable<Guid> NhanvienDonhang
+        {
+            get
+			{
+				Nullable<Guid> vGet = _NhanvienDonhang;
+				OnNhanvienDonhangGetting(ref _NhanvienDonhang, ref vGet);
+				return vGet;
+			}
+            set
+            {
+                OnNhanvienDonhangChanging(value);
+                SetProperty(ref _NhanvienDonhang, value);
+                OnNhanvienDonhangChanged();
+            }
+        }
+        
+        
         [DisplayName("Step")]
         public Nullable<Int32> Step
         {
@@ -215,6 +235,24 @@ namespace B2B.Model
                 OnNgayCapnhatChanging(value);
                 SetProperty(ref _NgayCapnhat, value);
                 OnNgayCapnhatChanged();
+            }
+        }
+        
+        
+        [DisplayName("Tongtien")]
+        public Nullable<Double> Tongtien
+        {
+            get
+			{
+				Nullable<Double> vGet = _Tongtien;
+				OnTongtienGetting(ref _Tongtien, ref vGet);
+				return vGet;
+			}
+            set
+            {
+                OnTongtienChanging(value);
+                SetProperty(ref _Tongtien, value);
+                OnTongtienChanged();
             }
         }
         
@@ -330,6 +368,11 @@ namespace B2B.Model
 		partial void OnTinhtrangPhieuxuatCurrentIdGetting(ref Nullable<Guid> value, ref Nullable<Guid> vGet);
         
         
+        partial void OnNhanvienDonhangChanging(Nullable<Guid> value);
+        partial void OnNhanvienDonhangChanged();
+		partial void OnNhanvienDonhangGetting(ref Nullable<Guid> value, ref Nullable<Guid> vGet);
+        
+        
         partial void OnStepChanging(Nullable<Int32> value);
         partial void OnStepChanged();
 		partial void OnStepGetting(ref Nullable<Int32> value, ref Nullable<Int32> vGet);
@@ -343,6 +386,11 @@ namespace B2B.Model
         partial void OnNgayCapnhatChanging(Nullable<DateTime> value);
         partial void OnNgayCapnhatChanged();
 		partial void OnNgayCapnhatGetting(ref Nullable<DateTime> value, ref Nullable<DateTime> vGet);
+        
+        
+        partial void OnTongtienChanging(Nullable<Double> value);
+        partial void OnTongtienChanged();
+		partial void OnTongtienGetting(ref Nullable<Double> value, ref Nullable<Double> vGet);
         
         
         partial void OnVersionChanging(Byte[] value);
@@ -376,9 +424,11 @@ namespace B2B.Model
             Items.Add(new AutoItem {Name = "NhanvienGiaohangId", Value = NhanvienGiaohangId, SqlType = SqlDbType.UniqueIdentifier});
             Items.Add(new AutoItem {Name = "NguyennhanLydo", Value = NguyennhanLydo, SqlType = SqlDbType.UniqueIdentifier});
             Items.Add(new AutoItem {Name = "TinhtrangPhieuxuatCurrentId", Value = TinhtrangPhieuxuatCurrentId, SqlType = SqlDbType.UniqueIdentifier});
+            Items.Add(new AutoItem {Name = "NhanvienDonhang", Value = NhanvienDonhang, SqlType = SqlDbType.UniqueIdentifier});
             Items.Add(new AutoItem {Name = "Step", Value = Step, SqlType = SqlDbType.Int});
             Items.Add(new AutoItem {Name = "Ngaylap", Value = Ngaylap, SqlType = SqlDbType.DateTime});
             Items.Add(new AutoItem {Name = "NgayCapnhat", Value = NgayCapnhat, SqlType = SqlDbType.DateTime});
+            Items.Add(new AutoItem {Name = "Tongtien", Value = Tongtien, SqlType = SqlDbType.Float});
             Items.Add(new AutoItem {Name = "Version", Value = Version, SqlType = SqlDbType.Timestamp});
             Items.Add(new AutoItem {Name = "Code", Value = Code, SqlType = SqlDbType.NVarChar});
             Items.Add(new AutoItem {Name = "TenTinhtrangPhieuxuat", Value = TenTinhtrangPhieuxuat, SqlType = SqlDbType.NVarChar});

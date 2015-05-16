@@ -264,6 +264,9 @@
             this.codeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.hanghoaModelBindingSource, "Code", true));
             this.codeTextEdit.Location = new System.Drawing.Point(109, 41);
             this.codeTextEdit.Name = "codeTextEdit";
+            this.codeTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.codeTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            this.codeTextEdit.Properties.ReadOnly = true;
             this.codeTextEdit.Size = new System.Drawing.Size(100, 20);
             this.codeTextEdit.TabIndex = 0;
             // 

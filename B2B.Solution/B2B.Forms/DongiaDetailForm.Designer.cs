@@ -318,6 +318,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(757, 435);
             this.Name = "DongiaDetailForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin chi tiết đơn giá";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DongiaDetailForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

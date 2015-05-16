@@ -21,28 +21,28 @@ namespace B2B.Model
 
         public ThuoctinhHanghoaModel()
         {
-			OnCreating();
+            OnCreating();
             ThuoctinhHanghoaId = ModelCore.GetGuidId();
-			OnCreated();
+            OnCreated();
         }
 
         public ThuoctinhHanghoaModel(AutoObject value)
         {
-			OnCreating();
+            OnCreating();
             DataFromAutoObject(value);
-			OnCreated();
+            OnCreated();
         }
 
-        
+
         [DisplayName("ThuoctinhHanghoaId")]
         public Guid ThuoctinhHanghoaId
         {
             get
-			{
-				Guid vGet = _ThuoctinhHanghoaId;
-				OnThuoctinhHanghoaIdGetting(ref _ThuoctinhHanghoaId, ref vGet);
-				return vGet;
-			}
+            {
+                Guid vGet = _ThuoctinhHanghoaId;
+                OnThuoctinhHanghoaIdGetting(ref _ThuoctinhHanghoaId, ref vGet);
+                return vGet;
+            }
             set
             {
                 OnThuoctinhHanghoaIdChanging(value);
@@ -50,17 +50,17 @@ namespace B2B.Model
                 OnThuoctinhHanghoaIdChanged();
             }
         }
-        
-        
+
+
         [DisplayName("HanghoaId")]
         public Nullable<Guid> HanghoaId
         {
             get
-			{
-				Nullable<Guid> vGet = _HanghoaId;
-				OnHanghoaIdGetting(ref _HanghoaId, ref vGet);
-				return vGet;
-			}
+            {
+                Nullable<Guid> vGet = _HanghoaId;
+                OnHanghoaIdGetting(ref _HanghoaId, ref vGet);
+                return vGet;
+            }
             set
             {
                 OnHanghoaIdChanging(value);
@@ -68,17 +68,17 @@ namespace B2B.Model
                 OnHanghoaIdChanged();
             }
         }
-        
-        
+
+
         [DisplayName("Step")]
         public Nullable<Int32> Step
         {
             get
-			{
-				Nullable<Int32> vGet = _Step;
-				OnStepGetting(ref _Step, ref vGet);
-				return vGet;
-			}
+            {
+                Nullable<Int32> vGet = _Step;
+                OnStepGetting(ref _Step, ref vGet);
+                return vGet;
+            }
             set
             {
                 OnStepChanging(value);
@@ -86,17 +86,17 @@ namespace B2B.Model
                 OnStepChanged();
             }
         }
-        
-        
+
+
         [DisplayName("NgayCapnhat")]
         public Nullable<DateTime> NgayCapnhat
         {
             get
-			{
-				Nullable<DateTime> vGet = _NgayCapnhat;
-				OnNgayCapnhatGetting(ref _NgayCapnhat, ref vGet);
-				return vGet;
-			}
+            {
+                Nullable<DateTime> vGet = _NgayCapnhat;
+                OnNgayCapnhatGetting(ref _NgayCapnhat, ref vGet);
+                return vGet;
+            }
             set
             {
                 OnNgayCapnhatChanging(value);
@@ -104,17 +104,17 @@ namespace B2B.Model
                 OnNgayCapnhatChanged();
             }
         }
-        
-        
+
+
         [DisplayName("Active")]
         public Nullable<Boolean> Active
         {
             get
-			{
-				Nullable<Boolean> vGet = _Active;
-				OnActiveGetting(ref _Active, ref vGet);
-				return vGet;
-			}
+            {
+                Nullable<Boolean> vGet = _Active;
+                OnActiveGetting(ref _Active, ref vGet);
+                return vGet;
+            }
             set
             {
                 OnActiveChanging(value);
@@ -122,17 +122,17 @@ namespace B2B.Model
                 OnActiveChanged();
             }
         }
-        
-        
+
+
         [DisplayName("Version")]
         public Byte[] Version
         {
             get
-			{
-				Byte[] vGet = _Version;
-				OnVersionGetting(ref _Version, ref vGet);
-				return vGet;
-			}
+            {
+                Byte[] vGet = _Version;
+                OnVersionGetting(ref _Version, ref vGet);
+                return vGet;
+            }
             set
             {
                 OnVersionChanging(value);
@@ -140,17 +140,17 @@ namespace B2B.Model
                 OnVersionChanged();
             }
         }
-        
-        
+
+
         [DisplayName("Code")]
         public String Code
         {
             get
-			{
-				String vGet = _Code;
-				OnCodeGetting(ref _Code, ref vGet);
-				return vGet;
-			}
+            {
+                String vGet = _Code;
+                OnCodeGetting(ref _Code, ref vGet);
+                return vGet;
+            }
             set
             {
                 OnCodeChanging(value);
@@ -158,17 +158,17 @@ namespace B2B.Model
                 OnCodeChanged();
             }
         }
-        
-        
+
+
         [DisplayName("TenThuoctinh")]
         public String TenThuoctinh
         {
             get
-			{
-				String vGet = _TenThuoctinh;
-				OnTenThuoctinhGetting(ref _TenThuoctinh, ref vGet);
-				return vGet;
-			}
+            {
+                String vGet = _TenThuoctinh;
+                OnTenThuoctinhGetting(ref _TenThuoctinh, ref vGet);
+                return vGet;
+            }
             set
             {
                 OnTenThuoctinhChanging(value);
@@ -176,17 +176,17 @@ namespace B2B.Model
                 OnTenThuoctinhChanged();
             }
         }
-        
-        
+
+
         [DisplayName("Ghichu")]
         public String Ghichu
         {
             get
-			{
-				String vGet = _Ghichu;
-				OnGhichuGetting(ref _Ghichu, ref vGet);
-				return vGet;
-			}
+            {
+                String vGet = _Ghichu;
+                OnGhichuGetting(ref _Ghichu, ref vGet);
+                return vGet;
+            }
             set
             {
                 OnGhichuChanging(value);
@@ -194,70 +194,70 @@ namespace B2B.Model
                 OnGhichuChanged();
             }
         }
-        
-		
-		partial void OnCreating();
+
+
+        partial void OnCreating();
         partial void OnCreated();
-		
-        
+
+
         partial void OnThuoctinhHanghoaIdChanging(Guid value);
         partial void OnThuoctinhHanghoaIdChanged();
-		partial void OnThuoctinhHanghoaIdGetting(ref Guid value, ref Guid vGet);
-        
-        
+        partial void OnThuoctinhHanghoaIdGetting(ref Guid value, ref Guid vGet);
+
+
         partial void OnHanghoaIdChanging(Nullable<Guid> value);
         partial void OnHanghoaIdChanged();
-		partial void OnHanghoaIdGetting(ref Nullable<Guid> value, ref Nullable<Guid> vGet);
-        
-        
+        partial void OnHanghoaIdGetting(ref Nullable<Guid> value, ref Nullable<Guid> vGet);
+
+
         partial void OnStepChanging(Nullable<Int32> value);
         partial void OnStepChanged();
-		partial void OnStepGetting(ref Nullable<Int32> value, ref Nullable<Int32> vGet);
-        
-        
+        partial void OnStepGetting(ref Nullable<Int32> value, ref Nullable<Int32> vGet);
+
+
         partial void OnNgayCapnhatChanging(Nullable<DateTime> value);
         partial void OnNgayCapnhatChanged();
-		partial void OnNgayCapnhatGetting(ref Nullable<DateTime> value, ref Nullable<DateTime> vGet);
-        
-        
+        partial void OnNgayCapnhatGetting(ref Nullable<DateTime> value, ref Nullable<DateTime> vGet);
+
+
         partial void OnActiveChanging(Nullable<Boolean> value);
         partial void OnActiveChanged();
-		partial void OnActiveGetting(ref Nullable<Boolean> value, ref Nullable<Boolean> vGet);
-        
-        
+        partial void OnActiveGetting(ref Nullable<Boolean> value, ref Nullable<Boolean> vGet);
+
+
         partial void OnVersionChanging(Byte[] value);
         partial void OnVersionChanged();
-		partial void OnVersionGetting(ref Byte[] value, ref Byte[] vGet);
-        
-        
+        partial void OnVersionGetting(ref Byte[] value, ref Byte[] vGet);
+
+
         partial void OnCodeChanging(String value);
         partial void OnCodeChanged();
-		partial void OnCodeGetting(ref String value, ref String vGet);
-        
-        
+        partial void OnCodeGetting(ref String value, ref String vGet);
+
+
         partial void OnTenThuoctinhChanging(String value);
         partial void OnTenThuoctinhChanged();
-		partial void OnTenThuoctinhGetting(ref String value, ref String vGet);
-        
-        
+        partial void OnTenThuoctinhGetting(ref String value, ref String vGet);
+
+
         partial void OnGhichuChanging(String value);
         partial void OnGhichuChanged();
-		partial void OnGhichuGetting(ref String value, ref String vGet);
-        
+        partial void OnGhichuGetting(ref String value, ref String vGet);
+
 
         public override AutoObject DataToAutoObject()
         {
             var Items = new List<AutoItem>();
 
-            Items.Add(new AutoItem {Name = "ThuoctinhHanghoaId", Value = ThuoctinhHanghoaId, SqlType = SqlDbType.UniqueIdentifier});
-            Items.Add(new AutoItem {Name = "HanghoaId", Value = HanghoaId, SqlType = SqlDbType.UniqueIdentifier});
-            Items.Add(new AutoItem {Name = "Step", Value = Step, SqlType = SqlDbType.Int});
-            Items.Add(new AutoItem {Name = "NgayCapnhat", Value = NgayCapnhat, SqlType = SqlDbType.DateTime});
-            Items.Add(new AutoItem {Name = "Active", Value = Active, SqlType = SqlDbType.Bit});
-            Items.Add(new AutoItem {Name = "Version", Value = Version, SqlType = SqlDbType.Timestamp});
-            Items.Add(new AutoItem {Name = "Code", Value = Code, SqlType = SqlDbType.NVarChar});
-            Items.Add(new AutoItem {Name = "TenThuoctinh", Value = TenThuoctinh, SqlType = SqlDbType.NVarChar});
-            Items.Add(new AutoItem {Name = "Ghichu", Value = Ghichu, SqlType = SqlDbType.NVarChar});
+            Items.Add(new AutoItem { Name = "ThuoctinhHanghoaId", Value = ThuoctinhHanghoaId, SqlType = SqlDbType.UniqueIdentifier });
+            Items.Add(new AutoItem { Name = "HanghoaId", Value = HanghoaId, SqlType = SqlDbType.UniqueIdentifier });
+            Items.Add(new AutoItem { Name = "Step", Value = Step, SqlType = SqlDbType.Int });
+            Items.Add(new AutoItem { Name = "NgayCapnhat", Value = NgayCapnhat, SqlType = SqlDbType.DateTime });
+            Items.Add(new AutoItem { Name = "Active", Value = Active, SqlType = SqlDbType.Bit });
+            Items.Add(new AutoItem { Name = "Version", Value = Version, SqlType = SqlDbType.Timestamp });
+            Items.Add(new AutoItem { Name = "Code", Value = Code, SqlType = SqlDbType.NVarChar });
+            Items.Add(new AutoItem { Name = "TenThuoctinh", Value = TenThuoctinh, SqlType = SqlDbType.NVarChar });
+            Items.Add(new AutoItem { Name = "Ghichu", Value = Ghichu, SqlType = SqlDbType.NVarChar });
 
             return DataToAutoObject(Items.ToArray());
         }

@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B2B.Main", "B2B.Main\B2B.Main.csproj", "{CE3D2758-CF86-4D6D-B2D1-CCA1B23621D1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{357C1811-0E0C-4840-9E4D-ECF898FAA1A2} = {357C1811-0E0C-4840-9E4D-ECF898FAA1A2}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B2B.Forms", "B2B.Forms\B2B.Forms.csproj", "{C9AFF529-F678-4A84-8B45-CB3CB9912057}"
+	ProjectSection(ProjectDependencies) = postProject
+		{58CBB3E6-E881-4718-9FBA-3C691AC35F23} = {58CBB3E6-E881-4718-9FBA-3C691AC35F23}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B2B.Reports", "B2B.Reports\B2B.Reports.csproj", "{58CBB3E6-E881-4718-9FBA-3C691AC35F23}"
 EndProject

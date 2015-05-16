@@ -220,7 +220,7 @@
             this.dongiaModelGridControl.Location = new System.Drawing.Point(289, 29);
             this.dongiaModelGridControl.MainView = this.dongiaModelGridView;
             this.dongiaModelGridControl.Name = "dongiaModelGridControl";
-            this.dongiaModelGridControl.Size = new System.Drawing.Size(755, 328);
+            this.dongiaModelGridControl.Size = new System.Drawing.Size(756, 328);
             this.dongiaModelGridControl.TabIndex = 1;
             this.dongiaModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dongiaModelGridView});
@@ -252,6 +252,7 @@
             this.dongiaModelGridView.OptionsBehavior.Editable = false;
             this.dongiaModelGridView.OptionsView.ShowAutoFilterRow = true;
             this.dongiaModelGridView.OptionsView.ShowFooter = true;
+            this.dongiaModelGridView.OptionsView.ShowGroupPanel = false;
             this.dongiaModelGridView.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dongiaModelGridView_CustomColumnDisplayText);
             // 
             // colDongiaId
@@ -284,7 +285,7 @@
             this.colNgayCapnhat2.Name = "colNgayCapnhat2";
             this.colNgayCapnhat2.Visible = true;
             this.colNgayCapnhat2.VisibleIndex = 5;
-            this.colNgayCapnhat2.Width = 115;
+            this.colNgayCapnhat2.Width = 86;
             // 
             // colApdungTu
             // 
@@ -293,7 +294,7 @@
             this.colApdungTu.Name = "colApdungTu";
             this.colApdungTu.Visible = true;
             this.colApdungTu.VisibleIndex = 6;
-            this.colApdungTu.Width = 113;
+            this.colApdungTu.Width = 54;
             // 
             // colDongia
             // 
@@ -302,7 +303,7 @@
             this.colDongia.Name = "colDongia";
             this.colDongia.Visible = true;
             this.colDongia.VisibleIndex = 4;
-            this.colDongia.Width = 119;
+            this.colDongia.Width = 78;
             // 
             // colActive2
             // 
@@ -310,7 +311,7 @@
             this.colActive2.Name = "colActive2";
             this.colActive2.Visible = true;
             this.colActive2.VisibleIndex = 7;
-            this.colActive2.Width = 53;
+            this.colActive2.Width = 48;
             // 
             // colVersion2
             // 
@@ -323,7 +324,7 @@
             this.colCode2.Name = "colCode2";
             this.colCode2.Visible = true;
             this.colCode2.VisibleIndex = 1;
-            this.colCode2.Width = 89;
+            this.colCode2.Width = 59;
             // 
             // colGhichu2
             // 
@@ -339,7 +340,7 @@
             this.colTenHanghoa1.Name = "colTenHanghoa1";
             this.colTenHanghoa1.Visible = true;
             this.colTenHanghoa1.VisibleIndex = 2;
-            this.colTenHanghoa1.Width = 219;
+            this.colTenHanghoa1.Width = 135;
             // 
             // colTenNhomKhachhang1
             // 
@@ -348,7 +349,7 @@
             this.colTenNhomKhachhang1.Name = "colTenNhomKhachhang1";
             this.colTenNhomKhachhang1.Visible = true;
             this.colTenNhomKhachhang1.VisibleIndex = 3;
-            this.colTenNhomKhachhang1.Width = 199;
+            this.colTenNhomKhachhang1.Width = 126;
             // 
             // colState2
             // 
@@ -357,7 +358,7 @@
             this.colState2.OptionsColumn.ReadOnly = true;
             this.colState2.Visible = true;
             this.colState2.VisibleIndex = 8;
-            this.colState2.Width = 90;
+            this.colState2.Width = 79;
             // 
             // NoGridColumn
             // 
@@ -367,7 +368,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
             this.NoGridColumn.Visible = true;
             this.NoGridColumn.VisibleIndex = 0;
-            this.NoGridColumn.Width = 47;
+            this.NoGridColumn.Width = 31;
             // 
             // ActionGroupControl
             // 
@@ -380,7 +381,7 @@
             this.ActionGroupControl.Location = new System.Drawing.Point(289, 357);
             this.ActionGroupControl.Margin = new System.Windows.Forms.Padding(2);
             this.ActionGroupControl.Name = "ActionGroupControl";
-            this.ActionGroupControl.Size = new System.Drawing.Size(755, 50);
+            this.ActionGroupControl.Size = new System.Drawing.Size(756, 50);
             this.ActionGroupControl.TabIndex = 0;
             this.ActionGroupControl.Text = "Thao tác Đơn giá";
             // 
@@ -400,7 +401,7 @@
             // 
             this.edittDongiaSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.edittDongiaSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("edittDongiaSimpleButton.Image")));
-            this.edittDongiaSimpleButton.Location = new System.Drawing.Point(582, 23);
+            this.edittDongiaSimpleButton.Location = new System.Drawing.Point(583, 23);
             this.edittDongiaSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.edittDongiaSimpleButton.Name = "edittDongiaSimpleButton";
             this.edittDongiaSimpleButton.Size = new System.Drawing.Size(70, 20);
@@ -424,7 +425,7 @@
             // 
             this.savetDongiaSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.savetDongiaSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("savetDongiaSimpleButton.Image")));
-            this.savetDongiaSimpleButton.Location = new System.Drawing.Point(662, 23);
+            this.savetDongiaSimpleButton.Location = new System.Drawing.Point(663, 23);
             this.savetDongiaSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.savetDongiaSimpleButton.Name = "savetDongiaSimpleButton";
             this.savetDongiaSimpleButton.Size = new System.Drawing.Size(70, 20);
@@ -613,7 +614,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(289, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(755, 29);
+            this.panelControl2.Size = new System.Drawing.Size(756, 29);
             this.panelControl2.TabIndex = 3;
             // 
             // hanghoaIdTextEdit
@@ -643,13 +644,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 407);
+            this.ClientSize = new System.Drawing.Size(1045, 407);
             this.Controls.Add(this.dongiaModelGridControl);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.ActionGroupControl);
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DongiaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đơn giá";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.nhomKhachhangModelBindingSource)).EndInit();

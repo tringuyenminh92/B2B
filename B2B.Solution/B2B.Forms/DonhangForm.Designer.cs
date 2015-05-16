@@ -177,153 +177,170 @@
             // codeLabel
             // 
             codeLabel.AutoSize = true;
-            codeLabel.Location = new System.Drawing.Point(30, 50);
+            codeLabel.Location = new System.Drawing.Point(15, 26);
+            codeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             codeLabel.Name = "codeLabel";
-            codeLabel.Size = new System.Drawing.Size(143, 25);
+            codeLabel.Size = new System.Drawing.Size(73, 13);
             codeLabel.TabIndex = 54;
             codeLabel.Text = "Mã đơn hàng:";
             // 
             // diachiGiaoLabel
             // 
             diachiGiaoLabel.AutoSize = true;
-            diachiGiaoLabel.Location = new System.Drawing.Point(26, 106);
+            diachiGiaoLabel.Location = new System.Drawing.Point(13, 55);
+            diachiGiaoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             diachiGiaoLabel.Name = "diachiGiaoLabel";
-            diachiGiaoLabel.Size = new System.Drawing.Size(84, 25);
+            diachiGiaoLabel.Size = new System.Drawing.Size(43, 13);
             diachiGiaoLabel.TabIndex = 56;
             diachiGiaoLabel.Text = "Địa chỉ:";
             // 
             // ghichuLabel
             // 
             ghichuLabel.AutoSize = true;
-            ghichuLabel.Location = new System.Drawing.Point(29, 576);
+            ghichuLabel.Location = new System.Drawing.Point(14, 300);
+            ghichuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             ghichuLabel.Name = "ghichuLabel";
-            ghichuLabel.Size = new System.Drawing.Size(98, 25);
+            ghichuLabel.Size = new System.Drawing.Size(49, 13);
             ghichuLabel.TabIndex = 60;
             ghichuLabel.Text = "Ghi chú: ";
             // 
             // khoIdLabel
             // 
             khoIdLabel.AutoSize = true;
-            khoIdLabel.Location = new System.Drawing.Point(26, 140);
+            khoIdLabel.Location = new System.Drawing.Point(13, 73);
+            khoIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             khoIdLabel.Name = "khoIdLabel";
-            khoIdLabel.Size = new System.Drawing.Size(101, 25);
+            khoIdLabel.Size = new System.Drawing.Size(54, 13);
             khoIdLabel.TabIndex = 64;
             khoIdLabel.Text = "Kho xuất:";
             // 
             // ngayCapnhatLabel
             // 
             ngayCapnhatLabel.AutoSize = true;
-            ngayCapnhatLabel.Location = new System.Drawing.Point(489, 140);
+            ngayCapnhatLabel.Location = new System.Drawing.Point(244, 73);
+            ngayCapnhatLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             ngayCapnhatLabel.Name = "ngayCapnhatLabel";
-            ngayCapnhatLabel.Size = new System.Drawing.Size(155, 25);
+            ngayCapnhatLabel.Size = new System.Drawing.Size(81, 13);
             ngayCapnhatLabel.TabIndex = 68;
             ngayCapnhatLabel.Text = "Ngày cập nhật:";
             // 
             // ngaygiaoLabel
             // 
             ngaygiaoLabel.AutoSize = true;
-            ngaygiaoLabel.Location = new System.Drawing.Point(26, 185);
+            ngaygiaoLabel.Location = new System.Drawing.Point(13, 96);
+            ngaygiaoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             ngaygiaoLabel.Name = "ngaygiaoLabel";
-            ngaygiaoLabel.Size = new System.Drawing.Size(112, 25);
+            ngaygiaoLabel.Size = new System.Drawing.Size(59, 13);
             ngaygiaoLabel.TabIndex = 70;
             ngaygiaoLabel.Text = "Ngày giao:";
             // 
             // ngaylapLabel
             // 
             ngaylapLabel.AutoSize = true;
-            ngaylapLabel.Location = new System.Drawing.Point(489, 50);
+            ngaylapLabel.Location = new System.Drawing.Point(244, 26);
+            ngaylapLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             ngaylapLabel.Name = "ngaylapLabel";
-            ngaylapLabel.Size = new System.Drawing.Size(101, 25);
+            ngaylapLabel.Size = new System.Drawing.Size(53, 13);
             ngaylapLabel.TabIndex = 72;
             ngaylapLabel.Text = "Ngày lập:";
             // 
             // soDienthoaiLabel
             // 
             soDienthoaiLabel.AutoSize = true;
-            soDienthoaiLabel.Location = new System.Drawing.Point(489, 59);
+            soDienthoaiLabel.Location = new System.Drawing.Point(244, 31);
+            soDienthoaiLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             soDienthoaiLabel.Name = "soDienthoaiLabel";
-            soDienthoaiLabel.Size = new System.Drawing.Size(115, 25);
+            soDienthoaiLabel.Size = new System.Drawing.Size(60, 13);
             soDienthoaiLabel.TabIndex = 82;
             soDienthoaiLabel.Text = "Điện thoại:";
             // 
             // tenKhachhangLabel
             // 
             tenKhachhangLabel.AutoSize = true;
-            tenKhachhangLabel.Location = new System.Drawing.Point(26, 59);
+            tenKhachhangLabel.Location = new System.Drawing.Point(13, 31);
+            tenKhachhangLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tenKhachhangLabel.Name = "tenKhachhangLabel";
-            tenKhachhangLabel.Size = new System.Drawing.Size(130, 25);
+            tenKhachhangLabel.Size = new System.Drawing.Size(67, 13);
             tenKhachhangLabel.TabIndex = 86;
             tenKhachhangLabel.Text = "Khách hàng:";
             // 
             // tenLoaiDonhangLabel
             // 
             tenLoaiDonhangLabel.AutoSize = true;
-            tenLoaiDonhangLabel.Location = new System.Drawing.Point(26, 95);
+            tenLoaiDonhangLabel.Location = new System.Drawing.Point(13, 49);
+            tenLoaiDonhangLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tenLoaiDonhangLabel.Name = "tenLoaiDonhangLabel";
-            tenLoaiDonhangLabel.Size = new System.Drawing.Size(153, 25);
+            tenLoaiDonhangLabel.Size = new System.Drawing.Size(78, 13);
             tenLoaiDonhangLabel.TabIndex = 88;
             tenLoaiDonhangLabel.Text = "Loại đơn hàng:";
             // 
             // tenNhanvienCapnhatLabel
             // 
             tenNhanvienCapnhatLabel.AutoSize = true;
-            tenNhanvienCapnhatLabel.Location = new System.Drawing.Point(489, 185);
+            tenNhanvienCapnhatLabel.Location = new System.Drawing.Point(244, 96);
+            tenNhanvienCapnhatLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tenNhanvienCapnhatLabel.Name = "tenNhanvienCapnhatLabel";
-            tenNhanvienCapnhatLabel.Size = new System.Drawing.Size(202, 25);
+            tenNhanvienCapnhatLabel.Size = new System.Drawing.Size(104, 13);
             tenNhanvienCapnhatLabel.TabIndex = 90;
             tenNhanvienCapnhatLabel.Text = "Nhân viên cập nhật:";
             // 
             // tenNhanvienLapLabel
             // 
             tenNhanvienLapLabel.AutoSize = true;
-            tenNhanvienLapLabel.Location = new System.Drawing.Point(489, 95);
+            tenNhanvienLapLabel.Location = new System.Drawing.Point(244, 49);
+            tenNhanvienLapLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tenNhanvienLapLabel.Name = "tenNhanvienLapLabel";
-            tenNhanvienLapLabel.Size = new System.Drawing.Size(148, 25);
+            tenNhanvienLapLabel.Size = new System.Drawing.Size(76, 13);
             tenNhanvienLapLabel.TabIndex = 92;
             tenNhanvienLapLabel.Text = "Nhân viên lập:";
             // 
             // tenQuanhuyenLabel
             // 
             tenQuanhuyenLabel.AutoSize = true;
-            tenQuanhuyenLabel.Location = new System.Drawing.Point(26, 151);
+            tenQuanhuyenLabel.Location = new System.Drawing.Point(13, 79);
+            tenQuanhuyenLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tenQuanhuyenLabel.Name = "tenQuanhuyenLabel";
-            tenQuanhuyenLabel.Size = new System.Drawing.Size(133, 25);
+            tenQuanhuyenLabel.Size = new System.Drawing.Size(70, 13);
             tenQuanhuyenLabel.TabIndex = 94;
             tenQuanhuyenLabel.Text = "Quận huyện:";
             // 
             // tenTinhthanhLabel
             // 
             tenTinhthanhLabel.AutoSize = true;
-            tenTinhthanhLabel.Location = new System.Drawing.Point(489, 151);
+            tenTinhthanhLabel.Location = new System.Drawing.Point(244, 79);
+            tenTinhthanhLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tenTinhthanhLabel.Name = "tenTinhthanhLabel";
-            tenTinhthanhLabel.Size = new System.Drawing.Size(121, 25);
+            tenTinhthanhLabel.Size = new System.Drawing.Size(62, 13);
             tenTinhthanhLabel.TabIndex = 96;
             tenTinhthanhLabel.Text = "Tỉnh thành:";
             // 
             // tenTinhtrangDonhangLabel
             // 
             tenTinhtrangDonhangLabel.AutoSize = true;
-            tenTinhtrangDonhangLabel.Location = new System.Drawing.Point(29, 271);
+            tenTinhtrangDonhangLabel.Location = new System.Drawing.Point(14, 141);
+            tenTinhtrangDonhangLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tenTinhtrangDonhangLabel.Name = "tenTinhtrangDonhangLabel";
-            tenTinhtrangDonhangLabel.Size = new System.Drawing.Size(117, 25);
+            tenTinhtrangDonhangLabel.Size = new System.Drawing.Size(60, 13);
             tenTinhtrangDonhangLabel.TabIndex = 98;
             tenTinhtrangDonhangLabel.Text = "Tình trạng:";
             // 
             // tongtienLabel
             // 
             tongtienLabel.AutoSize = true;
-            tongtienLabel.Location = new System.Drawing.Point(489, 230);
+            tongtienLabel.Location = new System.Drawing.Point(244, 120);
+            tongtienLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tongtienLabel.Name = "tongtienLabel";
-            tongtienLabel.Size = new System.Drawing.Size(108, 25);
+            tongtienLabel.Size = new System.Drawing.Size(56, 13);
             tongtienLabel.TabIndex = 104;
             tongtienLabel.Text = "Tổng tiền:";
             // 
             // hanDonhangLabel
             // 
             hanDonhangLabel.AutoSize = true;
-            hanDonhangLabel.Location = new System.Drawing.Point(26, 230);
+            hanDonhangLabel.Location = new System.Drawing.Point(13, 120);
+            hanDonhangLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             hanDonhangLabel.Name = "hanDonhangLabel";
-            hanDonhangLabel.Size = new System.Drawing.Size(103, 25);
+            hanDonhangLabel.Size = new System.Drawing.Size(54, 13);
             hanDonhangLabel.TabIndex = 105;
             hanDonhangLabel.Text = "Hạn chốt:";
             // 
@@ -335,9 +352,10 @@
             this.ActionGroupControl.Controls.Add(this.saveDonhangSimpleButton);
             this.ActionGroupControl.Controls.Add(this.exportDonhangSimpleButton);
             this.ActionGroupControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ActionGroupControl.Location = new System.Drawing.Point(1019, 1352);
+            this.ActionGroupControl.Location = new System.Drawing.Point(510, 316);
+            this.ActionGroupControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ActionGroupControl.Name = "ActionGroupControl";
-            this.ActionGroupControl.Size = new System.Drawing.Size(1702, 132);
+            this.ActionGroupControl.Size = new System.Drawing.Size(471, 69);
             this.ActionGroupControl.TabIndex = 0;
             this.ActionGroupControl.Text = "Thao tác Đơn đặt hàng";
             // 
@@ -345,9 +363,10 @@
             // 
             this.addDonhangSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.addDonhangSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("addDonhangSimpleButton.Image")));
-            this.addDonhangSimpleButton.Location = new System.Drawing.Point(333, 54);
+            this.addDonhangSimpleButton.Location = new System.Drawing.Point(166, 28);
+            this.addDonhangSimpleButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addDonhangSimpleButton.Name = "addDonhangSimpleButton";
-            this.addDonhangSimpleButton.Size = new System.Drawing.Size(139, 52);
+            this.addDonhangSimpleButton.Size = new System.Drawing.Size(70, 27);
             this.addDonhangSimpleButton.TabIndex = 6;
             this.addDonhangSimpleButton.Text = "Thêm";
             this.addDonhangSimpleButton.Click += new System.EventHandler(this.addDonhangSimpleButton_Click);
@@ -356,9 +375,10 @@
             // 
             this.editDonhangSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.editDonhangSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("editDonhangSimpleButton.Image")));
-            this.editDonhangSimpleButton.Location = new System.Drawing.Point(1382, 54);
+            this.editDonhangSimpleButton.Location = new System.Drawing.Point(311, 28);
+            this.editDonhangSimpleButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.editDonhangSimpleButton.Name = "editDonhangSimpleButton";
-            this.editDonhangSimpleButton.Size = new System.Drawing.Size(139, 52);
+            this.editDonhangSimpleButton.Size = new System.Drawing.Size(70, 27);
             this.editDonhangSimpleButton.TabIndex = 5;
             this.editDonhangSimpleButton.Text = "Sửa";
             this.editDonhangSimpleButton.Click += new System.EventHandler(this.editDonhangSimpleButton_Click);
@@ -367,9 +387,10 @@
             // 
             this.deleteDonhangSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.deleteDonhangSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteDonhangSimpleButton.Image")));
-            this.deleteDonhangSimpleButton.Location = new System.Drawing.Point(17, 53);
+            this.deleteDonhangSimpleButton.Location = new System.Drawing.Point(8, 28);
+            this.deleteDonhangSimpleButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.deleteDonhangSimpleButton.Name = "deleteDonhangSimpleButton";
-            this.deleteDonhangSimpleButton.Size = new System.Drawing.Size(139, 52);
+            this.deleteDonhangSimpleButton.Size = new System.Drawing.Size(70, 27);
             this.deleteDonhangSimpleButton.TabIndex = 8;
             this.deleteDonhangSimpleButton.Text = "Xóa";
             this.deleteDonhangSimpleButton.Click += new System.EventHandler(this.deleteDonhangSimpleButton_Click);
@@ -378,9 +399,10 @@
             // 
             this.saveDonhangSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.saveDonhangSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("saveDonhangSimpleButton.Image")));
-            this.saveDonhangSimpleButton.Location = new System.Drawing.Point(1536, 54);
+            this.saveDonhangSimpleButton.Location = new System.Drawing.Point(388, 28);
+            this.saveDonhangSimpleButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.saveDonhangSimpleButton.Name = "saveDonhangSimpleButton";
-            this.saveDonhangSimpleButton.Size = new System.Drawing.Size(139, 52);
+            this.saveDonhangSimpleButton.Size = new System.Drawing.Size(70, 27);
             this.saveDonhangSimpleButton.TabIndex = 4;
             this.saveDonhangSimpleButton.Text = "Lưu";
             this.saveDonhangSimpleButton.Click += new System.EventHandler(this.saveDonhangSimpleButton_Click);
@@ -389,9 +411,10 @@
             // 
             this.exportDonhangSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.exportDonhangSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("exportDonhangSimpleButton.Image")));
-            this.exportDonhangSimpleButton.Location = new System.Drawing.Point(175, 53);
+            this.exportDonhangSimpleButton.Location = new System.Drawing.Point(88, 28);
+            this.exportDonhangSimpleButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exportDonhangSimpleButton.Name = "exportDonhangSimpleButton";
-            this.exportDonhangSimpleButton.Size = new System.Drawing.Size(139, 52);
+            this.exportDonhangSimpleButton.Size = new System.Drawing.Size(70, 27);
             this.exportDonhangSimpleButton.TabIndex = 7;
             this.exportDonhangSimpleButton.Text = "Excel";
             this.exportDonhangSimpleButton.Click += new System.EventHandler(this.exportDonhangSimpleButton_Click);
@@ -399,18 +422,20 @@
             // loaiDonhangLabelControl
             // 
             this.loaiDonhangLabelControl.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.loaiDonhangLabelControl.Location = new System.Drawing.Point(35, 63);
+            this.loaiDonhangLabelControl.Location = new System.Drawing.Point(18, 33);
+            this.loaiDonhangLabelControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loaiDonhangLabelControl.Name = "loaiDonhangLabelControl";
-            this.loaiDonhangLabelControl.Size = new System.Drawing.Size(141, 25);
+            this.loaiDonhangLabelControl.Size = new System.Drawing.Size(71, 13);
             this.loaiDonhangLabelControl.TabIndex = 16;
             this.loaiDonhangLabelControl.Text = "Loại đơn hàng:";
             // 
             // ThangNamLabelControl
             // 
             this.ThangNamLabelControl.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ThangNamLabelControl.Location = new System.Drawing.Point(415, 63);
+            this.ThangNamLabelControl.Location = new System.Drawing.Point(208, 33);
+            this.ThangNamLabelControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ThangNamLabelControl.Name = "ThangNamLabelControl";
-            this.ThangNamLabelControl.Size = new System.Drawing.Size(115, 25);
+            this.ThangNamLabelControl.Size = new System.Drawing.Size(58, 13);
             this.ThangNamLabelControl.TabIndex = 14;
             this.ThangNamLabelControl.Text = "Tháng/năm:";
             // 
@@ -418,7 +443,8 @@
             // 
             this.thangNamDateEdit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.thangNamDateEdit.EditValue = new System.DateTime(2014, 9, 16, 11, 47, 49, 71);
-            this.thangNamDateEdit.Location = new System.Drawing.Point(536, 57);
+            this.thangNamDateEdit.Location = new System.Drawing.Point(268, 30);
+            this.thangNamDateEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.thangNamDateEdit.Name = "thangNamDateEdit";
             this.thangNamDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -431,16 +457,17 @@
             this.thangNamDateEdit.Properties.Mask.EditMask = "MM/yyyy";
             this.thangNamDateEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.thangNamDateEdit.Properties.VistaCalendarViewStyle = ((DevExpress.XtraEditors.VistaCalendarViewStyle)((DevExpress.XtraEditors.VistaCalendarViewStyle.YearView | DevExpress.XtraEditors.VistaCalendarViewStyle.CenturyView)));
-            this.thangNamDateEdit.Size = new System.Drawing.Size(227, 32);
+            this.thangNamDateEdit.Size = new System.Drawing.Size(114, 20);
             this.thangNamDateEdit.TabIndex = 1;
             // 
             // reloadDonhangSimpleButton
             // 
             this.reloadDonhangSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.reloadDonhangSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("reloadDonhangSimpleButton.Image")));
-            this.reloadDonhangSimpleButton.Location = new System.Drawing.Point(783, 56);
+            this.reloadDonhangSimpleButton.Location = new System.Drawing.Point(392, 29);
+            this.reloadDonhangSimpleButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reloadDonhangSimpleButton.Name = "reloadDonhangSimpleButton";
-            this.reloadDonhangSimpleButton.Size = new System.Drawing.Size(139, 34);
+            this.reloadDonhangSimpleButton.Size = new System.Drawing.Size(70, 18);
             this.reloadDonhangSimpleButton.TabIndex = 2;
             this.reloadDonhangSimpleButton.Text = "Lọc";
             this.reloadDonhangSimpleButton.Click += new System.EventHandler(this.reloadDonhangSimpleButton_Click);
@@ -453,16 +480,20 @@
             // 
             this.donhangModelGridControl.DataSource = this.donhangModelBindingSource;
             this.donhangModelGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.donhangModelGridControl.Location = new System.Drawing.Point(1019, 117);
+            this.donhangModelGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.donhangModelGridControl.Location = new System.Drawing.Point(510, 61);
             this.donhangModelGridControl.MainView = this.donhangModelGridView;
+            this.donhangModelGridControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.donhangModelGridControl.Name = "donhangModelGridControl";
-            this.donhangModelGridControl.Size = new System.Drawing.Size(1702, 1235);
+            this.donhangModelGridControl.Size = new System.Drawing.Size(471, 255);
             this.donhangModelGridControl.TabIndex = 3;
             this.donhangModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.donhangModelGridView});
             // 
             // donhangModelGridView
             // 
+            this.donhangModelGridView.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.donhangModelGridView.Appearance.OddRow.Options.UseBackColor = true;
             this.donhangModelGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colCode,
             this.colLoaiDonhang,
@@ -710,17 +741,19 @@
             this.DetailPanelControl.Controls.Add(this.xtraTabControl1);
             this.DetailPanelControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.DetailPanelControl.Location = new System.Drawing.Point(0, 0);
+            this.DetailPanelControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DetailPanelControl.Name = "DetailPanelControl";
-            this.DetailPanelControl.Size = new System.Drawing.Size(1019, 1484);
+            this.DetailPanelControl.Size = new System.Drawing.Size(510, 385);
             this.DetailPanelControl.TabIndex = 3;
             // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(2, 2);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1015, 1480);
+            this.xtraTabControl1.Size = new System.Drawing.Size(506, 381);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -731,8 +764,9 @@
             this.xtraTabPage1.Controls.Add(this.ThongtinChungGroupControl);
             this.xtraTabPage1.Controls.Add(ghichuLabel);
             this.xtraTabPage1.Controls.Add(this.ghichuTextEdit);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1010, 1442);
+            this.xtraTabPage1.Size = new System.Drawing.Size(500, 353);
             this.xtraTabPage1.Text = "Thông tin chi tiết";
             // 
             // groupControl1
@@ -748,65 +782,71 @@
             this.groupControl1.Controls.Add(soDienthoaiLabel);
             this.groupControl1.Controls.Add(tenKhachhangLabel);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl1.Location = new System.Drawing.Point(0, 329);
+            this.groupControl1.Location = new System.Drawing.Point(0, 171);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1010, 229);
+            this.groupControl1.Size = new System.Drawing.Size(500, 119);
             this.groupControl1.TabIndex = 107;
             this.groupControl1.Text = "Thông tin khách hàng - giao hàng";
             // 
             // soDienthoaiTextEdit
             // 
             this.soDienthoaiTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "SoDienthoai", true));
-            this.soDienthoaiTextEdit.Location = new System.Drawing.Point(697, 56);
+            this.soDienthoaiTextEdit.Location = new System.Drawing.Point(348, 29);
+            this.soDienthoaiTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.soDienthoaiTextEdit.Name = "soDienthoaiTextEdit";
             this.soDienthoaiTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.soDienthoaiTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.soDienthoaiTextEdit.Properties.ReadOnly = true;
-            this.soDienthoaiTextEdit.Size = new System.Drawing.Size(282, 32);
+            this.soDienthoaiTextEdit.Size = new System.Drawing.Size(141, 20);
             this.soDienthoaiTextEdit.TabIndex = 83;
             // 
             // tenTinhthanhTextEdit
             // 
             this.tenTinhthanhTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "TenTinhthanhGiao", true));
-            this.tenTinhthanhTextEdit.Location = new System.Drawing.Point(697, 148);
+            this.tenTinhthanhTextEdit.Location = new System.Drawing.Point(348, 77);
+            this.tenTinhthanhTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tenTinhthanhTextEdit.Name = "tenTinhthanhTextEdit";
             this.tenTinhthanhTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenTinhthanhTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenTinhthanhTextEdit.Properties.ReadOnly = true;
-            this.tenTinhthanhTextEdit.Size = new System.Drawing.Size(282, 32);
+            this.tenTinhthanhTextEdit.Size = new System.Drawing.Size(141, 20);
             this.tenTinhthanhTextEdit.TabIndex = 97;
             // 
             // diachiGiaoTextEdit
             // 
             this.diachiGiaoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "DiachiGiao", true));
-            this.diachiGiaoTextEdit.Location = new System.Drawing.Point(183, 102);
+            this.diachiGiaoTextEdit.Location = new System.Drawing.Point(92, 53);
+            this.diachiGiaoTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.diachiGiaoTextEdit.Name = "diachiGiaoTextEdit";
             this.diachiGiaoTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.diachiGiaoTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.diachiGiaoTextEdit.Properties.ReadOnly = true;
-            this.diachiGiaoTextEdit.Size = new System.Drawing.Size(796, 32);
+            this.diachiGiaoTextEdit.Size = new System.Drawing.Size(398, 20);
             this.diachiGiaoTextEdit.TabIndex = 57;
             // 
             // tenQuanhuyenTextEdit
             // 
             this.tenQuanhuyenTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "TenQuanhuyenGiao", true));
-            this.tenQuanhuyenTextEdit.Location = new System.Drawing.Point(183, 148);
+            this.tenQuanhuyenTextEdit.Location = new System.Drawing.Point(92, 77);
+            this.tenQuanhuyenTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tenQuanhuyenTextEdit.Name = "tenQuanhuyenTextEdit";
             this.tenQuanhuyenTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenQuanhuyenTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenQuanhuyenTextEdit.Properties.ReadOnly = true;
-            this.tenQuanhuyenTextEdit.Size = new System.Drawing.Size(282, 32);
+            this.tenQuanhuyenTextEdit.Size = new System.Drawing.Size(141, 20);
             this.tenQuanhuyenTextEdit.TabIndex = 95;
             // 
             // tenKhachhangTextEdit
             // 
             this.tenKhachhangTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "TenKhachhang", true));
-            this.tenKhachhangTextEdit.Location = new System.Drawing.Point(183, 56);
+            this.tenKhachhangTextEdit.Location = new System.Drawing.Point(92, 29);
+            this.tenKhachhangTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tenKhachhangTextEdit.Name = "tenKhachhangTextEdit";
             this.tenKhachhangTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenKhachhangTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenKhachhangTextEdit.Properties.ReadOnly = true;
-            this.tenKhachhangTextEdit.Size = new System.Drawing.Size(282, 32);
+            this.tenKhachhangTextEdit.Size = new System.Drawing.Size(141, 20);
             this.tenKhachhangTextEdit.TabIndex = 87;
             // 
             // ThongtinChungGroupControl
@@ -835,8 +875,9 @@
             this.ThongtinChungGroupControl.Controls.Add(this.tenLoaiDonhangTextEdit);
             this.ThongtinChungGroupControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.ThongtinChungGroupControl.Location = new System.Drawing.Point(0, 0);
+            this.ThongtinChungGroupControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ThongtinChungGroupControl.Name = "ThongtinChungGroupControl";
-            this.ThongtinChungGroupControl.Size = new System.Drawing.Size(1010, 329);
+            this.ThongtinChungGroupControl.Size = new System.Drawing.Size(500, 171);
             this.ThongtinChungGroupControl.TabIndex = 106;
             this.ThongtinChungGroupControl.Text = "Thông tin chung";
             // 
@@ -844,31 +885,34 @@
             // 
             this.hanDonhangDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "HanDonhang", true));
             this.hanDonhangDateEdit.EditValue = null;
-            this.hanDonhangDateEdit.Location = new System.Drawing.Point(188, 223);
+            this.hanDonhangDateEdit.Location = new System.Drawing.Point(94, 116);
+            this.hanDonhangDateEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.hanDonhangDateEdit.Name = "hanDonhangDateEdit";
             this.hanDonhangDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.hanDonhangDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.hanDonhangDateEdit.Size = new System.Drawing.Size(282, 32);
+            this.hanDonhangDateEdit.Size = new System.Drawing.Size(141, 20);
             this.hanDonhangDateEdit.TabIndex = 106;
             // 
             // codeTextEdit
             // 
             this.codeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "Code", true));
-            this.codeTextEdit.Location = new System.Drawing.Point(188, 43);
+            this.codeTextEdit.Location = new System.Drawing.Point(94, 22);
+            this.codeTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.codeTextEdit.Name = "codeTextEdit";
             this.codeTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.codeTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.codeTextEdit.Properties.ReadOnly = true;
-            this.codeTextEdit.Size = new System.Drawing.Size(282, 32);
+            this.codeTextEdit.Size = new System.Drawing.Size(141, 20);
             this.codeTextEdit.TabIndex = 55;
             // 
             // ngaylapDateEdit
             // 
             this.ngaylapDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "Ngaylap", true));
             this.ngaylapDateEdit.EditValue = null;
-            this.ngaylapDateEdit.Location = new System.Drawing.Point(697, 43);
+            this.ngaylapDateEdit.Location = new System.Drawing.Point(348, 22);
+            this.ngaylapDateEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ngaylapDateEdit.Name = "ngaylapDateEdit";
             this.ngaylapDateEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.ngaylapDateEdit.Properties.Appearance.Options.UseBackColor = true;
@@ -877,14 +921,15 @@
             this.ngaylapDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngaylapDateEdit.Properties.ReadOnly = true;
-            this.ngaylapDateEdit.Size = new System.Drawing.Size(282, 32);
+            this.ngaylapDateEdit.Size = new System.Drawing.Size(141, 20);
             this.ngaylapDateEdit.TabIndex = 73;
             // 
             // ngaygiaoDateEdit
             // 
             this.ngaygiaoDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "Ngaygiao", true));
             this.ngaygiaoDateEdit.EditValue = null;
-            this.ngaygiaoDateEdit.Location = new System.Drawing.Point(188, 178);
+            this.ngaygiaoDateEdit.Location = new System.Drawing.Point(94, 93);
+            this.ngaygiaoDateEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ngaygiaoDateEdit.Name = "ngaygiaoDateEdit";
             this.ngaygiaoDateEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.ngaygiaoDateEdit.Properties.Appearance.Options.UseBackColor = true;
@@ -893,14 +938,15 @@
             this.ngaygiaoDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngaygiaoDateEdit.Properties.ReadOnly = true;
-            this.ngaygiaoDateEdit.Size = new System.Drawing.Size(282, 32);
+            this.ngaygiaoDateEdit.Size = new System.Drawing.Size(141, 20);
             this.ngaygiaoDateEdit.TabIndex = 71;
             // 
             // ngayCapnhatDateEdit
             // 
             this.ngayCapnhatDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "NgayCapnhat", true));
             this.ngayCapnhatDateEdit.EditValue = null;
-            this.ngayCapnhatDateEdit.Location = new System.Drawing.Point(697, 133);
+            this.ngayCapnhatDateEdit.Location = new System.Drawing.Point(348, 69);
+            this.ngayCapnhatDateEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ngayCapnhatDateEdit.Name = "ngayCapnhatDateEdit";
             this.ngayCapnhatDateEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.ngayCapnhatDateEdit.Properties.Appearance.Options.UseBackColor = true;
@@ -909,29 +955,31 @@
             this.ngayCapnhatDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngayCapnhatDateEdit.Properties.ReadOnly = true;
-            this.ngayCapnhatDateEdit.Size = new System.Drawing.Size(282, 32);
+            this.ngayCapnhatDateEdit.Size = new System.Drawing.Size(141, 20);
             this.ngayCapnhatDateEdit.TabIndex = 69;
             // 
             // khoIdTextEdit
             // 
             this.khoIdTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "TenKho", true));
-            this.khoIdTextEdit.Location = new System.Drawing.Point(188, 133);
+            this.khoIdTextEdit.Location = new System.Drawing.Point(94, 69);
+            this.khoIdTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.khoIdTextEdit.Name = "khoIdTextEdit";
             this.khoIdTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.khoIdTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.khoIdTextEdit.Properties.ReadOnly = true;
-            this.khoIdTextEdit.Size = new System.Drawing.Size(282, 32);
+            this.khoIdTextEdit.Size = new System.Drawing.Size(141, 20);
             this.khoIdTextEdit.TabIndex = 65;
             // 
             // tenNhanvienCapnhatTextEdit
             // 
             this.tenNhanvienCapnhatTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "TenNhanvienCapnhat", true));
-            this.tenNhanvienCapnhatTextEdit.Location = new System.Drawing.Point(697, 178);
+            this.tenNhanvienCapnhatTextEdit.Location = new System.Drawing.Point(348, 93);
+            this.tenNhanvienCapnhatTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tenNhanvienCapnhatTextEdit.Name = "tenNhanvienCapnhatTextEdit";
             this.tenNhanvienCapnhatTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenNhanvienCapnhatTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenNhanvienCapnhatTextEdit.Properties.ReadOnly = true;
-            this.tenNhanvienCapnhatTextEdit.Size = new System.Drawing.Size(282, 32);
+            this.tenNhanvienCapnhatTextEdit.Size = new System.Drawing.Size(141, 20);
             this.tenNhanvienCapnhatTextEdit.TabIndex = 91;
             // 
             // tongtienSpinEdit
@@ -942,47 +990,51 @@
             0,
             0,
             0});
-            this.tongtienSpinEdit.Location = new System.Drawing.Point(697, 223);
+            this.tongtienSpinEdit.Location = new System.Drawing.Point(348, 116);
+            this.tongtienSpinEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tongtienSpinEdit.Name = "tongtienSpinEdit";
             this.tongtienSpinEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tongtienSpinEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tongtienSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.tongtienSpinEdit.Properties.ReadOnly = true;
-            this.tongtienSpinEdit.Size = new System.Drawing.Size(282, 32);
+            this.tongtienSpinEdit.Size = new System.Drawing.Size(141, 20);
             this.tongtienSpinEdit.TabIndex = 105;
             // 
             // tenTinhtrangDonhangTextEdit
             // 
             this.tenTinhtrangDonhangTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "TenTinhtrangDonhang", true));
-            this.tenTinhtrangDonhangTextEdit.Location = new System.Drawing.Point(191, 268);
+            this.tenTinhtrangDonhangTextEdit.Location = new System.Drawing.Point(96, 139);
+            this.tenTinhtrangDonhangTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tenTinhtrangDonhangTextEdit.Name = "tenTinhtrangDonhangTextEdit";
             this.tenTinhtrangDonhangTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenTinhtrangDonhangTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenTinhtrangDonhangTextEdit.Properties.ReadOnly = true;
-            this.tenTinhtrangDonhangTextEdit.Size = new System.Drawing.Size(788, 32);
+            this.tenTinhtrangDonhangTextEdit.Size = new System.Drawing.Size(394, 20);
             this.tenTinhtrangDonhangTextEdit.TabIndex = 99;
             // 
             // tenNhanvienLapTextEdit
             // 
             this.tenNhanvienLapTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "TenNhanvienLap", true));
-            this.tenNhanvienLapTextEdit.Location = new System.Drawing.Point(697, 88);
+            this.tenNhanvienLapTextEdit.Location = new System.Drawing.Point(348, 46);
+            this.tenNhanvienLapTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tenNhanvienLapTextEdit.Name = "tenNhanvienLapTextEdit";
             this.tenNhanvienLapTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenNhanvienLapTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenNhanvienLapTextEdit.Properties.ReadOnly = true;
-            this.tenNhanvienLapTextEdit.Size = new System.Drawing.Size(282, 32);
+            this.tenNhanvienLapTextEdit.Size = new System.Drawing.Size(141, 20);
             this.tenNhanvienLapTextEdit.TabIndex = 93;
             // 
             // tenLoaiDonhangTextEdit
             // 
             this.tenLoaiDonhangTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "TenLoaiDonhang", true));
-            this.tenLoaiDonhangTextEdit.Location = new System.Drawing.Point(188, 88);
+            this.tenLoaiDonhangTextEdit.Location = new System.Drawing.Point(94, 46);
+            this.tenLoaiDonhangTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tenLoaiDonhangTextEdit.Name = "tenLoaiDonhangTextEdit";
             this.tenLoaiDonhangTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.tenLoaiDonhangTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.tenLoaiDonhangTextEdit.Properties.ReadOnly = true;
-            this.tenLoaiDonhangTextEdit.Size = new System.Drawing.Size(282, 32);
+            this.tenLoaiDonhangTextEdit.Size = new System.Drawing.Size(141, 20);
             this.tenLoaiDonhangTextEdit.TabIndex = 89;
             // 
             // ghichuTextEdit
@@ -990,12 +1042,13 @@
             this.ghichuTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ghichuTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.donhangModelBindingSource, "Ghichu", true));
-            this.ghichuTextEdit.Location = new System.Drawing.Point(183, 576);
+            this.ghichuTextEdit.Location = new System.Drawing.Point(92, 300);
+            this.ghichuTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ghichuTextEdit.Name = "ghichuTextEdit";
             this.ghichuTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.ghichuTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.ghichuTextEdit.Properties.ReadOnly = true;
-            this.ghichuTextEdit.Size = new System.Drawing.Size(797, 847);
+            this.ghichuTextEdit.Size = new System.Drawing.Size(398, 51);
             this.ghichuTextEdit.TabIndex = 61;
             this.ghichuTextEdit.UseOptimizedRendering = true;
             // 
@@ -1007,9 +1060,10 @@
             this.FilterGroupControl.Controls.Add(this.thangNamDateEdit);
             this.FilterGroupControl.Controls.Add(this.reloadDonhangSimpleButton);
             this.FilterGroupControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.FilterGroupControl.Location = new System.Drawing.Point(1019, 0);
+            this.FilterGroupControl.Location = new System.Drawing.Point(510, 0);
+            this.FilterGroupControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FilterGroupControl.Name = "FilterGroupControl";
-            this.FilterGroupControl.Size = new System.Drawing.Size(1702, 117);
+            this.FilterGroupControl.Size = new System.Drawing.Size(471, 61);
             this.FilterGroupControl.TabIndex = 4;
             this.FilterGroupControl.Text = "Điều kiện lọc";
             // 
@@ -1018,9 +1072,10 @@
             this.loaiDonhangValueComboBox.DataSource = this.loaiDonhangModelBindingSource;
             this.loaiDonhangValueComboBox.DisplayMember = "TenLoaiDonhang";
             this.loaiDonhangValueComboBox.FormattingEnabled = true;
-            this.loaiDonhangValueComboBox.Location = new System.Drawing.Point(182, 56);
+            this.loaiDonhangValueComboBox.Location = new System.Drawing.Point(91, 29);
+            this.loaiDonhangValueComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loaiDonhangValueComboBox.Name = "loaiDonhangValueComboBox";
-            this.loaiDonhangValueComboBox.Size = new System.Drawing.Size(227, 33);
+            this.loaiDonhangValueComboBox.Size = new System.Drawing.Size(116, 21);
             this.loaiDonhangValueComboBox.TabIndex = 0;
             this.loaiDonhangValueComboBox.ValueMember = "LoaiDonhangValue";
             // 
@@ -1031,13 +1086,14 @@
             // DonhangForm
             // 
             this.AcceptButton = this.reloadDonhangSimpleButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2721, 1484);
+            this.ClientSize = new System.Drawing.Size(981, 385);
             this.Controls.Add(this.donhangModelGridControl);
             this.Controls.Add(this.FilterGroupControl);
             this.Controls.Add(this.ActionGroupControl);
             this.Controls.Add(this.DetailPanelControl);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DonhangForm";
             this.Text = "Danh Sách Đơn hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

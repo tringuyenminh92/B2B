@@ -8,6 +8,6 @@ namespace B2B.Model
 {
     public partial class ChitietKiemkeModel
     {
-        public int SoluongLech { get; set; }
+        public int? SoluongLech { get{ return SoluongTon-SoluongThuc;}}
     }
 }

@@ -1,0 +1,56 @@
+[13/05/2015 10:13][ERROR][B2B.Forms.HanghoaForm                             ][ndingSource_CurrentItemChanged][Input: Link hinh anh sai.]
+[Exception: System.IO.FileNotFoundException: \Images\Hinhhanghoa\CPTimGa500r.jpg
+   at System.Drawing.Image.FromFile(String filename, Boolean useEmbeddedColorManagement)
+   at System.Drawing.Image.FromFile(String filename)
+   at B2B.Forms.HanghoaForm.hanghoaModelBindingSource_CurrentItemChanged(Object sender, EventArgs e) in e:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\B2B.Forms\HanghoaForm.cs:line 218
+]
+[13/05/2015 10:14][ERROR][B2B.Forms.HanghoaForm                             ][ndingSource_CurrentItemChanged][Input: Link hinh anh sai.]
+[Exception: System.IO.FileNotFoundException: \Images\Hinhhanghoa\CPTimGa500r.jpg
+   at System.Drawing.Image.FromFile(String filename, Boolean useEmbeddedColorManagement)
+   at System.Drawing.Image.FromFile(String filename)
+   at B2B.Forms.HanghoaForm.hanghoaModelBindingSource_CurrentItemChanged(Object sender, EventArgs e) in e:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\B2B.Forms\HanghoaForm.cs:line 218
+]
+[13/05/2015 10:14][ERROR][B2B.Forms.HanghoaForm                             ][ndingSource_CurrentItemChanged][Input: Link hinh anh sai.]
+[Exception: System.IO.FileNotFoundException: \Images\Hinhhanghoa\CPTimGa500r.jpg
+   at System.Drawing.Image.FromFile(String filename, Boolean useEmbeddedColorManagement)
+   at System.Drawing.Image.FromFile(String filename)
+   at B2B.Forms.HanghoaForm.hanghoaModelBindingSource_CurrentItemChanged(Object sender, EventArgs e) in e:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\B2B.Forms\HanghoaForm.cs:line 218
+]
+[13/05/2015 10:14][ERROR][B2B.Forms.HanghoaForm                             ][ndingSource_CurrentItemChanged][Input: Link hinh anh sai.]
+[Exception: System.IO.FileNotFoundException: \Images\Hinhhanghoa\CPTimGa500r.jpg
+   at System.Drawing.Image.FromFile(String filename, Boolean useEmbeddedColorManagement)
+   at System.Drawing.Image.FromFile(String filename)
+   at B2B.Forms.HanghoaForm.hanghoaModelBindingSource_CurrentItemChanged(Object sender, EventArgs e) in e:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\B2B.Forms\HanghoaForm.cs:line 218
+]
+[13/05/2015 12:51][ERROR][B2B.Presenter.PhieuthuDetailPresenter             ][Save                          ][Input: Save Phieu thu]
+[Exception: System.Exception: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Thuchi_Phieuxuat". The conflict occurred in database "QLBH_08_2014", table "dbo.Phieuxuat", column 'PhieuxuatId'.
+The statement has been terminated.
+   at BMIModel.ModelCore.SetInvoke(List`1 items)
+   at BMIModel.ModelCore.Set[T](List`1 listBus)
+   at BMIModel.ModelCore.Set[T](T item)
+   at B2B.Presenter.PhieuthuDetailPresenter.Save() in e:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.Presenter\PhieuthuDetailPresenter.cs:line 147
+]
+[13/05/2015 13:32][ERROR][B2B.Presenter.PhieuthuDetailPresenter             ][Save                          ][Input: Save Phieu thu]
+[Exception: System.Exception: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Thuchi_Phieuxuat". The conflict occurred in database "QLBH_08_2014", table "dbo.Phieuxuat", column 'PhieuxuatId'.
+The statement has been terminated.
+   at BMIModel.ModelCore.SetInvoke(List`1 items)
+   at BMIModel.ModelCore.Set[T](List`1 listBus)
+   at BMIModel.ModelCore.Set[T](T item)
+   at B2B.Presenter.PhieuthuDetailPresenter.Save() in e:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.Presenter\PhieuthuDetailPresenter.cs:line 147
+]
+[13/05/2015 13:33][ERROR][B2B.Presenter.PhieuthuDetailPresenter             ][Save                          ][Input: Save Phieu thu]
+[Exception: System.Exception: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Thuchi_Phieuxuat". The conflict occurred in database "QLBH_08_2014", table "dbo.Phieuxuat", column 'PhieuxuatId'.
+The statement has been terminated.
+   at BMIModel.ModelCore.SetInvoke(List`1 items)
+   at BMIModel.ModelCore.Set[T](List`1 listBus)
+   at BMIModel.ModelCore.Set[T](T item)
+   at B2B.Presenter.PhieuthuDetailPresenter.Save() in e:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.Presenter\PhieuthuDetailPresenter.cs:line 147
+]
+[13/05/2015 13:34][ERROR][B2B.Presenter.PhieuthuDetailPresenter             ][Save                          ][Input: Save Phieu thu]
+[Exception: System.Exception: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Thuchi_Phieuxuat". The conflict occurred in database "QLBH_08_2014", table "dbo.Phieuxuat", column 'PhieuxuatId'.
+The statement has been terminated.
+   at BMIModel.ModelCore.SetInvoke(List`1 items)
+   at BMIModel.ModelCore.Set[T](List`1 listBus)
+   at BMIModel.ModelCore.Set[T](T item)
+   at B2B.Presenter.PhieuthuDetailPresenter.Save() in e:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.Presenter\PhieuthuDetailPresenter.cs:line 147
+]

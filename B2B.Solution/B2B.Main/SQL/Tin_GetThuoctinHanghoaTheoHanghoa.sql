@@ -1,7 +1,7 @@
 ﻿
 use QLBH_08_2014
 go
-Create proc Tin_GetThuoctinHanghoaTheoHanghoa
+alter proc Tin_GetThuoctinHanghoaTheoHanghoa
 @HanghoaId uniqueidentifier
 as
 select   d.ThuoctinhHanghoaId

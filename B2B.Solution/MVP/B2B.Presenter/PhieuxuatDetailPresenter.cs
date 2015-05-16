@@ -2,7 +2,7 @@
 	Interface file: 
     Author: Pham Xuân Vinh
     Date Created: 23/09/2014
-	Last Updated: 08/11/2014
+	Last Updated: 29/12/2014
 	Updated By: Pham Xuân Vinh
 	Update Description:
 *********************************************************************/
@@ -21,7 +21,7 @@ namespace B2B.Presenter
 {
     public class PhieuxuatDetailPresenter : Presenter<IPhieuxuatDetailView>
     {
-       
+        List<ChitietPhieuxuatModel> chitietPhieuxuatItemsTemp;
         //Create instance of logger for using log4net methods
         private static readonly ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         //Flag to check if error level was enabled.
@@ -67,7 +67,19 @@ namespace B2B.Presenter
         {
             try
             {
-                View.TinhtrangItems = Model.Get<TinhtrangModel>("Vinh_GetTinhtrangActive");
+                var items = new List<AutoItem>();
+                items.Add(new AutoItem
+                {
+                    Name = "LoaiTinhtrangValue",
+                    Value = 1,
+                    SqlType = System.Data.SqlDbType.Int
+                });
+                View.TinhtrangItems = Model.Get<TinhtrangModel>(new AutoObject
+                {
+                    Items = items,
+                    SpName = "Tri_GetTinhtrangTheoLoai"
+                }) as List<TinhtrangModel>;
+                //View.TinhtrangItems = Model.Get<TinhtrangModel>("Vinh_GetTinhtrangActive");
             }
             catch (System.Exception ex)
             {
@@ -144,8 +156,7 @@ namespace B2B.Presenter
                         ChitietDonhangId = lstChitietDonhang[i].ChitietDonhangId,
                         HanghoaId = lstChitietDonhang[i].HanghoaId,
                         TenHanghoa = lstChitietDonhang[i].TenHanghoa,
-                        Soluong = 0,
-                        Thanhtien = lstChitietDonhang[i].Thanhtien
+                        Soluong = 0
                     });
                 }
             }
@@ -169,8 +180,7 @@ namespace B2B.Presenter
                             ChitietDonhangId = ctdh.ChitietDonhangId,
                             HanghoaId = ctdh.HanghoaId,
                             TenHanghoa = ctdh.TenHanghoa,
-                            Soluong = 0,
-                            Thanhtien = ctdh.Thanhtien
+                            Soluong = 0
                         });
                     }
                     else { flag = 0; }
@@ -196,6 +206,7 @@ namespace B2B.Presenter
             //}
 
             View.ValuePhieuxuat.ChitietPhieuxuatItems = chitietPhieuxuatItems;
+            chitietPhieuxuatItemsTemp = chitietPhieuxuatItems;
         }
 
         public void DisplayTinhtrangPhieuxuat()
@@ -258,11 +269,22 @@ namespace B2B.Presenter
         public void CapnhatChitietPhieuxuat()
         {
             var chitietPhieuxuatTemp = new List<ChitietPhieuxuatModel>();
+            var lstChitietDonhang = View.ValuePhieuxuat.Donhang.ChitietDonhangItems as List<ChitietDonhangModel>;
             for (int i = 0; i < View.ValuePhieuxuat.ChitietPhieuxuatItems.Count; ++i)
             {
-                if (View.ValuePhieuxuat.ChitietPhieuxuatItems[i].Soluong == 0)
+                if (View.ValuePhieuxuat.ChitietPhieuxuatItems[i].Soluong == 0 && View.ValuePhieuxuat.ChitietPhieuxuatItems[i].Soluong == null)
                 {
                     chitietPhieuxuatTemp.Add(View.ValuePhieuxuat.ChitietPhieuxuatItems[i]);
+                }
+                else
+                {
+                    for (int j = 0; j < lstChitietDonhang.Count; ++j)
+                    {
+                        if(View.ValuePhieuxuat.ChitietPhieuxuatItems[i].ChitietDonhangId == lstChitietDonhang[j].ChitietDonhangId)
+                        {
+                            View.ValuePhieuxuat.ChitietPhieuxuatItems[i].Thanhtien = lstChitietDonhang[j].Giaban * View.ValuePhieuxuat.ChitietPhieuxuatItems[i].Soluong;
+                        }
+                    }
                 }
             }
             for(int i = 0; i<chitietPhieuxuatTemp.Count;++i)
@@ -272,123 +294,76 @@ namespace B2B.Presenter
         }
         public void CapnhatChitietDonhang()
         {
-            foreach ( var ctdh in View.ValuePhieuxuat.Donhang.ChitietDonhangItems)
+            var tinhtrangHuy = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.Code == "TTPX003") as TinhtrangModel;
+            if(View.ValuePhieuxuat.State == RowState.Insert && View.ValuePhieuxuat.TinhtrangPhieuxuatCurrentId == tinhtrangHuy.TinhtrangId)
             {
-                foreach (var ctpx in View.ValuePhieuxuat.ChitietPhieuxuatItems)
+                return;
+            }
+            if (View.ValuePhieuxuat.State == RowState.Insert)
+            {
+                foreach (var ctdh in View.ValuePhieuxuat.Donhang.ChitietDonhangItems)
                 {
-                    if(ctdh.ChitietDonhangId == ctpx.ChitietDonhangId)
+                    foreach (var ctpx in View.ValuePhieuxuat.ChitietPhieuxuatItems)
                     {
-                        int? soLuongXuat = ctpx.Soluong;
-                        int? soLuongConlai = ctdh.SoluongConlai;
-                        int? soLuongDukien = ctdh.Soluong;
-                        int? soLuongDaGiao = ctdh.SoluongGiao;
-
-                        //Cap nhat so luong giao
-                        soLuongDaGiao += soLuongXuat;
-
-                        //Cap nhat so luong du kien o don hang neu so luong xuat lon hon so luong du kien
-                        if (soLuongDaGiao > soLuongDukien)
+                        if (ctdh.ChitietDonhangId == ctpx.ChitietDonhangId)
                         {
-                            soLuongDukien = soLuongDaGiao;
+                            int? soLuongXuat = ctpx.Soluong;
+                            int? soLuongConlai = ctdh.SoluongConlai;
+                            int? soLuongDukien = ctdh.Soluong;
+                            int? soLuongDaGiao = ctdh.SoluongGiao;
+
+                            //Cap nhat so luong giao
+                            soLuongDaGiao += soLuongXuat;
+
+                            //Cap nhat so luong du kien o don hang neu so luong xuat lon hon so luong du kien
+                            if (soLuongDaGiao > soLuongDukien)
+                            {
+                                soLuongDukien = soLuongDaGiao;
+                                ctdh.Thanhtien = soLuongDukien * ctdh.Giaban;
+                            }
+
+                            //Cap nhat so luong con lai
+                            soLuongConlai = soLuongDukien - soLuongDaGiao;
+
+                            ctdh.SoluongGiao = soLuongDaGiao;
+                            ctdh.Soluong = soLuongDukien;
+                            ctdh.SoluongConlai = soLuongConlai;
                         }
+                    }
+                }
+            } else if (View.ValuePhieuxuat.State == RowState.Update && View.ValuePhieuxuat.TinhtrangPhieuxuatCurrentId == tinhtrangHuy.TinhtrangId)
+            {
+                foreach (var ctdh in View.ValuePhieuxuat.Donhang.ChitietDonhangItems)
+                {
+                    foreach (var ctpx in View.ValuePhieuxuat.ChitietPhieuxuatItems)
+                    {
+                        if (ctdh.ChitietDonhangId == ctpx.ChitietDonhangId)
+                        {
+                            int? soLuongXuat = ctpx.Soluong;
+                            int? soLuongConlai = ctdh.SoluongConlai;
+                            int? soLuongDukien = ctdh.Soluong;
+                            int? soLuongDaGiao = ctdh.SoluongGiao;
 
-                        //Cap nhat so luong con lai
-                        soLuongConlai = soLuongDukien - soLuongDaGiao;
+                            //Cap nhat so luong giao
+                            soLuongDaGiao -= soLuongXuat;
 
-                        ctdh.SoluongGiao = soLuongDaGiao;
-                        ctdh.Soluong = soLuongDukien;
-                        ctdh.SoluongConlai = soLuongConlai;
+                            //Cap nhat so luong con lai
+                            soLuongConlai = soLuongDukien - soLuongDaGiao;
+
+                            ctdh.SoluongGiao = soLuongDaGiao;
+                            ctdh.Soluong = soLuongDukien;
+                            ctdh.SoluongConlai = soLuongConlai;
+                        }
                     }
                 }
             }
-
-            //for(int i = 0; i<View.ValuePhieuxuat.Donhang.ChitietDonhangItems.Count;++i)
-            //{
-            //    if (View.ValuePhieuxuat.ChitietPhieuxuatItems[i].ChitietDonhangId == View.ValuePhieuxuat.Donhang.ChitietDonhangItems[i].ChitietDonhangId)
-            //    {
-                    // View.ValuePhieuxuat.ChitietPhieuxuatItems.Where(p=>p.ChitietDonhangId==View.ValueDonhang.DonhangId)
-                    //int? soLuongXuat = View.ValuePhieuxuat.ChitietPhieuxuatItems[i].Soluong;
-                    //int? soLuongConlai = View.ValuePhieuxuat.Donhang.ChitietDonhangItems[i].SoluongConlai;
-                    //int? soLuongDukien = View.ValuePhieuxuat.Donhang.ChitietDonhangItems[i].Soluong;
-                    //int? soLuongDaGiao = View.ValuePhieuxuat.Donhang.ChitietDonhangItems[i].SoluongGiao;
-
-                    ////Cap nhat so luong giao
-                    //soLuongDaGiao += soLuongXuat;
-
-                    ////Cap nhat so luong du kien o don hang neu so luong xuat lon hon so luong du kien
-                    //if (soLuongDaGiao > soLuongDukien)
-                    //{
-                    //    soLuongDukien = soLuongDaGiao;
-                    //}
-
-                    ////Cap nhat so luong con lai
-                    //soLuongConlai = soLuongDukien - soLuongDaGiao;
-
-                    //View.ValuePhieuxuat.Donhang.ChitietDonhangItems[i].SoluongGiao = soLuongDaGiao;
-                    //View.ValuePhieuxuat.Donhang.ChitietDonhangItems[i].Soluong = soLuongDukien;
-                    //View.ValuePhieuxuat.Donhang.ChitietDonhangItems[i].SoluongConlai = soLuongConlai;
-            //    } 
-            //}
+            
         }
 
-        //public void CapnhatTonkho()
-        //{
-        //    for (int i = 0; i < View.ValuePhieuxuat.ChitietPhieuxuatItems.Count; ++i)
-        //    {
-        //        if (View.ValuePhieuxuat.ChitietPhieuxuatItems[i].Soluong != 0)
-        //        {
-        //            var chitietPhieuxuat = View.ValuePhieuxuat.ChitietPhieuxuatItems[i] as ChitietPhieuxuatModel;
-
-        //            //Lay ton kho hien tai cua mat hang o kho tuong ung
-        //            var items = new List<AutoItem>();
-        //            items.Add(new AutoItem()
-        //            {
-        //                Name = "KhoId",
-        //                Value = View.ValuePhieuxuat.KhoId,
-        //                SqlType = System.Data.SqlDbType.UniqueIdentifier
-        //            });
-        //            items.Add(new AutoItem()
-        //            {
-        //                Name = "HanghoaId",
-        //                Value = chitietPhieuxuat.HanghoaId,
-        //                SqlType = System.Data.SqlDbType.UniqueIdentifier
-        //            });
-
-        //            //var tonkhoItems = Model.Get<TonkhoModel>(new AutoObject()
-        //            //{
-        //            //    Items = items,
-        //            //    SpName = "Tin_GetTonkhoMoinhatHanghoaTheoKho"
-        //            //}) as List<TonkhoModel>;
-
-        //            var tonkhoItems = Model.Get<TonkhoModel>(new AutoObject
-        //            {
-        //                Items = items,
-        //                SpName = "Tin_GetTonkhoMoinhatHanghoaTheoKho"
-        //            }) as List<TonkhoModel>;
-
-        //            var tonkho = tonkhoItems[0] as TonkhoModel;
-                    
-        //            TonkhoModel tk = new TonkhoModel()
-        //            {
-        //                HanghoaId = chitietPhieuxuat.HanghoaId,
-        //                KhoId = View.ValuePhieuxuat.KhoId,
-        //                NgayCapnhat = DateTime.Now,
-        //                Ngay = DateTime.Now.Day,
-        //                Thang = DateTime.Now.Month,
-        //                Nam = DateTime.Now.Year,
-        //                GioCapnhat = DateTime.Now,
-        //                SoduDauky = tonkho.SoluongTon,
-        //                SoluongNhap = 0,
-        //                SoluongXuat = chitietPhieuxuat.Soluong,
-        //                SoluongTon = tonkho.SoluongTon,
-        //                NhanvienCapnhat = View.ValuePhieuxuat.NhanvienCapnhatId,
-        //                Active = true,
-        //                SoluongTonDukien = tonkho.SoluongTonDukien + chitietPhieuxuat.Soluong
-        //            };
-        //            View.ValuePhieuxuat.TonkhoItems.Add(tk);
-        //        }
-        //    }
-        //}
+        public void CapnhatTenTinhtrang()
+        {
+            View.ValuePhieuxuat.TenTinhtrangPhieuxuat = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.TinhtrangId == View.ValuePhieuxuat.TinhtrangPhieuxuatCurrentId).TenTinhtrang;
+        }
 
         public void ResetCurrent()
         {
@@ -411,6 +386,19 @@ namespace B2B.Presenter
                 View.ValuePhieuxuat = pxCurrent;
             }
             
+        }
+
+        public void CapnhatTongtien()
+        {
+            double? tongtien = 0;
+            for (int i = 0; i < View.ValuePhieuxuat.ChitietPhieuxuatItems.Count; ++i)
+            {
+                if (View.ValuePhieuxuat.ChitietPhieuxuatItems[i].Thanhtien != null)
+                {
+                    tongtien += View.ValuePhieuxuat.ChitietPhieuxuatItems[i].Thanhtien;
+                }
+            }
+            View.ValuePhieuxuat.Tongtien = tongtien;
         }
     }
 }

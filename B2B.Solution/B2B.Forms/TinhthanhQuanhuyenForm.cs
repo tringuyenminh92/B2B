@@ -120,9 +120,9 @@ namespace B2B.Forms
                 
                 	if (presenter.AddnewQuanhuyen())
                 	{
+                        quanhuyenModelGridView.MoveLast();
                 		using (var f = new  QuanhuyenDetailForm(QuanhuyenCurrent as QuanhuyenModel) )
                 		{
-                			quanhuyenModelGridView.MoveLast();
                 			if (f.ShowDialog(this) == DialogResult.Cancel)
                 			{
                 				presenter.DeleteQuanhuyen();

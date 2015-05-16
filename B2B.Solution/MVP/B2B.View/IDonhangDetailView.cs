@@ -22,7 +22,7 @@ namespace B2B.View
     /// <summary>
     /// Interface IDonhangDetailView
     /// </summary>
-    public interface IDonhangDetailView:IView
+    public interface IDonhangDetailView : IView
     {
         List<KhachhangModel> KhachhangItems { get; set; }
 
@@ -51,5 +51,7 @@ namespace B2B.View
         ChitietDonhangModel ChitietDonhangCurrent { get; }
 
         DonhangModel Value { get; set; }
+
+        bool IsCongdon { get; set; }
     }
 }

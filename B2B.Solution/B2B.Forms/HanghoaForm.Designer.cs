@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HanghoaForm));
             this.nhomHanghoaIdLabel1 = new System.Windows.Forms.Label();
-            this.hanghoaModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nhomHanghoaModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hanghoaModelBindingSource = new System.Windows.Forms.BindingSource();
+            this.nhomHanghoaModelBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.hanghoaModelGridControl = new DevExpress.XtraGrid.GridControl();
             this.hanghoaModelGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -170,6 +169,8 @@
             // 
             // hanghoaModelGridView
             // 
+            this.hanghoaModelGridView.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.hanghoaModelGridView.Appearance.OddRow.Options.UseBackColor = true;
             this.hanghoaModelGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colHanghoaId,
             this.colNhomHanghoaId,
@@ -433,7 +434,7 @@
             // 
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(530, 429);
+            this.xtraTabPage1.Size = new System.Drawing.Size(531, 431);
             this.xtraTabPage1.Text = "Thông tin";
             // 
             // groupControl1
@@ -461,7 +462,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(530, 429);
+            this.groupControl1.Size = new System.Drawing.Size(531, 431);
             this.groupControl1.TabIndex = 0;
             // 
             // tenNhomhanghoaTextEdit
@@ -644,7 +645,7 @@
             this.ghichuTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.ghichuTextEdit.Properties.Appearance.Options.UseBackColor = true;
             this.ghichuTextEdit.Properties.ReadOnly = true;
-            this.ghichuTextEdit.Size = new System.Drawing.Size(413, 114);
+            this.ghichuTextEdit.Size = new System.Drawing.Size(414, 116);
             this.ghichuTextEdit.TabIndex = 56;
             this.ghichuTextEdit.UseOptimizedRendering = true;
             // 

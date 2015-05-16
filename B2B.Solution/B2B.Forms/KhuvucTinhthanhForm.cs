@@ -155,9 +155,9 @@ namespace B2B.Forms
 
                     if (presenter.AddnewKhuvuc())
                     {
+                        khuvucModelGridView.MoveLast();
                         using (var f = new KhuvucDetailForm(KhuvucCurrent as KhuvucModel))
                         {
-                            khuvucModelGridView.MoveLast();
                             if (f.ShowDialog(this) == DialogResult.Cancel)
                             {
                                 presenter.DeleteKhuvuc();
@@ -209,9 +209,9 @@ namespace B2B.Forms
 
                     if (presenter.AddnewTinhthanh())
                     {
+                        tinhthanhModelGridView.MoveLast();
                         using (var f = new TinhthanhDetailForm(TinhthanhCurrent as TinhthanhModel))
                         {
-                            tinhthanhModelGridView.MoveLast();
                             if (f.ShowDialog(this) == DialogResult.Cancel)
                             {
                                 presenter.DeleteTinhthanh();

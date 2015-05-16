@@ -33,10 +33,10 @@ E:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\bin\Deb
 E:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\obj\Debug\B2B.View.csprojResolveAssemblyReference.cache
 E:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\obj\Debug\B2B.View.dll
 E:\Lee_chan\Hoctap\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\obj\Debug\B2B.View.pdb
-C:\Users\Ga9286\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\obj\Debug\B2B.View.csprojResolveAssemblyReference.cache
-C:\Users\Ga9286\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\bin\Debug\B2B.View.dll
-C:\Users\Ga9286\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\bin\Debug\B2B.View.pdb
-C:\Users\Ga9286\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\bin\Debug\B2B.Model.dll
-C:\Users\Ga9286\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\bin\Debug\B2B.Model.pdb
-C:\Users\Ga9286\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\obj\Debug\B2B.View.dll
-C:\Users\Ga9286\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\obj\Debug\B2B.View.pdb
+C:\Users\vinh2_000\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\bin\Debug\B2B.View.dll
+C:\Users\vinh2_000\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\bin\Debug\B2B.View.pdb
+C:\Users\vinh2_000\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\bin\Debug\B2B.Model.dll
+C:\Users\vinh2_000\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\bin\Debug\B2B.Model.pdb
+C:\Users\vinh2_000\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\obj\Debug\B2B.View.csprojResolveAssemblyReference.cache
+C:\Users\vinh2_000\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\obj\Debug\B2B.View.dll
+C:\Users\vinh2_000\Desktop\SVN_Repost_09_12_2014\trunk\B2B.Solution\MVP\B2B.View\obj\Debug\B2B.View.pdb

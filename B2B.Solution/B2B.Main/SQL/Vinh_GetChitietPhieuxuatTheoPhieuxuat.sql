@@ -1,6 +1,6 @@
 ﻿use QLBH_08_2014
 go
-create proc Vinh_GetChitietPhieuxuatTheoPhieuxuat
+alter proc Vinh_GetChitietPhieuxuatTheoPhieuxuat
 	@PhieuxuatId uniqueidentifier
 as
 select ctpx.[ChitietPhieuxuatId]
@@ -11,7 +11,9 @@ select ctpx.[ChitietPhieuxuatId]
       ,ctpx.[Step]
       ,ctpx.[Version]
       ,ctpx.[ChitietDonhangId]
+	  ,ctpx.[Thanhtien]
 	  ,hh.TenHanghoa as TenHanghoa
-from ChitietPhieuxuat ctpx left join Hanghoa hh on ctpx.HanghoaId = hh.HanghoaId
+	  ,ctdh.Giaban as Dongia
+from ChitietPhieuxuat ctpx left join Hanghoa hh on ctpx.HanghoaId = hh.HanghoaId left join ChitietDonhang ctdh on ctpx.ChitietDonhangId = ctdh.ChitietDonhangId
 where ctpx.PhieuxuatId = @PhieuxuatId
 	

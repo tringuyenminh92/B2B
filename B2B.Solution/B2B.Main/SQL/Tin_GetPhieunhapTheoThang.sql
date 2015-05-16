@@ -14,19 +14,22 @@ begin
 	  ,d.KhoId
 	  ,d.NhaCungcapId
 	  ,d.Ngaylap
+	  ,d.NguyennhanLydo
+	  ,d.Tongtien
       ,d.Ghichu
       ,d.Step
       ,d.Version
 	  ,d.TinhtrangPhieunhapCurrentId
 	  ,n.HovatenNhanvien as TenNhanvien
 	  ,k.TenKho
+	  ,ng.Noidung
 	  ,h.TenNhaCungcap
-	  ,d.TinhtrangPhieunhapCurrentId
 	  ,l.TenTinhtrang
 	from Phieunhap d left join Nhanvien n on d.NhanvienId=n.NhanvienId
 				left join Nhanvien nv on d.NhanvienId=nv.NhanvienId
 				left join Kho k on d.KhoId=k.KhoId
 				left join NhaCungcap h on d.NhacungcapId=h.NhaCungcapId
 				left join Tinhtrang l on d.TinhtrangPhieunhapCurrentId=l.TinhtrangId
+				left join NguyennhanLydo ng on d.NguyennhanLydo=ng.NguyennhanLydoId
 	where Month(d.Ngaylap)=@thang and Year(d.Ngaylap)=@nam
 end

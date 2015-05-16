@@ -1,6 +1,6 @@
 ﻿use QLBH_08_2014
 go 
-create proc Tin_GetHanghoaTheoKho
+alter proc Tin_GetHanghoaTheoKho
 @KhoId uniqueidentifier
 as
 begin

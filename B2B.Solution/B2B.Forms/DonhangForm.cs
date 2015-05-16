@@ -115,11 +115,18 @@ namespace B2B.Forms
             }
             using (var f = new DonhangDetailForm(DonhangCurrent as DonhangModel))
             {
-                if (f.ShowDialog(this) == DialogResult.OK)
+                f.isEdit = true;
+                if (presenter.DaChot() || presenter.DaHuy())
+                {
+                    f.isEnabled = false;
+                }
+                var rs = f.ShowDialog(this);
+                if (rs == DialogResult.OK)
                 {
                     presenter.Save();
                 }
             }
+            presenter.Display();
             //}
             //catch (Exception ex)
             //{

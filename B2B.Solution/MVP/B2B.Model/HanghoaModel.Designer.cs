@@ -33,5 +33,6 @@ namespace B2B.Model
         public float? PhantramVAT { get; set; }
 
         public float? PhantramGiam { get; set; }
+        public bool ChonBaogia { get; set; }
     }
 }

@@ -50,10 +50,22 @@
     <Compile Include="ChitietDonhangModel.Designer.cs">
       <DependentUpon>ChitietDonhangModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChitietKiemkeModel.cs" />
+    <Compile Include="ChitietKiemkeModel.Designer.cs">
+      <DependentUpon>ChitietKiemkeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChitietPhieunhapModel.cs" />
     <Compile Include="ChitietPhieuxuatModel.cs" />
     <Compile Include="ChitietPhieuxuatModel.Designer.cs">
       <DependentUpon>ChitietPhieuxuatModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongnoNhapModel.cs" />
+    <Compile Include="CongnoNhapModel.Designer.cs">
+      <DependentUpon>CongnoNhapModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongnoXuatModel.cs" />
+    <Compile Include="CongnoXuatModel.Designer.cs">
+      <DependentUpon>CongnoXuatModel.cs</DependentUpon>
     </Compile>
     <Compile Include="DongiaModel.cs" />
     <Compile Include="DongiaModel.Designer.cs">
@@ -77,6 +89,10 @@
       <DependentUpon>KhoModel.cs</DependentUpon>
     </Compile>
     <Compile Include="KhuvucModel.cs" />
+    <Compile Include="KiemkeModel.cs" />
+    <Compile Include="KiemkeModel.Designer.cs">
+      <DependentUpon>KiemkeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoaiDonhangModel.cs" />
     <Compile Include="LoaiNguyennhanModel.cs" />
     <Compile Include="LoaiTinhtrangModel.cs" />
@@ -111,6 +127,10 @@
     <Compile Include="ThangnamNhapxuatModel.cs" />
     <Compile Include="ThangnamNhapxuatModel.Designer.cs">
       <DependentUpon>ThangnamNhapxuatModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThuchiModel.cs" />
+    <Compile Include="ThuchiModel.Designer.cs">
+      <DependentUpon>ThuchiModel.cs</DependentUpon>
     </Compile>
     <Compile Include="ThuoctinhHanghoaModel.cs" />
     <Compile Include="ThuoctinhHanghoaModel.Designer.cs">

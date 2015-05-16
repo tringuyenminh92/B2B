@@ -18,12 +18,12 @@ namespace B2B.View
     public interface IThuoctinhHanghoaView : IView
     {
         Guid? HanghoaCurrentId { get;}
-        HanghoaModel HanghoaCurrent { get; set; }
+        HanghoaModel HanghoaCurrent { get; }
 
         List<ThuoctinhHanghoaModel> ThuoctinhHanghoaItems { get; set; }
 
         List<HanghoaModel> HanghoaItems { get; set; }
 
-        ThuoctinhHanghoaModel ThuoctinhHanghoaCurrent { get; set; }
+        ThuoctinhHanghoaModel ThuoctinhHanghoaCurrent { get;}
     }
 }

@@ -179,7 +179,7 @@ namespace B2B.Presenter
             }
         }
 
-        public void Save()
+        public bool Save()
         {
             try
             {
@@ -192,6 +192,7 @@ namespace B2B.Presenter
                 }
                 Model.Set(View.DongiaItems);
                 View.RefreshData();
+                return true;
             }
             catch (Exception ex)
             {
@@ -200,6 +201,7 @@ namespace B2B.Presenter
                 {
                     logger.Error("Save", ex);
                 }
+                return false;
             }
         }
 

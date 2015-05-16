@@ -51,6 +51,7 @@
             this.colTenKho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenNhaCungcap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenTinhtrang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNoidung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colState = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NoGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -104,7 +105,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(784, 561);
+            this.panelControl2.Size = new System.Drawing.Size(1264, 721);
             this.panelControl2.TabIndex = 1;
             // 
             // phieunhapModelGridControl
@@ -114,7 +115,7 @@
             this.phieunhapModelGridControl.Location = new System.Drawing.Point(2, 55);
             this.phieunhapModelGridControl.MainView = this.phieunhapModelGridView;
             this.phieunhapModelGridControl.Name = "phieunhapModelGridControl";
-            this.phieunhapModelGridControl.Size = new System.Drawing.Size(780, 450);
+            this.phieunhapModelGridControl.Size = new System.Drawing.Size(1260, 610);
             this.phieunhapModelGridControl.TabIndex = 2;
             this.phieunhapModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.phieunhapModelGridView});
@@ -125,6 +126,9 @@
             // 
             // phieunhapModelGridView
             // 
+            this.phieunhapModelGridView.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.phieunhapModelGridView.Appearance.OddRow.BackColor2 = System.Drawing.Color.White;
+            this.phieunhapModelGridView.Appearance.OddRow.Options.UseBackColor = true;
             this.phieunhapModelGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colPhieunhapId,
             this.colNhanvienId,
@@ -142,11 +146,13 @@
             this.colTenKho,
             this.colTenNhaCungcap,
             this.colTenTinhtrang,
+            this.colNoidung,
             this.colState,
             this.NoGridColumn});
             this.phieunhapModelGridView.GridControl = this.phieunhapModelGridControl;
             this.phieunhapModelGridView.Name = "phieunhapModelGridView";
             this.phieunhapModelGridView.OptionsBehavior.Editable = false;
+            this.phieunhapModelGridView.OptionsView.EnableAppearanceOddRow = true;
             this.phieunhapModelGridView.OptionsView.ShowAutoFilterRow = true;
             this.phieunhapModelGridView.OptionsView.ShowFooter = true;
             this.phieunhapModelGridView.OptionsView.ShowGroupPanel = false;
@@ -193,21 +199,21 @@
             this.colNgaylap.FieldName = "Ngaylap";
             this.colNgaylap.Name = "colNgaylap";
             this.colNgaylap.Visible = true;
-            this.colNgaylap.VisibleIndex = 7;
-            this.colNgaylap.Width = 108;
+            this.colNgaylap.VisibleIndex = 2;
+            this.colNgaylap.Width = 82;
             // 
             // colTongtien
             // 
             this.colTongtien.Caption = "Tổng tiền";
             this.colTongtien.DisplayFormat.FormatString = "{0:n0}";
-            this.colTongtien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTongtien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colTongtien.FieldName = "Tongtien";
             this.colTongtien.Name = "colTongtien";
             this.colTongtien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tongtien", "{0:n0}")});
             this.colTongtien.Visible = true;
             this.colTongtien.VisibleIndex = 3;
-            this.colTongtien.Width = 99;
+            this.colTongtien.Width = 91;
             // 
             // colVersion
             // 
@@ -220,7 +226,7 @@
             this.colCode.Name = "colCode";
             this.colCode.Visible = true;
             this.colCode.VisibleIndex = 1;
-            this.colCode.Width = 83;
+            this.colCode.Width = 71;
             // 
             // colGhichu
             // 
@@ -228,17 +234,17 @@
             this.colGhichu.FieldName = "Ghichu";
             this.colGhichu.Name = "colGhichu";
             this.colGhichu.Visible = true;
-            this.colGhichu.VisibleIndex = 8;
-            this.colGhichu.Width = 138;
+            this.colGhichu.VisibleIndex = 9;
+            this.colGhichu.Width = 89;
             // 
             // colTenNhanvien
             // 
-            this.colTenNhanvien.Caption = "Người lập";
+            this.colTenNhanvien.Caption = "Nhân viên";
             this.colTenNhanvien.FieldName = "TenNhanvien";
             this.colTenNhanvien.Name = "colTenNhanvien";
             this.colTenNhanvien.Visible = true;
-            this.colTenNhanvien.VisibleIndex = 6;
-            this.colTenNhanvien.Width = 149;
+            this.colTenNhanvien.VisibleIndex = 8;
+            this.colTenNhanvien.Width = 105;
             // 
             // colTenKho
             // 
@@ -246,8 +252,8 @@
             this.colTenKho.FieldName = "TenKho";
             this.colTenKho.Name = "colTenKho";
             this.colTenKho.Visible = true;
-            this.colTenKho.VisibleIndex = 2;
-            this.colTenKho.Width = 113;
+            this.colTenKho.VisibleIndex = 5;
+            this.colTenKho.Width = 115;
             // 
             // colTenNhaCungcap
             // 
@@ -255,8 +261,8 @@
             this.colTenNhaCungcap.FieldName = "TenNhaCungcap";
             this.colTenNhaCungcap.Name = "colTenNhaCungcap";
             this.colTenNhaCungcap.Visible = true;
-            this.colTenNhaCungcap.VisibleIndex = 5;
-            this.colTenNhaCungcap.Width = 121;
+            this.colTenNhaCungcap.VisibleIndex = 6;
+            this.colTenNhaCungcap.Width = 122;
             // 
             // colTenTinhtrang
             // 
@@ -265,7 +271,16 @@
             this.colTenTinhtrang.Name = "colTenTinhtrang";
             this.colTenTinhtrang.Visible = true;
             this.colTenTinhtrang.VisibleIndex = 4;
-            this.colTenTinhtrang.Width = 93;
+            this.colTenTinhtrang.Width = 128;
+            // 
+            // colNoidung
+            // 
+            this.colNoidung.Caption = "Nguyên nhân";
+            this.colNoidung.FieldName = "Noidung";
+            this.colNoidung.Name = "colNoidung";
+            this.colNoidung.Visible = true;
+            this.colNoidung.VisibleIndex = 7;
+            this.colNoidung.Width = 110;
             // 
             // colState
             // 
@@ -273,8 +288,8 @@
             this.colState.Name = "colState";
             this.colState.OptionsColumn.ReadOnly = true;
             this.colState.Visible = true;
-            this.colState.VisibleIndex = 9;
-            this.colState.Width = 97;
+            this.colState.VisibleIndex = 10;
+            this.colState.Width = 77;
             // 
             // NoGridColumn
             // 
@@ -284,7 +299,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
             this.NoGridColumn.Visible = true;
             this.NoGridColumn.VisibleIndex = 0;
-            this.NoGridColumn.Width = 43;
+            this.NoGridColumn.Width = 54;
             // 
             // groupControl1
             // 
@@ -296,7 +311,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(780, 53);
+            this.groupControl1.Size = new System.Drawing.Size(1260, 53);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "Thộng tin chung";
             // 
@@ -358,10 +373,10 @@
             this.InformationGroupControl.Controls.Add(this.exportPhieunhapSimpleButton);
             this.InformationGroupControl.Controls.Add(this.savePhieunhapSimpleButton);
             this.InformationGroupControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.InformationGroupControl.Location = new System.Drawing.Point(2, 505);
+            this.InformationGroupControl.Location = new System.Drawing.Point(2, 665);
             this.InformationGroupControl.Margin = new System.Windows.Forms.Padding(2);
             this.InformationGroupControl.Name = "InformationGroupControl";
-            this.InformationGroupControl.Size = new System.Drawing.Size(780, 54);
+            this.InformationGroupControl.Size = new System.Drawing.Size(1260, 54);
             this.InformationGroupControl.TabIndex = 1;
             this.InformationGroupControl.Text = "Thao tác Nhóm khách hàng";
             // 
@@ -393,7 +408,7 @@
             // 
             this.editPhieunhapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.editPhieunhapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("editPhieunhapSimpleButton.Image")));
-            this.editPhieunhapSimpleButton.Location = new System.Drawing.Point(624, 28);
+            this.editPhieunhapSimpleButton.Location = new System.Drawing.Point(1104, 28);
             this.editPhieunhapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.editPhieunhapSimpleButton.Name = "editPhieunhapSimpleButton";
             this.editPhieunhapSimpleButton.Size = new System.Drawing.Size(70, 20);
@@ -417,7 +432,7 @@
             // 
             this.savePhieunhapSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.savePhieunhapSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("savePhieunhapSimpleButton.Image")));
-            this.savePhieunhapSimpleButton.Location = new System.Drawing.Point(698, 27);
+            this.savePhieunhapSimpleButton.Location = new System.Drawing.Point(1178, 27);
             this.savePhieunhapSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.savePhieunhapSimpleButton.Name = "savePhieunhapSimpleButton";
             this.savePhieunhapSimpleButton.Size = new System.Drawing.Size(70, 20);
@@ -446,13 +461,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1264, 721);
             this.Controls.Add(this.panelControl2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "PhieunhapForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu nhập";
@@ -515,6 +527,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTenKho;
         private DevExpress.XtraGrid.Columns.GridColumn colTenNhaCungcap;
         private DevExpress.XtraGrid.Columns.GridColumn colTenTinhtrang;
+        private DevExpress.XtraGrid.Columns.GridColumn colNoidung;
         private DevExpress.XtraGrid.Columns.GridColumn colState;
         private DevExpress.XtraGrid.Columns.GridColumn NoGridColumn;
     }

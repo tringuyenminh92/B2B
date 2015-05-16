@@ -45,6 +45,7 @@ namespace B2B.Forms
             //presenter.DisplayChitietPhieunhap();        
             presenter.DisplayHanghoa();
             presenter.DisplayTinhTrang();
+            presenter.DisplayNguyennhanLydo();
             presenter.DisplayKho();
             presenter.DisplayNhacungcap();
             var tinhtrangHuy = TinhtrangItems.FirstOrDefault(p => p.Code == "TTPN03").TinhtrangId;
@@ -52,8 +53,15 @@ namespace B2B.Forms
             if (value.TinhtrangPhieunhapCurrentId == tinhtrangHuy || value.TinhtrangPhieunhapCurrentId == tinhtrangChot)
             {
                 OkSimpleButton.Enabled = false;
+                chitietPhieunhapGroupBox.Enabled = false;
+                thongtinchungGroupBox.Enabled = false;
             }
             hSDDateEdit.Properties.MinValue = DateTime.Now;
+            //if(value.NhacungcapId==null|| value.KhoId==null)
+            //{
+            //    nhacungcapIdTextEdit.SelectedIndex=0;
+            //    khoIdTextEdit.SelectedIndex=0;
+            //}
         }
 
         public PhieunhapModel CurrentPhieunhap { get; set; }
@@ -74,6 +82,11 @@ namespace B2B.Forms
                 if (presenter.AddNew())
                 {
                     ChitietPhieunhapModelGridView.MoveLast();
+                    //hanghoaIdTextEdit.Select(-1,0);
+                    gianhapSpinEdit.Value = 0 ;
+                    soluongSpinEdit.Value = 0;
+                    ghichuTextEdit.Text = string.Empty;
+
                 }
             }
             catch (Exception ex)
@@ -96,7 +109,12 @@ namespace B2B.Forms
 
         private void OkSimpleButton_Click(object sender, EventArgs e)
         {
+            if (nhacungcapIdTextEdit.SelectedValue == null || khoIdTextEdit.SelectedValue == null || tinhtrangPhieunhapIdTextEdit.SelectedValue == null||nguyennhanLydoTextEdit.SelectedValue==null)
+                return;
             DialogResult = DialogResult.OK;
+            CurrentPhieunhap.TenKho = khoIdTextEdit.Text;
+            CurrentPhieunhap.TenNhaCungcap = nhacungcapIdTextEdit.Text;
+            CurrentPhieunhap.TenTinhtrang = tinhtrangPhieunhapIdTextEdit.Text;
             presenter.CapnhatTongtien();
             Close();
         }
@@ -217,6 +235,25 @@ namespace B2B.Forms
 
         public void RefreshDataKho()
         {
+            throw new NotImplementedException();
+        }
+
+
+        public List<NguyennhanLydoModel> NguyennhanLydoItems
+        {
+            get
+            {
+                return nguyennhanLydoModelBindingSource.DataSource as List<NguyennhanLydoModel>;
+            }
+            set
+            {
+                nguyennhanLydoModelBindingSource.DataSource = value;
+            }
+        }
+
+        public void RefeshNguyennhanLydo()
+        {
+            //
             throw new NotImplementedException();
         }
     }

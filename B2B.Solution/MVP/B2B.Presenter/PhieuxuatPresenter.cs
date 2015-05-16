@@ -2,7 +2,7 @@
 	Class file: 
     Author: Tran Nguyen Hoang Khuyen
     Date Created: 23/09/2014
-	Last Updated: 13/12/2014
+	Last Updated: 17/01/2014
 	Updated By: Tran Nguyen Hoang Khuyen
 	Update Description:
 *********************************************************************/
@@ -34,10 +34,12 @@ namespace B2B.Presenter
 
         public bool Addnew()
         {
-            try
-            {
+            //try
+            //{
                 var DonhangCurrent = View.DonhangCurrent as DonhangModel;
-                if (DonhangCurrent == null)
+                var TinhtrangDonhangDachot = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.Code == "TTDH06");
+                var TinhtrangDonhangDahuy = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.Code == "TTDH03");
+                if (DonhangCurrent == null || DonhangCurrent.TinhtrangDonhangCurrentId == TinhtrangDonhangDachot.TinhtrangId || DonhangCurrent.TinhtrangDonhangCurrentId == TinhtrangDonhangDahuy.TinhtrangId)
                 {
                     return false;
                 }
@@ -51,10 +53,11 @@ namespace B2B.Presenter
                     TenNhanvienLap = View.NhanvienCapNhat.HovatenNhanvien,
                     NhanvienCapnhatId = View.NhanvienCapNhat.NhanvienId,
                     TenNhanvienCapnhat = View.NhanvienCapNhat.HovatenNhanvien,
+                    NhanvienDonhang = DonhangCurrent.NhanvienId,
                     //KhoId = DonhangCurrent.KhoId,
                     //TenKho = DonhangCurrent.TenKho,
                     CodeDonhang = DonhangCurrent.Code,
-                    TonkhoItems = new List<TonkhoModel>(),
+                    //TonkhoItems = new List<TonkhoModel>(),
                     ChitietPhieuxuatItems = new List<ChitietPhieuxuatModel>(),
                     Donhang = DonhangCurrent
                 };
@@ -71,16 +74,16 @@ namespace B2B.Presenter
                 View.PhieuxuatItems.Add(phieuxuat);
                 View.RefreshData();
                 return true;
-            }
-            catch (System.Exception ex)
-            {
-                //Check log flag and log error to file.
-                if (isErrorEnabled)
-                {
-                    logger.Error("Add new", ex);
-                }
-                return false;
-            }
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    //Check log flag and log error to file.
+            //    if (isErrorEnabled)
+            //    {
+            //        logger.Error("Add new", ex);
+            //    }
+            //    return false;
+            //}
         }
 
 
@@ -89,14 +92,24 @@ namespace B2B.Presenter
             //try
             //{
                 List<PhieuxuatModel> PhieuxuatLuu = new List<PhieuxuatModel>();
+                List<int> rowStates = new List<int>();
                 for (int i = 0; i < View.PhieuxuatItems.Count; ++i)
                 {
                     if (View.PhieuxuatItems[i].State == RowState.Insert || View.PhieuxuatItems[i].State == RowState.Update)
                     {
+                        if(View.PhieuxuatItems[i].State == RowState.Insert)
+                        {
+                            rowStates.Add(1);
+                        }
+                        else if(View.PhieuxuatItems[i].State == RowState.Update)
+                        {
+                            rowStates.Add(2);
+                        }
+                        else rowStates.Add(0);
                         PhieuxuatLuu.Add(View.PhieuxuatItems[i]);
                     }
                 }
-                var PhieuxuatLuuTonkho = PhieuxuatLuu as List<PhieuxuatModel>;
+                //var PhieuxuatLuuTonkho = PhieuxuatLuu as List<PhieuxuatModel>;
                 foreach (var item in View.PhieuxuatItems)
                 {
                     item.NgayCapnhat = DateTime.Now;
@@ -104,34 +117,40 @@ namespace B2B.Presenter
                 Model.Set(View.PhieuxuatItems);
                 for (int i = 0; i < PhieuxuatLuu.Count; ++i)
                 {
-                    if (View.PhieuxuatItems[i].State == RowState.Insert || View.PhieuxuatItems[i].State == RowState.Update)
+                    //Save chi tiet phieu xuat
+                    var chiTietPhieuXuatItemsLLuu = PhieuxuatLuu[i].ChitietPhieuxuatItems as List<ChitietPhieuxuatModel>;
+                    Model.Set(chiTietPhieuXuatItemsLLuu);
+
+                    //Save tinh trang phieu xuat
+                    var TinhtrangPhieuXuatCurrent = new TinhtrangPhieuxuatModel
                     {
-                        //Save chi tiet phieu xuat
-                        Model.Set(PhieuxuatLuu[i].ChitietPhieuxuatItems);
+                        TinhtrangId = PhieuxuatLuu[i].TinhtrangPhieuxuatCurrentId,
+                        PhieuxuatId = PhieuxuatLuu[i].PhieuxuatId,
+                        NgayCapnhat = DateTime.Now
+                    };
+                    Model.Set(TinhtrangPhieuXuatCurrent);
 
-                        //Save tinh trang phieu xuat
-                        var TinhtrangPhieuXuatCurrent = new TinhtrangPhieuxuatModel
-                        {
-                            TinhtrangId = PhieuxuatLuu[i].TinhtrangPhieuxuatCurrentId,
-                            PhieuxuatId = PhieuxuatLuu[i].PhieuxuatId,
-                            NgayCapnhat = DateTime.Now
-                        };
-                        Model.Set(TinhtrangPhieuXuatCurrent);
+                    //Save chi tiet don hang
+                    Model.Set(PhieuxuatLuu[i].Donhang.ChitietDonhangItems);
 
-                        //Save chi tiet don hang
-                        Model.Set(PhieuxuatLuu[i].Donhang.ChitietDonhangItems);
+                    //Save cong no xuat
+                    CapnhatCongnoXuat(PhieuxuatLuu[i],rowStates[i]);
+                    if (PhieuxuatLuu[i].CongnoXuat !=null)
+                    {
+                        Model.Set(PhieuxuatLuu[i].CongnoXuat);
                     }
-                }
-                foreach (var px in PhieuxuatLuuTonkho)
-                {
-                    px.ChitietPhieuxuatItems = px.ChitietPhieuxuatItems.GroupBy(p => p.HanghoaId).Select(u => new ChitietPhieuxuatModel
+
+
+                    //Save ton kho
+                    PhieuxuatLuu[i].ChitietPhieuxuatItems = PhieuxuatLuu[i].ChitietPhieuxuatItems.GroupBy(p => p.HanghoaId).Select(u => new ChitietPhieuxuatModel
                     {
                         Soluong = u.Sum(e => e.Soluong),
                         HanghoaId = u.First().HanghoaId,
                         Thanhtien = u.Sum(e => e.Thanhtien),
                     }).ToList();
-                    CapnhatTonkho(px);
-                    Model.Set(px.TonkhoItems);
+                    CapnhatTonkho(PhieuxuatLuu[i], rowStates[i]);
+                    Model.Set(PhieuxuatLuu[i].TonkhoItems);
+
                 }
                 View.RefreshData();
                 return true;
@@ -178,21 +197,6 @@ namespace B2B.Presenter
 
         public void DisplayDonhang()
         {
-            //try
-            //{
-            //    View.DonhangItems = Model.Get<DonhangModel>("Khuyen_GetDonhang");
-            //    View.RefreshDataDonhang();
-            //}
-            //catch (System.Exception ex)
-            //{
-            //    //Check log flag and log error to file.
-            //    if (isErrorEnabled)
-            //    {
-            //        logger.Error("Khuyen_GetDonhang", ex);
-            //    }
-            //    return;
-            //}
-
             try
             {
 
@@ -273,8 +277,9 @@ namespace B2B.Presenter
             }).FirstOrDefault();
         }
 
-        public void CapnhatTonkho(PhieuxuatModel px)
+        public void CapnhatTonkho(PhieuxuatModel px,int rowState)
         {
+            px.TonkhoItems = new List<TonkhoModel>();
             var tinhtrangChot = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.Code == "TTPX002") as TinhtrangModel;
             var tinhtrangHuy = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.Code == "TTPX003") as TinhtrangModel;
 
@@ -304,8 +309,16 @@ namespace B2B.Presenter
                         Items = items,
                         SpName = "Tin_GetTonkhoMoinhatHanghoaTheoKho"
                     }) as List<TonkhoModel>;
+                    int? SoluongTon = 0;
+                    int? SoluongTonDukien = 0;
+                    if(tonkhoItems.Count > 0)
+                    {
+                        var tonkho = tonkhoItems[0] as TonkhoModel;
+                        SoluongTon = tonkho.SoluongTon;
+                        SoluongTonDukien = tonkho.SoluongTonDukien;
+                    }
+                    
 
-                    var tonkho = tonkhoItems[0] as TonkhoModel;
 
                     TonkhoModel tk = new TonkhoModel()
                     {
@@ -316,39 +329,172 @@ namespace B2B.Presenter
                         Thang = DateTime.Now.Month,
                         Nam = DateTime.Now.Year,
                         GioCapnhat = DateTime.Now,
-                        SoduDauky = tonkho.SoluongTon,
+                        SoduDauky = SoluongTon,
                         SoluongNhap = 0,
                         SoluongXuat = chitietPhieuxuat.Soluong,
-                        SoluongTon = tonkho.SoluongTon,
+                        SoluongTon = SoluongTon,
                         NhanvienCapnhat = px.NhanvienCapnhatId,
                         Active = true,
                         ThanhtienXuat = chitietPhieuxuat.Thanhtien
                     };
                     if(px.TinhtrangPhieuxuatCurrentId == tinhtrangChot.TinhtrangId)
                     {
-                        tk.SoluongTonDukien = tonkho.SoluongTonDukien - chitietPhieuxuat.Soluong;
-                        tk.SoluongTon = tk.SoluongTonDukien;
+                        tk.SoluongTonDukien = SoluongTonDukien - chitietPhieuxuat.Soluong;
+                        tk.SoluongTon -= chitietPhieuxuat.Soluong;
                         px.TonkhoItems.Add(tk);
                     }
                     else if(px.TinhtrangPhieuxuatCurrentId == tinhtrangHuy.TinhtrangId)
                     {
-                        if(px.State == RowState.Update)
+                        if (rowState == 2)
                         {
-                            tk.SoluongTonDukien = tonkho.SoluongTonDukien + chitietPhieuxuat.Soluong;
+                            tk.SoluongTonDukien = SoluongTonDukien + chitietPhieuxuat.Soluong;
                             px.TonkhoItems.Add(tk);
                         }
                     }
                     else
                     {
-                        if (px.State == RowState.Insert)
+                        if (rowState == 1)
                         {
-                            tk.SoluongTonDukien = tonkho.SoluongTonDukien - chitietPhieuxuat.Soluong;
                             px.TonkhoItems.Add(tk);
                         }
                     }
                     
                 }
             }
+
+        }
+
+        public void CapnhatCongnoXuat(PhieuxuatModel px, int rowState)
+        {
+            var tinhtrangHuy = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.Code == "TTPX003") as TinhtrangModel;
+            if ((rowState == 1 && px.TinhtrangPhieuxuatCurrentId != tinhtrangHuy.TinhtrangId) || (px.TinhtrangPhieuxuatCurrentId == tinhtrangHuy.TinhtrangId && rowState == 2))
+            { 
+                px.CongnoXuat = new CongnoXuatModel();
+                double? tongThanhtien = 0;
+                for (int i = 0; i < px.ChitietPhieuxuatItems.Count; ++i)
+                {
+                    if (px.ChitietPhieuxuatItems[i].Thanhtien != null)
+                    {
+                        tongThanhtien += px.ChitietPhieuxuatItems[i].Thanhtien;
+                    }
+                }
+                var items = new List<AutoItem>();
+                items.Add(new AutoItem()
+                {
+                    Name = "KhachhangId",
+                    Value = px.Donhang.KhachhangId,
+                    SqlType = System.Data.SqlDbType.UniqueIdentifier
+                });
+
+                var congnoItems = Model.Get<CongnoXuatModel>(new AutoObject
+                {
+                    Items = items,
+                    SpName = "Khuyen_GetCongnoXuatMoinhatTheoKhachhang"
+                }) as List<CongnoXuatModel>;
+                
+                double? TongnoTheoCongNo = 0;
+                if(congnoItems.Count > 0)
+                {
+                    var congnoMoinhat = congnoItems[0] as CongnoXuatModel;
+                    TongnoTheoCongNo = congnoMoinhat.Tongno;
+                }
+                CongnoXuatModel cnx = new CongnoXuatModel
+                {
+                    KhachhangId = px.Donhang.KhachhangId,
+                    Dienthoai = string.IsNullOrWhiteSpace(px.Donhang.SoDienthoai)?"":px.Donhang.SoDienthoai.Split(',')[0],
+                    Diachi = px.Donhang.DiachiGiao,
+                    NgayGiaodich = DateTime.Now,
+                    SoduTruocGiaodich = TongnoTheoCongNo,
+                    SotienGiaodich = tongThanhtien,
+                    NgayhenTra = px.Donhang.HanDonhang,
+                    NhanvienId = View.NhanvienCapNhat.NhanvienId,
+                    Ghichu = px.Ghichu
+                };
+                if (rowState == 1)
+                {
+                    cnx.Tongno = TongnoTheoCongNo + cnx.SotienGiaodich;  
+                }
+                else if (px.TinhtrangPhieuxuatCurrentId == tinhtrangHuy.TinhtrangId)
+                {
+                    cnx.Tongno = TongnoTheoCongNo - cnx.SotienGiaodich;
+                }
+                px.CongnoXuat = cnx;
+            }
+
+        }
+
+        public bool CheckTinhtrangPhieuxuatChotHoacHuy()
+        {
+            var TinhtrangPhieuxuatChot = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.Code == "TTPX002");
+            var TinhtrangPhieuxuatHuy = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.Code == "TTPX003");
+            if (View.PhieuxuatCurrent.TinhtrangPhieuxuatCurrentId == TinhtrangPhieuxuatChot.TinhtrangId || View.PhieuxuatCurrent.TinhtrangPhieuxuatCurrentId == TinhtrangPhieuxuatHuy.TinhtrangId)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool LapPhieuthuButtonDisable()
+        {
+            if (View.PhieuxuatCurrent != null)
+            {
+                if (CheckTinhtrangPhieuxuatChotHoacHuy() || View.PhieuxuatCurrent.State != RowState.UnChange)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void AddPhieuthu(ThuchiModel pt)
+        {
+            pt.PhieuxuatId = View.PhieuxuatCurrent.PhieuxuatId;
+            pt.Vaoluc = DateTime.Now;
+            pt.Ngay = pt.Vaoluc.Value.Day;
+            pt.Thang = pt.Vaoluc.Value.Month;
+            pt.Nam = pt.Vaoluc.Value.Year;
+            pt.NhanvienId = View.NhanvienCapNhat.NhanvienId;
+            pt.NhannopTienId = View.DonhangCurrent.KhachhangId;
+            pt.TenNhannopTien = View.DonhangCurrent.TenKhachhang;
+        }
+
+        public bool HuyPhieuxuat()
+        {
+            try
+            {
+                var tinhtrangHuy = Model.Get<TinhtrangModel>("sys_TinhtrangSelect").FirstOrDefault(p => p.Code == "TTPX003") as TinhtrangModel;
+                View.PhieuxuatCurrent.TinhtrangPhieuxuatCurrentId = tinhtrangHuy.TinhtrangId;
+                Model.Set(View.PhieuxuatCurrent);
+
+                //Cap nhat tinh trang
+                var TinhtrangPhieuXuatCurrent = new TinhtrangPhieuxuatModel
+                {
+                    TinhtrangId = View.PhieuxuatCurrent.TinhtrangPhieuxuatCurrentId,
+                    PhieuxuatId = View.PhieuxuatCurrent.PhieuxuatId,
+                    NgayCapnhat = DateTime.Now
+                };
+                Model.Set(TinhtrangPhieuXuatCurrent);
+
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //Check log flag and log error to file.
+                if (isErrorEnabled)
+                {
+                    logger.Error("Huy phieu xuat", ex);
+                }
+                return false;
+            }
+            
 
         }
     }

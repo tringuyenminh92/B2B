@@ -14,7 +14,6 @@ using System.Windows.Forms;
 using B2B.Model;
 using B2B.Presenter;
 using B2B.View;
-using BusinessObject;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using log4net;
@@ -55,14 +54,6 @@ namespace B2B.Forms
             set { phieunhapModelBindingSource.DataSource = value;}
         }
 
-        //public List<NhaCungcapModel> NhacungcapItems
-        //{
-        //    get { return nhaCungcapModelBindingSource.DataSource as List<NhaCungcapModel>; }
-        //    set
-        //    { 
-        //        nhaCungcapModelBindingSource.DataSource = value;
-        //    }
-        //}
 
         public void RefreshDataNhacungcap()
         {
@@ -135,8 +126,8 @@ namespace B2B.Forms
 
         private void editPhieunhapSimpleButton_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
             
                 using (var f = new PhieunhapDetailForm(PhieunhapCurrent))
                 {
@@ -145,30 +136,32 @@ namespace B2B.Forms
                         presenter.Delete();
                     }
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    //Check log flag and log error to file.
-            //    if (isErrorEnabled)
-            //    {
-            //        logger.Error(string.Format("Result: {0}", ""), ex);
-            //    }
-            //}
+            }
+            catch (Exception ex)
+            {
+                //Check log flag and log error to file.
+                if (isErrorEnabled)
+                {
+                    logger.Error(string.Format("Result: {0}", ""), ex);
+                }
+            }
 
         }
 
         private void savePhieunhapSimpleButton_Click(object sender, EventArgs e)
         {
-            presenter.Save();
+            if (presenter.Save())
+            {
+                XtraMessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                XtraMessageBox.Show("Lưu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             presenter.DisplayPhieunhap();
         }
 
         private void reloaPhieunhapSimpleButton_Click(object sender, EventArgs e)
-        {
-            presenter.DisplayPhieunhap();
-        }
-
-        private void khoIdTextEdit_EditValueChanged(object sender, EventArgs e)
         {
             presenter.DisplayPhieunhap();
         }
@@ -195,34 +188,5 @@ namespace B2B.Forms
                 e.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
-
-
-        //public List<TinhtrangModel> TinhtrangItems
-        //{
-        //    get
-        //    {
-        //        return tinhtrangModelBindingSource.DataSource as List<TinhtrangModel>;
-        //    }
-        //    set
-        //    {
-        //        tinhtrangModelBindingSource.DataSource=value;
-        //    }
-        //}
-
-        private void nhacungcapIdTextEdit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nhacungcapIdLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tenKhoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

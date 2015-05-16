@@ -35,5 +35,6 @@ namespace B2B.Model
         public string CodeDonhang { get; set; }
         public string TenNguyennhanLydo { get; set; }
         public DonhangModel Donhang { get; set; }
+        public CongnoXuatModel CongnoXuat { get; set; }
     }
 }

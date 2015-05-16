@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuxuatDetailForm));
             System.Windows.Forms.Label tinhtrangPhieuxuatCurrentIdLabel;
             System.Windows.Forms.Label nguyennhanLydoLabel;
             System.Windows.Forms.Label codeLabel1;
@@ -39,9 +38,10 @@
             System.Windows.Forms.Label codeLabel;
             System.Windows.Forms.Label nhanvienGiaohangIdLabel;
             System.Windows.Forms.Label ngayCapnhatLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuxuatDetailForm));
             this.phieuxuatModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nhanvienModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelNut = new DevExpress.XtraEditors.PanelControl();
             this.CancelSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.OKSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.tinhtrangModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -64,14 +64,13 @@
             this.colTenHanghoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NogridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoluongDaXuat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.nguyennhanLydoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.khoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.tinhtrangPhieuxuatCurrentIdTextEdit = new System.Windows.Forms.ComboBox();
+            this.panelThuoctinhCoban = new DevExpress.XtraEditors.PanelControl();
             this.nguyennhanLydoTextEdit = new System.Windows.Forms.ComboBox();
+            this.nguyennhanLydoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nhanvienGiaohangIdTextEdit = new System.Windows.Forms.ComboBox();
             this.khoIdTextEdit = new System.Windows.Forms.ComboBox();
-            this.codeTextEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.khoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.codeDonhangTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.codeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.tenNhanvienLabel = new System.Windows.Forms.Label();
             this.ngaylapDateEdit = new DevExpress.XtraEditors.DateEdit();
@@ -80,7 +79,8 @@
             this.tenNhanvienTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.ngaylapDateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.ngayCapnhatDateEdit = new DevExpress.XtraEditors.DateEdit();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.panelTinhtrang = new DevExpress.XtraEditors.PanelControl();
+            this.tinhtrangPhieuxuatCurrentIdTextEdit = new System.Windows.Forms.ComboBox();
             tinhtrangPhieuxuatCurrentIdLabel = new System.Windows.Forms.Label();
             nguyennhanLydoLabel = new System.Windows.Forms.Label();
             codeLabel1 = new System.Windows.Forms.Label();
@@ -92,8 +92,8 @@
             ngayCapnhatLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.phieuxuatModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienModelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelNut)).BeginInit();
+            this.panelNut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tinhtrangModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhtrangPhieuxuatModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -102,11 +102,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.chitietPhieuxuatModelGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chitietPhieuxuatModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chitietPhieuxuatgridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelThuoctinhCoban)).BeginInit();
+            this.panelThuoctinhCoban.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nguyennhanLydoModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoModelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.codeTextEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.codeDonhangTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit.Properties)).BeginInit();
@@ -116,9 +116,90 @@
             ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngayCapnhatDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngayCapnhatDateEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelTinhtrang)).BeginInit();
+            this.panelTinhtrang.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tinhtrangPhieuxuatCurrentIdLabel
+            // 
+            tinhtrangPhieuxuatCurrentIdLabel.AutoSize = true;
+            tinhtrangPhieuxuatCurrentIdLabel.Location = new System.Drawing.Point(27, 19);
+            tinhtrangPhieuxuatCurrentIdLabel.Name = "tinhtrangPhieuxuatCurrentIdLabel";
+            tinhtrangPhieuxuatCurrentIdLabel.Size = new System.Drawing.Size(60, 13);
+            tinhtrangPhieuxuatCurrentIdLabel.TabIndex = 52;
+            tinhtrangPhieuxuatCurrentIdLabel.Text = "Tình trạng:";
+            // 
+            // nguyennhanLydoLabel
+            // 
+            nguyennhanLydoLabel.AutoSize = true;
+            nguyennhanLydoLabel.Location = new System.Drawing.Point(28, 184);
+            nguyennhanLydoLabel.Name = "nguyennhanLydoLabel";
+            nguyennhanLydoLabel.Size = new System.Drawing.Size(101, 13);
+            nguyennhanLydoLabel.TabIndex = 48;
+            nguyennhanLydoLabel.Text = "Nguyên nhân lý do:";
+            // 
+            // codeLabel1
+            // 
+            codeLabel1.AutoSize = true;
+            codeLabel1.Location = new System.Drawing.Point(28, 44);
+            codeLabel1.Name = "codeLabel1";
+            codeLabel1.Size = new System.Drawing.Size(58, 13);
+            codeLabel1.TabIndex = 45;
+            codeLabel1.Text = "Đơn hàng:";
+            // 
+            // ngaylapLabel
+            // 
+            ngaylapLabel.AutoSize = true;
+            ngaylapLabel.Location = new System.Drawing.Point(28, 72);
+            ngaylapLabel.Name = "ngaylapLabel";
+            ngaylapLabel.Size = new System.Drawing.Size(101, 13);
+            ngaylapLabel.TabIndex = 41;
+            ngaylapLabel.Text = "Ngày lập đơn hàng:";
+            // 
+            // ghichuLabel
+            // 
+            ghichuLabel.AutoSize = true;
+            ghichuLabel.Location = new System.Drawing.Point(408, 74);
+            ghichuLabel.Name = "ghichuLabel";
+            ghichuLabel.Size = new System.Drawing.Size(46, 13);
+            ghichuLabel.TabIndex = 44;
+            ghichuLabel.Text = "Ghi chú:";
+            // 
+            // khoIdLabel
+            // 
+            khoIdLabel.AutoSize = true;
+            khoIdLabel.Location = new System.Drawing.Point(408, 45);
+            khoIdLabel.Name = "khoIdLabel";
+            khoIdLabel.Size = new System.Drawing.Size(29, 13);
+            khoIdLabel.TabIndex = 36;
+            khoIdLabel.Text = "Kho:";
+            // 
+            // codeLabel
+            // 
+            codeLabel.AutoSize = true;
+            codeLabel.Location = new System.Drawing.Point(28, 16);
+            codeLabel.Name = "codeLabel";
+            codeLabel.Size = new System.Drawing.Size(36, 13);
+            codeLabel.TabIndex = 38;
+            codeLabel.Text = "Code:";
+            // 
+            // nhanvienGiaohangIdLabel
+            // 
+            nhanvienGiaohangIdLabel.AutoSize = true;
+            nhanvienGiaohangIdLabel.Location = new System.Drawing.Point(408, 16);
+            nhanvienGiaohangIdLabel.Name = "nhanvienGiaohangIdLabel";
+            nhanvienGiaohangIdLabel.Size = new System.Drawing.Size(109, 13);
+            nhanvienGiaohangIdLabel.TabIndex = 37;
+            nhanvienGiaohangIdLabel.Text = "Nhân viên giao hàng:";
+            // 
+            // ngayCapnhatLabel
+            // 
+            ngayCapnhatLabel.AutoSize = true;
+            ngayCapnhatLabel.Location = new System.Drawing.Point(28, 156);
+            ngayCapnhatLabel.Name = "ngayCapnhatLabel";
+            ngayCapnhatLabel.Size = new System.Drawing.Size(110, 13);
+            ngayCapnhatLabel.TabIndex = 39;
+            ngayCapnhatLabel.Text = "Ngày cập nhật phiếu:";
             // 
             // phieuxuatModelBindingSource
             // 
@@ -128,15 +209,15 @@
             // 
             this.nhanvienModelBindingSource.DataSource = typeof(B2B.Model.NhanvienModel);
             // 
-            // panelControl1
+            // panelNut
             // 
-            this.panelControl1.Controls.Add(this.CancelSimpleButton);
-            this.panelControl1.Controls.Add(this.OKSimpleButton);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 570);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(792, 58);
-            this.panelControl1.TabIndex = 73;
+            this.panelNut.Controls.Add(this.CancelSimpleButton);
+            this.panelNut.Controls.Add(this.OKSimpleButton);
+            this.panelNut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelNut.Location = new System.Drawing.Point(0, 570);
+            this.panelNut.Name = "panelNut";
+            this.panelNut.Size = new System.Drawing.Size(792, 58);
+            this.panelNut.TabIndex = 73;
             // 
             // CancelSimpleButton
             // 
@@ -185,8 +266,8 @@
             // 
             this.pageThongtinPhieuxuat.AutoScroll = true;
             this.pageThongtinPhieuxuat.Controls.Add(this.chitietPhieuxuatModelGridControl);
-            this.pageThongtinPhieuxuat.Controls.Add(this.panelControl2);
-            this.pageThongtinPhieuxuat.Controls.Add(this.panelControl3);
+            this.pageThongtinPhieuxuat.Controls.Add(this.panelThuoctinhCoban);
+            this.pageThongtinPhieuxuat.Controls.Add(this.panelTinhtrang);
             this.pageThongtinPhieuxuat.Name = "pageThongtinPhieuxuat";
             this.pageThongtinPhieuxuat.Size = new System.Drawing.Size(786, 542);
             this.pageThongtinPhieuxuat.Text = "Thông tin Phiếu xuất";
@@ -321,62 +402,33 @@
             this.colSoluongDaXuat.VisibleIndex = 3;
             this.colSoluongDaXuat.Width = 132;
             // 
-            // nguyennhanLydoModelBindingSource
+            // panelThuoctinhCoban
             // 
-            this.nguyennhanLydoModelBindingSource.DataSource = typeof(B2B.Model.NguyennhanLydoModel);
-            // 
-            // khoModelBindingSource
-            // 
-            this.khoModelBindingSource.DataSource = typeof(B2B.Model.KhoModel);
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.nguyennhanLydoTextEdit);
-            this.panelControl2.Controls.Add(this.nhanvienGiaohangIdTextEdit);
-            this.panelControl2.Controls.Add(this.khoIdTextEdit);
-            this.panelControl2.Controls.Add(nguyennhanLydoLabel);
-            this.panelControl2.Controls.Add(codeLabel1);
-            this.panelControl2.Controls.Add(this.codeTextEdit1);
-            this.panelControl2.Controls.Add(this.codeTextEdit);
-            this.panelControl2.Controls.Add(ngaylapLabel);
-            this.panelControl2.Controls.Add(ghichuLabel);
-            this.panelControl2.Controls.Add(this.tenNhanvienLabel);
-            this.panelControl2.Controls.Add(this.ngaylapDateEdit);
-            this.panelControl2.Controls.Add(this.ngaylapLabel1);
-            this.panelControl2.Controls.Add(this.ghichuTextEdit);
-            this.panelControl2.Controls.Add(this.tenNhanvienTextEdit);
-            this.panelControl2.Controls.Add(khoIdLabel);
-            this.panelControl2.Controls.Add(codeLabel);
-            this.panelControl2.Controls.Add(this.ngaylapDateEdit1);
-            this.panelControl2.Controls.Add(nhanvienGiaohangIdLabel);
-            this.panelControl2.Controls.Add(this.ngayCapnhatDateEdit);
-            this.panelControl2.Controls.Add(ngayCapnhatLabel);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(0, 52);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(786, 215);
-            this.panelControl2.TabIndex = 17;
-            // 
-            // tinhtrangPhieuxuatCurrentIdTextEdit
-            // 
-            this.tinhtrangPhieuxuatCurrentIdTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.phieuxuatModelBindingSource, "TinhtrangPhieuxuatCurrentId", true));
-            this.tinhtrangPhieuxuatCurrentIdTextEdit.DataSource = this.tinhtrangModelBindingSource;
-            this.tinhtrangPhieuxuatCurrentIdTextEdit.DisplayMember = "TenTinhtrang";
-            this.tinhtrangPhieuxuatCurrentIdTextEdit.FormattingEnabled = true;
-            this.tinhtrangPhieuxuatCurrentIdTextEdit.Location = new System.Drawing.Point(143, 15);
-            this.tinhtrangPhieuxuatCurrentIdTextEdit.Name = "tinhtrangPhieuxuatCurrentIdTextEdit";
-            this.tinhtrangPhieuxuatCurrentIdTextEdit.Size = new System.Drawing.Size(235, 21);
-            this.tinhtrangPhieuxuatCurrentIdTextEdit.TabIndex = 53;
-            this.tinhtrangPhieuxuatCurrentIdTextEdit.ValueMember = "TinhtrangId";
-            // 
-            // tinhtrangPhieuxuatCurrentIdLabel
-            // 
-            tinhtrangPhieuxuatCurrentIdLabel.AutoSize = true;
-            tinhtrangPhieuxuatCurrentIdLabel.Location = new System.Drawing.Point(27, 19);
-            tinhtrangPhieuxuatCurrentIdLabel.Name = "tinhtrangPhieuxuatCurrentIdLabel";
-            tinhtrangPhieuxuatCurrentIdLabel.Size = new System.Drawing.Size(60, 13);
-            tinhtrangPhieuxuatCurrentIdLabel.TabIndex = 52;
-            tinhtrangPhieuxuatCurrentIdLabel.Text = "Tình trạng:";
+            this.panelThuoctinhCoban.Controls.Add(this.nguyennhanLydoTextEdit);
+            this.panelThuoctinhCoban.Controls.Add(this.nhanvienGiaohangIdTextEdit);
+            this.panelThuoctinhCoban.Controls.Add(this.khoIdTextEdit);
+            this.panelThuoctinhCoban.Controls.Add(nguyennhanLydoLabel);
+            this.panelThuoctinhCoban.Controls.Add(codeLabel1);
+            this.panelThuoctinhCoban.Controls.Add(this.codeDonhangTextEdit);
+            this.panelThuoctinhCoban.Controls.Add(this.codeTextEdit);
+            this.panelThuoctinhCoban.Controls.Add(ngaylapLabel);
+            this.panelThuoctinhCoban.Controls.Add(ghichuLabel);
+            this.panelThuoctinhCoban.Controls.Add(this.tenNhanvienLabel);
+            this.panelThuoctinhCoban.Controls.Add(this.ngaylapDateEdit);
+            this.panelThuoctinhCoban.Controls.Add(this.ngaylapLabel1);
+            this.panelThuoctinhCoban.Controls.Add(this.ghichuTextEdit);
+            this.panelThuoctinhCoban.Controls.Add(this.tenNhanvienTextEdit);
+            this.panelThuoctinhCoban.Controls.Add(khoIdLabel);
+            this.panelThuoctinhCoban.Controls.Add(codeLabel);
+            this.panelThuoctinhCoban.Controls.Add(this.ngaylapDateEdit1);
+            this.panelThuoctinhCoban.Controls.Add(nhanvienGiaohangIdLabel);
+            this.panelThuoctinhCoban.Controls.Add(this.ngayCapnhatDateEdit);
+            this.panelThuoctinhCoban.Controls.Add(ngayCapnhatLabel);
+            this.panelThuoctinhCoban.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelThuoctinhCoban.Location = new System.Drawing.Point(0, 52);
+            this.panelThuoctinhCoban.Name = "panelThuoctinhCoban";
+            this.panelThuoctinhCoban.Size = new System.Drawing.Size(786, 215);
+            this.panelThuoctinhCoban.TabIndex = 17;
             // 
             // nguyennhanLydoTextEdit
             // 
@@ -389,6 +441,10 @@
             this.nguyennhanLydoTextEdit.Size = new System.Drawing.Size(235, 21);
             this.nguyennhanLydoTextEdit.TabIndex = 51;
             this.nguyennhanLydoTextEdit.ValueMember = "NguyennhanLydoId";
+            // 
+            // nguyennhanLydoModelBindingSource
+            // 
+            this.nguyennhanLydoModelBindingSource.DataSource = typeof(B2B.Model.NguyennhanLydoModel);
             // 
             // nhanvienGiaohangIdTextEdit
             // 
@@ -414,34 +470,20 @@
             this.khoIdTextEdit.TabIndex = 49;
             this.khoIdTextEdit.ValueMember = "KhoId";
             // 
-            // nguyennhanLydoLabel
+            // khoModelBindingSource
             // 
-            nguyennhanLydoLabel.AutoSize = true;
-            nguyennhanLydoLabel.Location = new System.Drawing.Point(28, 184);
-            nguyennhanLydoLabel.Name = "nguyennhanLydoLabel";
-            nguyennhanLydoLabel.Size = new System.Drawing.Size(101, 13);
-            nguyennhanLydoLabel.TabIndex = 48;
-            nguyennhanLydoLabel.Text = "Nguyên nhân lý do:";
+            this.khoModelBindingSource.DataSource = typeof(B2B.Model.KhoModel);
             // 
-            // codeLabel1
+            // codeDonhangTextEdit
             // 
-            codeLabel1.AutoSize = true;
-            codeLabel1.Location = new System.Drawing.Point(28, 44);
-            codeLabel1.Name = "codeLabel1";
-            codeLabel1.Size = new System.Drawing.Size(58, 13);
-            codeLabel1.TabIndex = 45;
-            codeLabel1.Text = "Đơn hàng:";
-            // 
-            // codeTextEdit1
-            // 
-            this.codeTextEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuxuatModelBindingSource, "CodeDonhang", true));
-            this.codeTextEdit1.Location = new System.Drawing.Point(144, 41);
-            this.codeTextEdit1.Name = "codeTextEdit1";
-            this.codeTextEdit1.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.codeTextEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.codeTextEdit1.Properties.ReadOnly = true;
-            this.codeTextEdit1.Size = new System.Drawing.Size(235, 20);
-            this.codeTextEdit1.TabIndex = 47;
+            this.codeDonhangTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuxuatModelBindingSource, "CodeDonhang", true));
+            this.codeDonhangTextEdit.Location = new System.Drawing.Point(144, 41);
+            this.codeDonhangTextEdit.Name = "codeDonhangTextEdit";
+            this.codeDonhangTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.codeDonhangTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            this.codeDonhangTextEdit.Properties.ReadOnly = true;
+            this.codeDonhangTextEdit.Size = new System.Drawing.Size(235, 20);
+            this.codeDonhangTextEdit.TabIndex = 47;
             // 
             // codeTextEdit
             // 
@@ -450,24 +492,6 @@
             this.codeTextEdit.Name = "codeTextEdit";
             this.codeTextEdit.Size = new System.Drawing.Size(235, 20);
             this.codeTextEdit.TabIndex = 40;
-            // 
-            // ngaylapLabel
-            // 
-            ngaylapLabel.AutoSize = true;
-            ngaylapLabel.Location = new System.Drawing.Point(28, 72);
-            ngaylapLabel.Name = "ngaylapLabel";
-            ngaylapLabel.Size = new System.Drawing.Size(101, 13);
-            ngaylapLabel.TabIndex = 41;
-            ngaylapLabel.Text = "Ngày lập đơn hàng:";
-            // 
-            // ghichuLabel
-            // 
-            ghichuLabel.AutoSize = true;
-            ghichuLabel.Location = new System.Drawing.Point(408, 74);
-            ghichuLabel.Name = "ghichuLabel";
-            ghichuLabel.Size = new System.Drawing.Size(46, 13);
-            ghichuLabel.TabIndex = 44;
-            ghichuLabel.Text = "Ghi chú:";
             // 
             // tenNhanvienLabel
             // 
@@ -523,24 +547,6 @@
             this.tenNhanvienTextEdit.Size = new System.Drawing.Size(235, 20);
             this.tenNhanvienTextEdit.TabIndex = 33;
             // 
-            // khoIdLabel
-            // 
-            khoIdLabel.AutoSize = true;
-            khoIdLabel.Location = new System.Drawing.Point(408, 45);
-            khoIdLabel.Name = "khoIdLabel";
-            khoIdLabel.Size = new System.Drawing.Size(29, 13);
-            khoIdLabel.TabIndex = 36;
-            khoIdLabel.Text = "Kho:";
-            // 
-            // codeLabel
-            // 
-            codeLabel.AutoSize = true;
-            codeLabel.Location = new System.Drawing.Point(28, 16);
-            codeLabel.Name = "codeLabel";
-            codeLabel.Size = new System.Drawing.Size(36, 13);
-            codeLabel.TabIndex = 38;
-            codeLabel.Text = "Code:";
-            // 
             // ngaylapDateEdit1
             // 
             this.ngaylapDateEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuxuatModelBindingSource, "Ngaylap", true));
@@ -556,15 +562,6 @@
             this.ngaylapDateEdit1.Properties.ReadOnly = true;
             this.ngaylapDateEdit1.Size = new System.Drawing.Size(235, 20);
             this.ngaylapDateEdit1.TabIndex = 35;
-            // 
-            // nhanvienGiaohangIdLabel
-            // 
-            nhanvienGiaohangIdLabel.AutoSize = true;
-            nhanvienGiaohangIdLabel.Location = new System.Drawing.Point(408, 16);
-            nhanvienGiaohangIdLabel.Name = "nhanvienGiaohangIdLabel";
-            nhanvienGiaohangIdLabel.Size = new System.Drawing.Size(109, 13);
-            nhanvienGiaohangIdLabel.TabIndex = 37;
-            nhanvienGiaohangIdLabel.Text = "Nhân viên giao hàng:";
             // 
             // ngayCapnhatDateEdit
             // 
@@ -582,24 +579,28 @@
             this.ngayCapnhatDateEdit.Size = new System.Drawing.Size(235, 20);
             this.ngayCapnhatDateEdit.TabIndex = 42;
             // 
-            // ngayCapnhatLabel
+            // panelTinhtrang
             // 
-            ngayCapnhatLabel.AutoSize = true;
-            ngayCapnhatLabel.Location = new System.Drawing.Point(28, 156);
-            ngayCapnhatLabel.Name = "ngayCapnhatLabel";
-            ngayCapnhatLabel.Size = new System.Drawing.Size(110, 13);
-            ngayCapnhatLabel.TabIndex = 39;
-            ngayCapnhatLabel.Text = "Ngày cập nhật phiếu:";
+            this.panelTinhtrang.Controls.Add(this.tinhtrangPhieuxuatCurrentIdTextEdit);
+            this.panelTinhtrang.Controls.Add(tinhtrangPhieuxuatCurrentIdLabel);
+            this.panelTinhtrang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTinhtrang.Location = new System.Drawing.Point(0, 0);
+            this.panelTinhtrang.Name = "panelTinhtrang";
+            this.panelTinhtrang.Size = new System.Drawing.Size(786, 52);
+            this.panelTinhtrang.TabIndex = 18;
             // 
-            // panelControl3
+            // tinhtrangPhieuxuatCurrentIdTextEdit
             // 
-            this.panelControl3.Controls.Add(this.tinhtrangPhieuxuatCurrentIdTextEdit);
-            this.panelControl3.Controls.Add(tinhtrangPhieuxuatCurrentIdLabel);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(0, 0);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(786, 52);
-            this.panelControl3.TabIndex = 18;
+            this.tinhtrangPhieuxuatCurrentIdTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.phieuxuatModelBindingSource, "TinhtrangPhieuxuatCurrentId", true));
+            this.tinhtrangPhieuxuatCurrentIdTextEdit.DataSource = this.tinhtrangModelBindingSource;
+            this.tinhtrangPhieuxuatCurrentIdTextEdit.DisplayMember = "TenTinhtrang";
+            this.tinhtrangPhieuxuatCurrentIdTextEdit.FormattingEnabled = true;
+            this.tinhtrangPhieuxuatCurrentIdTextEdit.Location = new System.Drawing.Point(143, 15);
+            this.tinhtrangPhieuxuatCurrentIdTextEdit.Name = "tinhtrangPhieuxuatCurrentIdTextEdit";
+            this.tinhtrangPhieuxuatCurrentIdTextEdit.Size = new System.Drawing.Size(235, 21);
+            this.tinhtrangPhieuxuatCurrentIdTextEdit.TabIndex = 53;
+            this.tinhtrangPhieuxuatCurrentIdTextEdit.ValueMember = "TinhtrangId";
+            this.tinhtrangPhieuxuatCurrentIdTextEdit.SelectionChangeCommitted += new System.EventHandler(this.tinhtrangPhieuxuatCurrentIdTextEdit_SelectionChangeCommitted);
             // 
             // PhieuxuatDetailForm
             // 
@@ -608,7 +609,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(792, 628);
             this.Controls.Add(this.xtraTabControl1);
-            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.panelNut);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(808, 667);
             this.MinimizeBox = false;
@@ -620,8 +621,8 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PhieuxuatDetailForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.phieuxuatModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienModelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelNut)).EndInit();
+            this.panelNut.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tinhtrangModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhtrangPhieuxuatModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -630,12 +631,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.chitietPhieuxuatModelGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chitietPhieuxuatModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chitietPhieuxuatgridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelThuoctinhCoban)).EndInit();
+            this.panelThuoctinhCoban.ResumeLayout(false);
+            this.panelThuoctinhCoban.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nguyennhanLydoModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoModelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.codeTextEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.codeDonhangTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit.Properties)).EndInit();
@@ -645,9 +646,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ngaylapDateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngayCapnhatDateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngayCapnhatDateEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelTinhtrang)).EndInit();
+            this.panelTinhtrang.ResumeLayout(false);
+            this.panelTinhtrang.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -656,7 +657,7 @@
 
         private System.Windows.Forms.BindingSource phieuxuatModelBindingSource;
         private System.Windows.Forms.BindingSource nhanvienModelBindingSource;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl panelNut;
         private DevExpress.XtraEditors.SimpleButton CancelSimpleButton;
         private DevExpress.XtraEditors.SimpleButton OKSimpleButton;
         private System.Windows.Forms.BindingSource tinhtrangModelBindingSource;
@@ -681,11 +682,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn NogridColumn;
         private System.Windows.Forms.BindingSource nguyennhanLydoModelBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colSoluongDaXuat;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.PanelControl panelThuoctinhCoban;
         private System.Windows.Forms.ComboBox nguyennhanLydoTextEdit;
         private System.Windows.Forms.ComboBox nhanvienGiaohangIdTextEdit;
         private System.Windows.Forms.ComboBox khoIdTextEdit;
-        private DevExpress.XtraEditors.TextEdit codeTextEdit1;
+        private DevExpress.XtraEditors.TextEdit codeDonhangTextEdit;
         private DevExpress.XtraEditors.TextEdit codeTextEdit;
         private System.Windows.Forms.Label tenNhanvienLabel;
         private DevExpress.XtraEditors.DateEdit ngaylapDateEdit;
@@ -694,7 +695,7 @@
         private DevExpress.XtraEditors.TextEdit tenNhanvienTextEdit;
         private DevExpress.XtraEditors.DateEdit ngaylapDateEdit1;
         private DevExpress.XtraEditors.DateEdit ngayCapnhatDateEdit;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.PanelControl panelTinhtrang;
         private System.Windows.Forms.ComboBox tinhtrangPhieuxuatCurrentIdTextEdit;
     }
 }

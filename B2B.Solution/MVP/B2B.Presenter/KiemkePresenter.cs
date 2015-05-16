@@ -2,84 +2,151 @@
 	Class file: 
     Author: Ly Hoang Tin
     Date Created: 20/12/2014
-	Last Updated: 20/12/2014
+	Last Updated: 17/01/2015
 	Updated By: Ly Hoang Tin
 	Update Description:
 *********************************************************************/
+
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using log4net;
-using BusinessObject;
-using BMIModel;
-using B2B.View;
+using System.Reflection;
 using B2B.Model;
+using B2B.View;
+using BMIModel;
+using BusinessObject;
+using log4net;
 
 namespace B2B.Presenter
 {
-    public class KiemkePresenter:Presenter<IKiemkeView>
+    public class KiemkePresenter : Presenter<IKiemkeView>
     {
         //Create instance of logger for using log4net methods
-        private static readonly ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         //Flag to check if error level was enabled.
         private static readonly bool isErrorEnabled = logger.IsErrorEnabled;
+
         public KiemkePresenter(IKiemkeView view)
-            : base(view) 
-        { }
-        public void DisplayKiemkeTheoThang()
+            : base(view)
         {
-            try
-            {
-                var timeValueCurrent = View.timeValue;
-                var items = new List<AutoItem>()
+        }
+
+        public void DisplayKiemkeTheoKho()
+        {
+            //try
+            //{
+                //var timeValueCurrent = View.KhoCurrentId;
+                var items = new List<AutoItem>
                 {
                     new AutoItem
                     {
-                        Name="KhoId",
-                        Value=View.KhoValue,
-                        SqlType=System.Data.SqlDbType.UniqueIdentifier
+                        Name = "KhoId",
+                        Value = View.KhoCurrentId,
+                        SqlType = SqlDbType.UniqueIdentifier
                     }
                 };
-                View.KiemkeItems=Model.Get<KiemkeModel>(new AutoObject
+                View.KiemkeItems = Model.Get<KiemkeModel>(new AutoObject
                 {
-                    Items=items,
-                    SpName="Tin_SelectKiemkeTheoKho"
+                    Items = items,
+                    SpName = "Tin_SelectKiemkeTheoKho"
                 });
-                View.RefeshKiemke();
+            foreach(var kk in View.KiemkeItems)
+            {
+                kk.ListChitietKiemke = new List<ChitietKiemkeModel>();
+                var itemkks = new List<AutoItem>
+                {               
+                    new AutoItem
+                    {
+                        Name = "KiemkeId",
+                        Value = kk.KiemkeId,
+                        SqlType = SqlDbType.UniqueIdentifier
+                    }
+                };
+
+                kk.ListChitietKiemke = Model.Get<ChitietKiemkeModel>(new AutoObject
+                {
+                    Items = itemkks,
+                    SpName = "Tin_SelectChitietKiemkeTheoKiemke"
+                });
+                
             }
-            catch(Exception ex)
+                View.RefreshKiemke();
+            //}
+            //catch (Exception ex)
+            //{
+            //    //Check log flag and log error to file.
+            //    if (isErrorEnabled)
+            //    {
+            //        logger.Error("Tin_SelectKiemkeTheoKho", ex);
+            //    }
+            //}
+        }
+
+        public void DisplayChitietKiemke()
+        {
+            try
+            {
+                if(View.KiemkeCurrent.KiemkeId==null)
+                {
+                    View.ChitietKiemkeItems = null;
+                    View.RefreshChitietKiemke();
+                    return;
+                }
+             var items = new List<AutoItem>
+                {               
+                    new AutoItem
+                    {
+                        Name = "KiemkeId",
+                        Value = View.KiemkeCurrent.KiemkeId,
+                        SqlType = SqlDbType.UniqueIdentifier
+                    }
+                };
+            
+                View.KiemkeCurrent.ListChitietKiemke = Model.Get<ChitietKiemkeModel>(new AutoObject
+                {
+                    Items = items,
+                    SpName = "Tin_SelectChitietKiemkeTheoKiemke"
+                });
+                View.ChitietKiemkeItems = View.KiemkeCurrent.ListChitietKiemke;
+                //View.KiemkeCurrent.ListChitietKiemke = Model.Get<ChitietKiemkeModel>(new AutoObject
+                //{
+                //    Items = items,
+                //    SpName = "Tin_SelectChitietKiemkeTheoKiemke"
+                //});
+                View.RefreshChitietKiemke();
+            }
+            catch (Exception ex)
             {
                 //Check log flag and log error to file.
                 if (isErrorEnabled)
                 {
-                    logger.Error("Tin_SelectKiemkeTheoKho", ex);
+                    logger.Error("Tin_SelectChitietKiemkeTheoKiemke", ex);
                 }
-                return;
             }
         }
+
         public void DisplayHanghoaTheoKho()
         {
             try
             {
-                var items = new List<AutoItem>()
+            var items = new List<AutoItem>
+            {
+                new AutoItem
                 {
-                    new AutoItem()
-                    {
-                        Name="KhoId",
-                        Value=View.KhoValue,
-                        SqlType=System.Data.SqlDbType.UniqueIdentifier
-                    }
-                };
-                View.HanghoaItems = Model.Get<HanghoaModel>(new AutoObject
-                    {
-                        Items=items,
-                        SpName="Tin_GetHanghoaTheoKho"
-                    });
-                View.RefeshHanghoa();
+                    Name = "KhoId",
+                    Value = View.KhoCurrentId,
+                    SqlType = SqlDbType.UniqueIdentifier
+                }
+            };
+            View.HanghoaItems = Model.Get<HanghoaModel>(new AutoObject
+            {
+                Items = items,
+                SpName = "Tin_GetHanghoaTheoKho"
+            });
+            View.RefreshHanghoa();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Check log flag and log error to file.
                 if (isErrorEnabled)
@@ -89,106 +156,143 @@ namespace B2B.Presenter
                 return;
             }
         }
-        public void DisplayNhanvienCapnhat()
+
+        public void DisplayKho()
         {
-            try
-            {
-                var items = new List<AutoItem>
-                {
-                    new AutoItem
-                    {
-                        Name = "UserId",
-                        Value = ModelCore.UserId,
-                        SqlType = System.Data.SqlDbType.UniqueIdentifier
-                    }
-                };
-
-
-                List<NhanvienModel> listNhanvien = Model.Get<NhanvienModel>(new AutoObject
-                {
-                    Items = items,
-                    SpName = "Vinh_GetNhanvienTheoUserId"
-                });
-                if (listNhanvien == null)
-                    return;
-                View.NhanvienCapnhat = listNhanvien[0];
-            }
-            catch (Exception ex)
-            {
-                //Check log flag and log error to file.
-                if (isErrorEnabled)
-                {
-                    logger.Error("Vinh_GetNhanvienTheoUserId", ex);
-                }
-            }
+            //try
+            //{
+            View.Khoitems = Model.Get<KhoModel>("sys_KhoSelect");
+            View.RefreshKho();
+            //}
+            //catch(Exception ex)
+            //{
+            //    //Check log flag and log error to file.
+            //    if (isErrorEnabled)
+            //    {
+            //        logger.Error("sys_KhoSelect", ex);
+            //    }
+            //    return;
+            //}
         }
+
         public bool Addnew()
         {
-            try
+            //try
+            //{
+            //Lấy thông tin nhân viên
+            var nvitems = new List<AutoItem>
             {
-                var kk = new KiemkeModel()
+                new AutoItem
                 {
-                    NhanvienId=View.NhanvienCapnhat.NhanvienId,
-                    TenNhanvien=View.NhanvienCapnhat.TenNhanvien,
-                    Ngaylap=DateTime.Now,
-                    Active=true,
-                    ListChitietKiemke=new List<ChitietKiemkeModel>()
-                };
-                View.KiemkeItems.Add(kk);
-                View.RefreshData();
-                return true;
-            }
-            catch(Exception ex)
-            {
-                //Check log flag and log error to file.
-                if (isErrorEnabled)
-                {
-                    logger.Error("", ex);
+                    Name = "UserId",
+                    Value = ModelCore.UserId,
+                    SqlType = SqlDbType.UniqueIdentifier
                 }
+            };
+
+
+            List<NhanvienModel> listNhanvien = Model.Get<NhanvienModel>(new AutoObject
+            {
+                Items = nvitems,
+                SpName = "Vinh_GetNhanvienTheoUserId"
+            });
+            if (listNhanvien == null)
                 return false;
-            }
+            NhanvienModel nhanvienCapnhat = listNhanvien[0];
+            //new Kiem ke
+            var kk = new KiemkeModel
+            {
+                KhoId = View.KhoCurrentId,
+                NhanvienId = nhanvienCapnhat.NhanvienId,
+                TenNhanvien = nhanvienCapnhat.HovatenNhanvien,
+                Ngaylap = DateTime.Now,
+                Active = true,
+                ListChitietKiemke = new List<ChitietKiemkeModel>()
+            };
+            View.KiemkeItems.Add(kk);
+            View.RefreshKiemke();
+            return true;
+            //}
+            //catch (Exception ex)
+            //{
+            //    //Check log flag and log error to file.
+            //    if (isErrorEnabled)
+            //    {
+            //        logger.Error("", ex);
+            //    }
+            //    return false;
+            //}
         }
+
         public bool AddnewDetail()
         {
-            try
+            //try
+            //{
+            //Lấy số lượng tồn
+            int? slton = 0;
+            var items = new List<AutoItem>
             {
-                var hanghoaCurrentId=View.HanghoaCurrentId;
-                if(hanghoaCurrentId==null)
+                new AutoItem
                 {
-                    return false;
+                    Name = "KhoId",
+                    Value = View.KhoCurrentId,
+                    SqlType = SqlDbType.UniqueIdentifier
+                },
+                new AutoItem
+                {
+                    Name = "HanghoaId",
+                    Value = View.HanghoaCurrentId,
+                    SqlType = SqlDbType.UniqueIdentifier
                 }
-                var tenHanghoacurrent=View.TenHanghoaCurrent;
-                if(tenHanghoacurrent==null)
-                {
-                    return false;
-                }
-                var kiemkeDetail = new ChitietKiemkeModel()
-                {
-                    HanghoaId=hanghoaCurrentId,
-                    TenHanghoa=tenHanghoacurrent,
-                    SoluongTon=View.SoluongTonValue,
-                    SoluongThuc=View.SoluongThucValue,
-                    Ghichu=View.GhichuValue
-                };
-                View.ChitietKiemkeItems.Add(kiemkeDetail);
-                View.RefeshChitietKiemke();
-                return true;
+            };
+            List<TonkhoModel> tonkho = Model.Get<TonkhoModel>(new AutoObject
+            {
+                Items = items,
+                SpName = "Tin_GetSoluongtonTheoHanghoaTrongKho"
+            });
+            if (tonkho != null)
+            {
+                slton = tonkho[0].SoluongTon;
             }
-            catch(Exception ex)
+            //Kiểm tra giá trị đầu vào
+            Guid? hanghoaCurrentId = View.HanghoaCurrentId;
+            if (hanghoaCurrentId == null)
             {
-                //Check log flag and log error to file.
-                if (isErrorEnabled)
-                {
-                    logger.Error("", ex);
-                }
                 return false;
             }
-        }
-        public bool Save()
-        {
-            //var kiemkeLuu=View.KiemkeItems.where
+            var firstOrDefault = View.HanghoaItems.FirstOrDefault(p => p.HanghoaId == (Guid) hanghoaCurrentId);
+            if (firstOrDefault != null)
+            {
+                string tenHanghoacurrent =
+                    firstOrDefault.TenHanghoa;
+                if (tenHanghoacurrent == null)
+                {
+                    return false;
+                }
+                var kiemkeDetail = new ChitietKiemkeModel
+                {
+                    KiemkeId=View.KiemkeCurrent.KiemkeId,
+                    HanghoaId = hanghoaCurrentId,
+                    TenHanghoa = tenHanghoacurrent,
+                    SoluongTon = slton
+                };
+                //View.ChitietKiemkeItems.Add(kiemkeDetail);
+                View.KiemkeCurrent.ListChitietKiemke.Add(kiemkeDetail);
+            }
+            View.RefreshChitietKiemke();
             return true;
+            //}
+            //catch (Exception ex)
+            //{
+            //    //Check log flag and log error to file.
+            //    if (isErrorEnabled)
+            //    {
+            //        logger.Error("", ex);
+            //    }
+            //    return false;
+            //}
         }
+
         public bool Delete()
         {
             try
@@ -196,11 +300,11 @@ namespace B2B.Presenter
                 KiemkeModel current = View.KiemkeCurrent;
                 if (current == null)
                     return false;
-                if(current.State==RowState.Insert)
+                if (current.State == RowState.Insert)
                 {
                     View.KiemkeItems.Remove(current);
                 }
-                View.RefeshKiemke();
+                View.RefreshKiemke();
                 return true;
             }
             catch (Exception ex)
@@ -213,20 +317,21 @@ namespace B2B.Presenter
                 return false;
             }
         }
+
         public bool DeleteDetail()
         {
             try
             {
                 ChitietKiemkeModel current = View.ChitietKiemkeCurrent;
-                if(current==null)
+                if (current == null)
                 {
-                    return false
+                    return false;
                 }
-                if(current.State==RowState.Insert)
+                if (current.State == RowState.Insert)
                 {
                     View.ChitietKiemkeItems.Remove(current);
                 }
-                View.RefeshChitietKiemke();
+                View.RefreshChitietKiemke();
                 return true;
             }
             catch (Exception ex)
@@ -238,6 +343,31 @@ namespace B2B.Presenter
                 }
                 return false;
             }
+        }
+
+        public bool Save()
+        {
+            //try
+            //{
+                //List<KiemkeModel> kiemkeLuu =
+                //    View.KiemkeItems.Where(p => (p.State == RowState.Insert || p.State == RowState.Update)).ToList();
+                Model.Set(View.KiemkeItems);
+                foreach (KiemkeModel kk in View.KiemkeItems)
+                {
+                    Model.Set(kk.ListChitietKiemke);
+                }
+                View.RefreshKiemke();
+                return true;
+            //}
+            //catch (Exception ex)
+            //{
+            //    //Check log flag and log error to file.
+            //    if (isErrorEnabled)
+            //    {
+            //        logger.Error("", ex);
+            //    }
+            //    return false;
+            //}
         }
     }
 }

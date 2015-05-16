@@ -38,5 +38,9 @@ namespace B2B.View
         void RefreshDataNhacungcap();
 
         void RefreshDataKho();
+
+        List<NguyennhanLydoModel> NguyennhanLydoItems { get; set; }
+
+        void RefeshNguyennhanLydo();
     }
 }

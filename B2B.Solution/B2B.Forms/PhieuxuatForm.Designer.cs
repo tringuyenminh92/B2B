@@ -76,9 +76,10 @@
             this.tenNhanvienTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.khoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.HanghoaActionGroupControl = new DevExpress.XtraEditors.GroupControl();
+            this.addPhieuthuSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPhieuGiaohang = new DevExpress.XtraEditors.SimpleButton();
             this.editPhieuxuatSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.addPhieuxuatSimpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.deletePhieuxuatSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.savePhieuxuatSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.exportPhieuxuatSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -231,7 +232,7 @@
             this.phieuxuatModelGridControl.Location = new System.Drawing.Point(406, 371);
             this.phieuxuatModelGridControl.MainView = this.phieuxuatModelGridView;
             this.phieuxuatModelGridControl.Name = "phieuxuatModelGridControl";
-            this.phieuxuatModelGridControl.Size = new System.Drawing.Size(862, 322);
+            this.phieuxuatModelGridControl.Size = new System.Drawing.Size(862, 290);
             this.phieuxuatModelGridControl.TabIndex = 0;
             this.phieuxuatModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.phieuxuatModelGridView});
@@ -239,6 +240,7 @@
             // phieuxuatModelBindingSource
             // 
             this.phieuxuatModelBindingSource.DataSource = typeof(B2B.Model.PhieuxuatModel);
+            this.phieuxuatModelBindingSource.PositionChanged += new System.EventHandler(this.phieuxuatModelBindingSource_PositionChanged);
             // 
             // phieuxuatModelGridView
             // 
@@ -270,6 +272,8 @@
             this.phieuxuatModelGridView.OptionsView.ShowAutoFilterRow = true;
             this.phieuxuatModelGridView.OptionsView.ShowFooter = true;
             this.phieuxuatModelGridView.OptionsView.ShowGroupPanel = false;
+            this.phieuxuatModelGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTenNhanvienCapnhat1, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.phieuxuatModelGridView.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.phieuxuatModelGridView_CustomColumnDisplayText);
             // 
             // colPhieuxuatId
@@ -325,7 +329,7 @@
             this.colCode1.Name = "colCode1";
             this.colCode1.Visible = true;
             this.colCode1.VisibleIndex = 1;
-            this.colCode1.Width = 132;
+            this.colCode1.Width = 177;
             // 
             // colTenTinhtrangPhieuxuat
             // 
@@ -334,7 +338,7 @@
             this.colTenTinhtrangPhieuxuat.Name = "colTenTinhtrangPhieuxuat";
             this.colTenTinhtrangPhieuxuat.Visible = true;
             this.colTenTinhtrangPhieuxuat.VisibleIndex = 3;
-            this.colTenTinhtrangPhieuxuat.Width = 120;
+            this.colTenTinhtrangPhieuxuat.Width = 127;
             // 
             // colGhichu1
             // 
@@ -345,8 +349,12 @@
             // 
             // colTenNhanvienLap1
             // 
+            this.colTenNhanvienLap1.Caption = "Nhân viên lập";
             this.colTenNhanvienLap1.FieldName = "TenNhanvienLap";
             this.colTenNhanvienLap1.Name = "colTenNhanvienLap1";
+            this.colTenNhanvienLap1.Visible = true;
+            this.colTenNhanvienLap1.VisibleIndex = 2;
+            this.colTenNhanvienLap1.Width = 192;
             // 
             // colTenKho
             // 
@@ -360,20 +368,19 @@
             this.colTenNhanvienGiaohang.Name = "colTenNhanvienGiaohang";
             this.colTenNhanvienGiaohang.Visible = true;
             this.colTenNhanvienGiaohang.VisibleIndex = 4;
-            this.colTenNhanvienGiaohang.Width = 166;
+            this.colTenNhanvienGiaohang.Width = 175;
             // 
             // colNhanvienCapnhatId1
             // 
             this.colNhanvienCapnhatId1.FieldName = "NhanvienCapnhatId";
             this.colNhanvienCapnhatId1.Name = "colNhanvienCapnhatId1";
+            this.colNhanvienCapnhatId1.Width = 93;
             // 
             // colTenNhanvienCapnhat1
             // 
             this.colTenNhanvienCapnhat1.Caption = "Nhân viên cập nhật";
             this.colTenNhanvienCapnhat1.FieldName = "TenNhanvienCapnhat";
             this.colTenNhanvienCapnhat1.Name = "colTenNhanvienCapnhat1";
-            this.colTenNhanvienCapnhat1.Visible = true;
-            this.colTenNhanvienCapnhat1.VisibleIndex = 2;
             this.colTenNhanvienCapnhat1.Width = 165;
             // 
             // colNgaylapDonhang
@@ -393,7 +400,7 @@
             this.colState1.OptionsColumn.ReadOnly = true;
             this.colState1.Visible = true;
             this.colState1.VisibleIndex = 5;
-            this.colState1.Width = 52;
+            this.colState1.Width = 60;
             // 
             // NoGridColumn1
             // 
@@ -403,7 +410,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)});
             this.NoGridColumn1.Visible = true;
             this.NoGridColumn1.VisibleIndex = 0;
-            this.NoGridColumn1.Width = 60;
+            this.NoGridColumn1.Width = 80;
             // 
             // groupControl1
             // 
@@ -563,18 +570,44 @@
             // 
             // HanghoaActionGroupControl
             // 
+            this.HanghoaActionGroupControl.Controls.Add(this.addPhieuthuSimpleButton);
+            this.HanghoaActionGroupControl.Controls.Add(this.btnPhieuGiaohang);
             this.HanghoaActionGroupControl.Controls.Add(this.editPhieuxuatSimpleButton);
             this.HanghoaActionGroupControl.Controls.Add(this.addPhieuxuatSimpleButton);
-            this.HanghoaActionGroupControl.Controls.Add(this.deletePhieuxuatSimpleButton);
             this.HanghoaActionGroupControl.Controls.Add(this.savePhieuxuatSimpleButton);
             this.HanghoaActionGroupControl.Controls.Add(this.exportPhieuxuatSimpleButton);
             this.HanghoaActionGroupControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.HanghoaActionGroupControl.Location = new System.Drawing.Point(406, 693);
+            this.HanghoaActionGroupControl.Location = new System.Drawing.Point(406, 661);
             this.HanghoaActionGroupControl.Margin = new System.Windows.Forms.Padding(2);
             this.HanghoaActionGroupControl.Name = "HanghoaActionGroupControl";
             this.HanghoaActionGroupControl.Size = new System.Drawing.Size(862, 72);
             this.HanghoaActionGroupControl.TabIndex = 3;
             this.HanghoaActionGroupControl.Text = "Thao tác Phiếu xuất";
+            // 
+            // addPhieuthuSimpleButton
+            // 
+            this.addPhieuthuSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.addPhieuthuSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("addPhieuthuSimpleButton.Image")));
+            this.addPhieuthuSimpleButton.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.addPhieuthuSimpleButton.Location = new System.Drawing.Point(160, 27);
+            this.addPhieuthuSimpleButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addPhieuthuSimpleButton.Name = "addPhieuthuSimpleButton";
+            this.addPhieuthuSimpleButton.Size = new System.Drawing.Size(106, 32);
+            this.addPhieuthuSimpleButton.TabIndex = 19;
+            this.addPhieuthuSimpleButton.Text = "Lập phiếu thu";
+            this.addPhieuthuSimpleButton.Click += new System.EventHandler(this.addPhieuthuSimpleButton_Click);
+            // 
+            // btnPhieuGiaohang
+            // 
+            this.btnPhieuGiaohang.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnPhieuGiaohang.Image = global::B2B.Forms.Properties.Resources.ExportToPDF_16x16;
+            this.btnPhieuGiaohang.Location = new System.Drawing.Point(270, 27);
+            this.btnPhieuGiaohang.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPhieuGiaohang.Name = "btnPhieuGiaohang";
+            this.btnPhieuGiaohang.Size = new System.Drawing.Size(106, 32);
+            this.btnPhieuGiaohang.TabIndex = 7;
+            this.btnPhieuGiaohang.Text = "Phiếu giao hàng";
+            this.btnPhieuGiaohang.Click += new System.EventHandler(this.btnPhieuGiaohang_Click);
             // 
             // editPhieuxuatSimpleButton
             // 
@@ -592,25 +625,13 @@
             // 
             this.addPhieuxuatSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.addPhieuxuatSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("addPhieuxuatSimpleButton.Image")));
-            this.addPhieuxuatSimpleButton.Location = new System.Drawing.Point(158, 27);
+            this.addPhieuxuatSimpleButton.Location = new System.Drawing.Point(86, 27);
             this.addPhieuxuatSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.addPhieuxuatSimpleButton.Name = "addPhieuxuatSimpleButton";
             this.addPhieuxuatSimpleButton.Size = new System.Drawing.Size(70, 32);
             this.addPhieuxuatSimpleButton.TabIndex = 4;
             this.addPhieuxuatSimpleButton.Text = "Thêm";
             this.addPhieuxuatSimpleButton.Click += new System.EventHandler(this.addPhieuxuatSimpleButton_Click);
-            // 
-            // deletePhieuxuatSimpleButton
-            // 
-            this.deletePhieuxuatSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.deletePhieuxuatSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("deletePhieuxuatSimpleButton.Image")));
-            this.deletePhieuxuatSimpleButton.Location = new System.Drawing.Point(9, 27);
-            this.deletePhieuxuatSimpleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.deletePhieuxuatSimpleButton.Name = "deletePhieuxuatSimpleButton";
-            this.deletePhieuxuatSimpleButton.Size = new System.Drawing.Size(70, 32);
-            this.deletePhieuxuatSimpleButton.TabIndex = 6;
-            this.deletePhieuxuatSimpleButton.Text = "Xóa";
-            this.deletePhieuxuatSimpleButton.Click += new System.EventHandler(this.deletePhieuxuatSimpleButton_Click);
             // 
             // savePhieuxuatSimpleButton
             // 
@@ -628,7 +649,7 @@
             // 
             this.exportPhieuxuatSimpleButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.exportPhieuxuatSimpleButton.Image = ((System.Drawing.Image)(resources.GetObject("exportPhieuxuatSimpleButton.Image")));
-            this.exportPhieuxuatSimpleButton.Location = new System.Drawing.Point(84, 27);
+            this.exportPhieuxuatSimpleButton.Location = new System.Drawing.Point(12, 27);
             this.exportPhieuxuatSimpleButton.Margin = new System.Windows.Forms.Padding(2);
             this.exportPhieuxuatSimpleButton.Name = "exportPhieuxuatSimpleButton";
             this.exportPhieuxuatSimpleButton.Size = new System.Drawing.Size(70, 32);
@@ -647,7 +668,7 @@
             this.donhangModelGridControl.Location = new System.Drawing.Point(2, 67);
             this.donhangModelGridControl.MainView = this.donhangModelGridView;
             this.donhangModelGridControl.Name = "donhangModelGridControl";
-            this.donhangModelGridControl.Size = new System.Drawing.Size(402, 696);
+            this.donhangModelGridControl.Size = new System.Drawing.Size(402, 664);
             this.donhangModelGridControl.TabIndex = 0;
             this.donhangModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.donhangModelGridView,
@@ -875,7 +896,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(406, 765);
+            this.groupControl2.Size = new System.Drawing.Size(406, 733);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Danh sách đơn hàng";
             // 
@@ -937,7 +958,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1268, 765);
+            this.ClientSize = new System.Drawing.Size(1268, 733);
             this.Controls.Add(this.phieuxuatModelGridControl);
             this.Controls.Add(this.HanghoaActionGroupControl);
             this.Controls.Add(this.groupControl1);
@@ -988,7 +1009,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView phieuxuatModelGridView;
         private DevExpress.XtraEditors.GroupControl HanghoaActionGroupControl;
         private DevExpress.XtraEditors.SimpleButton addPhieuxuatSimpleButton;
-        private DevExpress.XtraEditors.SimpleButton deletePhieuxuatSimpleButton;
         private DevExpress.XtraEditors.SimpleButton savePhieuxuatSimpleButton;
         private DevExpress.XtraEditors.SimpleButton exportPhieuxuatSimpleButton;
         private DevExpress.XtraEditors.SimpleButton editPhieuxuatSimpleButton;
@@ -1063,5 +1083,7 @@
         private DevExpress.XtraEditors.LabelControl ThangNamLabelControl;
         private DevExpress.XtraEditors.DateEdit thangNamDateEdit;
         private DevExpress.XtraEditors.SimpleButton reloadDonhangSimpleButton;
+        private DevExpress.XtraEditors.SimpleButton btnPhieuGiaohang;
+        private DevExpress.XtraEditors.SimpleButton addPhieuthuSimpleButton;
     }
 }
